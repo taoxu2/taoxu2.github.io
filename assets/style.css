@@ -1,2 +1,8 @@
 /* Custom tweaks */
 .post-title { letter-spacing: 0.3px; }
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+h1, h2 {
+  color: #007acc;
+}
