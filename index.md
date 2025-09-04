@@ -3,6 +3,10 @@ layout: home
 title: Home
 ---
 
-Welcome to my personal site 👋  
+👋 Welcome to **Tao Xu’s Blog**  
 
-Here I share projects, essays, and notes.
+I write about:
+- 📊 Statistics & Data Science  
+- 🧮 Pure Mathematics  
+- 📚 Philosophy  
+- ✍️ Personal notes & projects
