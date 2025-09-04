@@ -1,0 +1,9 @@
+title: My GitHub Site
+description: A simple GitHub Pages site powered by Jekyll
+theme: minima
+# url: https://example.com   # <-- set this if you use a custom domain
+# baseurl: ""                # <-- set this if you deploy under a subpath
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
