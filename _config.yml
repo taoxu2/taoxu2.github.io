@@ -1,9 +1,30 @@
 title: Tao Xu’s Blog
-description: Notes on math, stats, philosophy, and life
+description: Notes on math, statistics, philosophy, and life
 theme: minima
-# url: https://example.com   # <-- set this if you use a custom domain
-# baseurl: ""                # <-- set this if you deploy under a subpath
 markdown: kramdown
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Pages to show in the navigation bar
+header_pages:
+  - research.md
+  - photos.md
+  - finance.md
+  - philosophy.md
+
+# Theme information (optional, for descriptions)
+themes:
+  research:
+    title: Academic Research
+    blurb: Notes on mathematics, statistics, and papers
+  photography:
+    title: Photography
+    blurb: Portfolio and shooting notes
+  finance:
+    title: Financial Analysis
+    blurb: Trading reviews, company research, and macro insights
+  philosophy:
+    title: Philosophical Essays
+    blurb: Reading notes and reflections
