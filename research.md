@@ -13,4 +13,3 @@ I will post:
 - ✏️ Problem-solving and proofs  
 - 📄 Summaries of research papers  
 
-Stay tuned for updates!
