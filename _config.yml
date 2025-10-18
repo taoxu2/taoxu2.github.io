@@ -1,5 +1,5 @@
 title: Tao Xu’s Blog
-description: Notes on math, statistics, philosophy, and life
+description: Notes
 theme: minima
 markdown: kramdown
 
@@ -17,14 +17,8 @@ header_pages:
 # Theme information (optional, for descriptions)
 themes:
   research:
-    title: Academic Research
-    blurb: Notes on mathematics, statistics, and papers
+    title: Academic
+    blurb: Notes on mathematics, statistics
   photography:
     title: Photography
     blurb: Portfolio and shooting notes
-  finance:
-    title: Financial Analysis
-    blurb: Trading reviews, company research, and macro insights
-  philosophy:
-    title: Philosophical Essays
-    blurb: Reading notes and reflections
