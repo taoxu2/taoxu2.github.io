@@ -1,15 +1,15 @@
 ---
 layout: page
-title: Academic Research
+title: Academic Notes
 permalink: /research/
 ---
 
-# Academic Research
+# Academic Notes
 
-This section collects my notes on mathematics, statistics, and academic papers.  
+Welcome to my collection of academic notes. 
 
-I will post:
-- 📘 Course notes and derivations  
-- ✏️ Problem-solving and proofs  
-- 📄 Summaries of research papers  
+Here you'll find summaries, problem solutions, and conceptual insights from courses in Mathematics and Statistics at UCSB.
 
+---
+
+## Measure Theory (MATH 201A)
