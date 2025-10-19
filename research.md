@@ -26,7 +26,7 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 [📘 View Week 3 Lecture Notes →](/assets/MATH201A_Week3_Lecture.html)
 
 #### MIDTERM REVIEW:
-Question on the textbook: (/assets/MATH201A Chapter1 TEXTBOOK Question.pdf)
+[ View Textbook Quesitons →](/assets/MATH201A_Chapter1_TEXTBOOK_Question.pdf)
 
 ### PSTAT 210
 
