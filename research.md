@@ -13,6 +13,7 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 
 ## Measure Theory (MATH 201A/PSTAT 210)
 
+(open those notes in safari(google can not show some code like "\mathcal")
 
 ### MATH 201ABC (My Notes)
 
