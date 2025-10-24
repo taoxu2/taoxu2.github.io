@@ -26,14 +26,17 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### Week 3 notes
 [📘 View Week 3 Lecture Notes →](/assets/MATH201A_Week3_Lecture.html)
 
-#### MIDTERM REVIEW:
+#### MIDTERM 1 REVIEW:(10.23)
 [ View Textbook Quesitons →](/assets/MATH201A_Chapter1_TEXTBOOK_Question.pdf)
+
+#### Midterm 2 reivew:(11.20)
 
 ### PSTAT 210
 
+#### MIDTERM Review (11.6)
 to be updated haha
 
-
-
 ## PDE (MATH 124AB)
-NONE!
+
+#### midterm review (10.29)
+
