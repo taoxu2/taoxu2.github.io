@@ -30,6 +30,7 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 [ View Textbook Quesitons →](/assets/MATH201A_Chapter1_TEXTBOOK_Question.pdf)
 
 #### Midterm 2 reivew:(11.20)
+update later
 
 ### PSTAT 210
 
@@ -39,4 +40,6 @@ to be updated haha
 ## PDE (MATH 124AB)
 
 #### midterm review (10.29)
+
+
 
