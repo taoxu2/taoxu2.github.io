@@ -39,7 +39,9 @@ to be updated haha
 
 ## PDE (MATH 124AB)
 
-#### midterm review (10.29)
+#### Midterm Review (10.29)
+[📘 View Midterm Review →](/assets/MATH124A_Midterm_review.html)
+
 
 
 
