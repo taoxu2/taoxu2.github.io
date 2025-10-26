@@ -42,6 +42,5 @@ to be updated haha
 #### Midterm Review (10.29)
 [📘 View Midterm Review →](/assets/MATH124A_Midterm_review.html)
 
-
-
+[📘 View Chapter 1 Notes →](/assets/PDE_Chapter_1.html)
 
