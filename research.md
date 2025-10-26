@@ -44,3 +44,6 @@ to be updated haha
 
 [📘 View Chapter 1 Notes →](/assets/PDE_Chapter_1.html)
 
+[📘 View Chapter 1 Exercises →](/assets/PDE_Chapter_1_Exercises.pdf)
+
+
