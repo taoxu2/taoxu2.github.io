@@ -34,6 +34,9 @@ update later
 
 ### PSTAT 210
 
+#### Chapter 1 notes:
+[📘 View Chapter 1 Lecture Notes →](/assets/PSTAT210_Ch1.html)
+
 #### MIDTERM Review (11.6)
 to be updated haha
 
