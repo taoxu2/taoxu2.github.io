@@ -37,6 +37,9 @@ update later
 #### Chapter 1 notes:
 [📘 View Chapter 1 Lecture Notes →](/assets/PSTAT210_Ch1.html)
 
+#### Chapter 2 notes:
+[📘 View Chapter 2 Lecture Notes →](/assets/PSTAT210_Ch2.html)
+
 #### MIDTERM Review (11.6)
 to be updated haha
 
