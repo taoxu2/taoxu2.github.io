@@ -41,7 +41,6 @@ update later
 [📘 View Chapter 2 Lecture Notes →](/assets/PSTAT210_Ch2.html)
 
 #### MIDTERM Review (11.6)
-to be updated haha
 [🧩 View Chapter 1 Exercises →](/assets/PSTAT210_Ch1_Exercises.pdf)
 
 ## PDE (MATH 124AB)
