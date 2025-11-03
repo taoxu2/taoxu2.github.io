@@ -42,6 +42,7 @@ update later
 
 #### MIDTERM Review (11.6)
 to be updated haha
+[🧩 View Chapter 1 Exercises →](/assets/PSTAT210_Ch1_Exercises.pdf)
 
 ## PDE (MATH 124AB)
 
