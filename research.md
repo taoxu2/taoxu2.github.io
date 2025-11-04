@@ -59,4 +59,9 @@ update later
 [📘 View Chapter 2 Exercises →](/assets/PDE_Chapter_2_Exercises.pdf)
 
 
+## Hyperbolic Geometry (MATH 113)
+
+#### Midterm review (11.13)
+update later
+
 
