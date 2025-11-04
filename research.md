@@ -62,6 +62,8 @@ update later
 ## Hyperbolic Geometry (MATH 113)
 
 #### Midterm review (11.13)
-update later
+
+View Chapter 1-6 in the Textbook:
+[📘 View Textbook →](/assets/MATH113(hyperbolic_geometry).pdf)
 
 
