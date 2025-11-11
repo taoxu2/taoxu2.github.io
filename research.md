@@ -39,7 +39,7 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 [📘 View Week 6 Lecture Notes →](/assets/MATH201A_Week6_Lecture.html)
 
 #### Week 7 notes
-
+[📘 View Week 7 Lecture Notes →](/assets/MATH201A_Week7_Lecture.html)
 
 #### Midterm 2 reivew:(11.20)
 update later
