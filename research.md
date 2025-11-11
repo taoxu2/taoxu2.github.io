@@ -29,8 +29,21 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### MIDTERM 1 REVIEW:(10.23)
 [ View Textbook Quesitons →](/assets/MATH201A_Chapter1_TEXTBOOK_Question.pdf)
 
+#### Week 4 notes
+[📘 View Week 4 Lecture Notes →](/assets/MATH201A_Week4_Lecture.html)
+
+#### Week 5 notes
+[📘 View Week 5 Lecture Notes →](/assets/MATH201A_Week5_Lecture.html)
+
+#### Week 6 notes
+[📘 View Week 6 Lecture Notes →](/assets/MATH201A_Week6_Lecture.html)
+
+#### Week 7 notes
+
+
 #### Midterm 2 reivew:(11.20)
 update later
+
 
 ### PSTAT 210
 
