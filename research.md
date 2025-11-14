@@ -27,7 +27,7 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 [📘 View Week 3 Lecture Notes →](/assets/MATH201A_Week3_Lecture.html)
 
 #### MIDTERM 1 REVIEW:(10.23)
-[ View Textbook Quesitons →](/assets/MATH201A_Chapter1_TEXTBOOK_Question.pdf)
+[ View Textbook Quesitons in Chapter 1 →](/assets/MATH201A_Chapter1_TEXTBOOK_Question.pdf)
 
 #### Week 4 notes
 [📘 View Week 4 Lecture Notes →](/assets/MATH201A_Week4_Lecture.html)
@@ -42,7 +42,7 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 [📘 View Week 7 Lecture Notes →](/assets/MATH201A_Week7_Lecture.html)
 
 #### Midterm 2 reivew:(11.20)
-[ View Textbook Quesitons →](/assets/MATH201A_Chapter2_Exercises.pdf)
+[ View Textbook Quesitons in Chapter 2 →](/assets/MATH201A_Chapter2_Exercises.pdf)
 
 
 ### PSTAT 210
