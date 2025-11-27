@@ -77,8 +77,15 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### Midterm review (11.13)
 [📘 View Midterm Review →](/assets/MATH113_Midterm_review.html)
 
+### Chapter Notes
 
-View Chapter 1-6 in the Textbook:
-[📘 View Textbook →](/assets/MATH113(hyperbolic_geometry).pdf)
+#### CH1 Notes  
+[📘 View CH1 Notes →](/assets/MATH113CH1_notes.html)
+
+#### CH2 Notes  
+[📘 View CH2 Notes →](/assets/MATH113CH2_notes.html)
+
+#### CH3 Notes  
+[📘 View CH3 Notes →](/assets/MATH113CH3_notes.html)
 
 
