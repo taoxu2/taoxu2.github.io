@@ -90,12 +90,15 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 
 ## ADV STAT METHODS (PSTAT 220ABC)
 
-### PSTAT 220A 
+### PSTAT 220A
 
 #### Week 1 Notes
+[📘 View PSTAT 220A Week 1 Notes →](/assets/PSTAT220A_Week1_notes.html)
 
-#### Week 2 Notes 
+#### Week 2 Notes
+[📘 View PSTAT 220A Week 2 Notes →](/assets/PSTAT220A_Week2_notes.html)
 
 #### Week 3 Notes
+[📘 View PSTAT 220A Week 3 Notes →](/assets/PSTAT220A_Week3_notes.html)
 
 
