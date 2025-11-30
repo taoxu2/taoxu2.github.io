@@ -88,4 +88,14 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### CH3 Notes  
 [📘 View CH3 Notes →](/assets/MATH113CH3_notes.html)
 
+## ADV STAT METHODS (PSTAT 220ABC)
+
+### PSTAT 220A 
+
+#### Week 1 Notes
+
+#### Week 2 Notes 
+
+#### Week 3 Notes
+
 
