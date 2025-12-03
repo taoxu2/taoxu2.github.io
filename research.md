@@ -101,4 +101,14 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### Week 3 Notes
 [📘 View PSTAT 220A Week 3 Notes →](/assets/PSTAT220A_Week3_notes.html)
 
+#### Week 4 Notes
+[📘 View PSTAT 220A Week 3 Notes →](/assets/PSTAT220A_Week4_notes.html)
 
+#### Week 5 Notes
+[📘 View PSTAT 220A Week 3 Notes →](/assets/PSTAT220A_Week5_notes.html)
+
+#### Week 6 Notes
+[📘 View PSTAT 220A Week 3 Notes →](/assets/PSTAT220A_Week6_notes.html)
+
+#### Week 7 Notes
+[📘 View PSTAT 220A Week 3 Notes →](/assets/PSTAT220A_Week7_notes.html)
