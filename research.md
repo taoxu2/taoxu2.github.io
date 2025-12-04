@@ -88,6 +88,19 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### CH3 Notes  
 [📘 View CH3 Notes →](/assets/MATH113CH3_notes.html)
 
+#### CH4 Notes  
+[📘 View CH4 Notes →](/assets/MATH113CH4_notes.html)
+
+#### CH5 Notes  
+[📘 View CH5 Notes →](/assets/MATH113CH5_notes.html)
+
+#### CH6 Notes  
+[📘 View CH6 Notes →](/assets/MATH113CH6_notes.html)
+
+#### CH7 Notes  
+[📘 View CH7 Notes →](/assets/MATH113CH7_notes.html)
+
+
 ## ADV STAT METHODS (PSTAT 220ABC)
 
 ### PSTAT 220A
