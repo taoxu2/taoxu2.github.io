@@ -41,10 +41,8 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### Week 7 notes
 [📘 View Week 7 Lecture Notes →](/assets/MATH201A_Week7_Lecture.html)
 
-#### Midterm 2 reivew:(11.20)
-[ View Textbook Quesitons in Chapter 2 →](/assets/MATH201A_Chapter2_Exercises.pdf)
-
-
+#### Final reivew:(12.9)
+[📘 View Final Review Notes →](/assets/MATH201A_final_review.html)
 
 ### PSTAT 210
 
