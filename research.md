@@ -53,6 +53,21 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 #### Chapter 2 notes:
 [📘 View Chapter 2 Lecture Notes →](/assets/PSTAT210_Ch2.html)
 
+### PSTAT 210
+
+- [PSTAT210 Chapter 0](PSTAT210/PSTAT210_CH0.pdf)
+  
+- [PSTAT210 Chapter 1](PSTAT210/PSTAT210_CH1.html)
+  
+- [PSTAT210 Chapter 2](PSTAT210/PSTAT210_CH2.html)
+  
+- [PSTAT210 Chapter 3](PSTAT210/PSTAT210_CH3.html)
+  
+- [PSTAT210 Chapter 4](PSTAT210/PSTAT210_CH4.html)
+  
+- [PSTAT210 Chapter 5](PSTAT210/PSTAT210_CH5.html)
+
+
 #### MIDTERM Review (11.6)
 [🧩 View Chapter 1 Exercises →](/assets/PSTAT210_Ch1_Exercises.pdf)
 
