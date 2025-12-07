@@ -357,1390 +357,308 @@ display: none;
 </div>
 
 
-<div id="σ-fields" class="section level1">
-<h1>1. σ-fields</h1>
-<div id="definition-σ-field" class="section level2">
-<h2>Definition (σ-field)</h2>
-<p>Let <span class="math inline">\(\Omega\)</span> be a sample
-space.<br />
+<div id="chapter-2-measure-theory-foundations" class="section level1">
+<h1>Chapter 2: Measure Theory Foundations</h1>
+<div id="sigma-fields-σ-fields" class="section level2">
+<h2>1. Sigma-Fields (σ-Fields)</h2>
+<div id="definition" class="section level3">
+<h3>Definition</h3>
+<p>Let <span class="math inline">\(\Omega\)</span> be a sample space
+(universal set).<br />
 A collection <span class="math inline">\(\mathcal{F} \subseteq
-\mathcal{P}(\Omega)\)</span> is a <strong>σ-field</strong> if:</p>
+\mathcal{P}(\Omega)\)</span> (power set of <span class="math inline">\(\Omega\)</span>) is a <strong>σ-field</strong> (or
+σ-algebra) if:<br />
+1. <strong>Contains empty and full sets</strong>: <span class="math inline">\(\varnothing \in \mathcal{F}\)</span> and <span class="math inline">\(\Omega \in \mathcal{F}\)</span>.<br />
+2. <strong>Closed under complements</strong>: If <span class="math inline">\(A \in \mathcal{F}\)</span>, then <span class="math inline">\(A^c \in \mathcal{F}\)</span>.<br />
+3. <strong>Closed under countable unions</strong>: If <span class="math inline">\(A_n \in \mathcal{F}\)</span> for all <span class="math inline">\(n \in \mathbb{N}\)</span>, then <span class="math inline">\(\bigcup_{n=1}^{\infty} A_n \in
+\mathcal{F}\)</span>.</p>
+<p><strong>Consequences</strong>:<br />
+- Closed under countable intersections (by De Morgan’s laws: <span class="math inline">\(\bigcap A_n = (\bigcup A_n^c)^c\)</span>).<br />
+- Closed under finite unions/intersections (special case of
+countable).<br />
+- These properties ensure consistent definition of measures on <span class="math inline">\(\mathcal{F}\)</span>.</p>
+<p>The pair <span class="math inline">\((\Omega, \mathcal{F})\)</span>
+is called a <strong>measurable space</strong>.</p>
+</div>
+<div id="examples" class="section level3">
+<h3>Examples</h3>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(\varnothing \in \mathcal{F}\)</span> and
-<span class="math inline">\(\Omega \in \mathcal{F}\)</span>.</li>
-<li>If <span class="math inline">\(A \in \mathcal{F}\)</span>, then
-<span class="math inline">\(A^c \in \mathcal{F}\)</span>.<br />
-(closed under complements)</li>
-<li>If <span class="math inline">\(A_n \in \mathcal{F}\)</span> for all
-<span class="math inline">\(n\)</span>, then<br />
-<span class="math display">\[
-\bigcup_{n=1}^{\infty} A_n \in \mathcal{F}.
-\]</span> (closed under countable unions)</li>
+<li><strong>Power Set</strong>: <span class="math inline">\(\mathcal{F}
+= \mathcal{P}(\Omega)\)</span>, the largest σ-field (contains all
+subsets).<br />
+</li>
+<li><strong>Trivial σ-Field</strong>: <span class="math inline">\(\mathcal{F} = \{\varnothing, \Omega\}\)</span>,
+the smallest σ-field.<br />
+</li>
+<li><strong>Countable/Co-Countable Sets</strong>: <span class="math inline">\(\mathcal{F} = \{A \subseteq \Omega : A \text{ is
+countable or } A^c \text{ is countable}\}\)</span>.
+<ul>
+<li>Proof: Countable unions remain countable; complements swap
+countable/co-countable.</li>
+</ul></li>
 </ol>
-<p>These guarantee we can define a <strong>measure</strong> consistently
-over <span class="math inline">\(\mathcal{F}\)</span>.</p>
+<p><strong>Additional Example</strong>: For <span class="math inline">\(\Omega = \{1,2,3\}\)</span>, a σ-field could be
+<span class="math inline">\(\{\varnothing, \{1\}, \{2,3\},
+\Omega\}\)</span>.</p>
 <hr />
 </div>
 </div>
-<div id="examples-of-σ-fields" class="section level1">
-<h1>2. Examples of σ-fields</h1>
-<div id="example-1-power-set" class="section level3">
-<h3>Example 1: Power set</h3>
-<p><span class="math display">\[
-\mathcal{F} = \mathcal{P}(\Omega)
-\]</span> This is the <strong>largest possible σ-field</strong>.</p>
-</div>
-<div id="example-2-trivial-σ-field" class="section level3">
-<h3>Example 2: Trivial σ-field</h3>
-<p><span class="math display">\[
-\mathcal{F} = \{\varnothing, \Omega\}.
-\]</span></p>
-</div>
-<div id="example-3-countable-or-co-countable-sets" class="section level3">
-<h3>Example 3: Countable or co-countable sets</h3>
-<p>Let <span class="math display">\[
-\mathcal{F}
-= \{A \subseteq \Omega : A \text{ is countable or } A^c \text{ is
-countable}\}.
-\]</span> Then <span class="math inline">\(\mathcal{F}\)</span> is a
-σ-field because:</p>
-<ul>
-<li>countable complement remains co-countable<br />
-</li>
-<li>union of countably many countable sets is countable<br />
-</li>
-<li>complement of a co-countable set is countable</li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="generating-σ-fields" class="section level1">
-<h1>3. Generating σ-fields</h1>
-<p>Let <span class="math inline">\(\mathcal{C}\)</span> be
-<strong>any</strong> collection of subsets of <span class="math inline">\(\Omega\)</span>.<br />
-We want a σ-field that:</p>
-<ul>
-<li>contains <span class="math inline">\(\mathcal{C}\)</span></li>
-<li>is minimal (smallest possible)</li>
-</ul>
-<p>This is the <strong>σ-field generated by</strong> <span class="math inline">\(\mathcal{C}\)</span>:</p>
-<p><span class="math display">\[
-\sigma(\mathcal{C}).
-\]</span></p>
-<p>It must satisfy:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathcal{C} \subseteq
-\sigma(\mathcal{C}).\)</span></li>
-<li>If <span class="math inline">\(\mathcal{H}\)</span> is any σ-field
+<div id="generating-sigma-fields" class="section level2">
+<h2>2. Generating Sigma-Fields</h2>
+<p>Let <span class="math inline">\(\mathcal{C}\)</span> be any
+collection of subsets of <span class="math inline">\(\Omega\)</span>.<br />
+The <strong>σ-field generated by <span class="math inline">\(\mathcal{C}\)</span></strong>, denoted <span class="math inline">\(\sigma(\mathcal{C})\)</span>, is the smallest
+σ-field containing <span class="math inline">\(\mathcal{C}\)</span>:<br />
+- <span class="math inline">\(\mathcal{C} \subseteq
+\sigma(\mathcal{C})\)</span>.<br />
+- If <span class="math inline">\(\mathcal{H}\)</span> is any σ-field
 with <span class="math inline">\(\mathcal{C} \subseteq
-\mathcal{H}\)</span>, then<br />
-<span class="math display">\[
-\sigma(\mathcal{C}) \subseteq \mathcal{H}.
-\]</span></li>
-</ol>
-<p>Thus <span class="math inline">\(\sigma(\mathcal{C})\)</span> is the
-<strong>intersection of all σ-fields containing</strong> <span class="math inline">\(\mathcal{C}\)</span>.</p>
-<hr />
-</div>
-<div id="intersection-of-σ-fields" class="section level1">
-<h1>4. Intersection of σ-fields</h1>
-<div id="lemma" class="section level3">
-<h3>Lemma</h3>
+\mathcal{H}\)</span>, then <span class="math inline">\(\sigma(\mathcal{C}) \subseteq
+\mathcal{H}\)</span>.</p>
+<p><strong>Construction</strong>: <span class="math inline">\(\sigma(\mathcal{C})\)</span> is the intersection
+of all σ-fields containing <span class="math inline">\(\mathcal{C}\)</span> (exists since the power set
+is one such σ-field).</p>
+<div id="lemma-intersection-of-σ-fields" class="section level3">
+<h3>Lemma: Intersection of σ-Fields</h3>
 <p>If <span class="math inline">\(\{\mathcal{F}_i : i \in I\}\)</span>
-is a family of σ-fields (index set <span class="math inline">\(I\)</span> not necessarily countable), then</p>
-<p><span class="math display">\[
-\mathcal{G} = \bigcap_{i \in I} \mathcal{F}_i
-\]</span></p>
-<p>is also a σ-field.</p>
+is a family of σ-fields (index <span class="math inline">\(I\)</span>
+arbitrary, not necessarily countable), then <span class="math inline">\(\bigcap_{i \in I} \mathcal{F}_i\)</span> is a
+σ-field.<br />
+<strong>Proof</strong>:<br />
+- <span class="math inline">\(\varnothing, \Omega \in\)</span> every
+<span class="math inline">\(\mathcal{F}_i\)</span>, so in the
+intersection.<br />
+- Complements: If <span class="math inline">\(A\)</span> in
+intersection, <span class="math inline">\(A^c\)</span> in each <span class="math inline">\(\mathcal{F}_i\)</span>.<br />
+- Countable unions: Similarly preserved.</p>
+<p><strong>Warning</strong>: Unions of σ-fields are <strong>not</strong>
+generally σ-fields.<br />
+<strong>Counterexample</strong>: <span class="math inline">\(\Omega =
+\{a,b,c\}\)</span>, <span class="math inline">\(\mathcal{F}_1 =
+\{\varnothing, \Omega, \{a\}, \{b,c\}\}\)</span>, <span class="math inline">\(\mathcal{F}_2 = \{\varnothing, \Omega, \{b\},
+\{a,c\}\}\)</span>. Union misses <span class="math inline">\(\{a,b\}\)</span>.</p>
 </div>
-<div id="proof-outline" class="section level3">
-<h3>Proof outline</h3>
-<ul>
-<li><span class="math inline">\(\varnothing, \Omega \in
-\mathcal{G}\)</span> because they lie in every <span class="math inline">\(\mathcal{F}_i\)</span>.</li>
-<li>If <span class="math inline">\(A \in \mathcal{G}\)</span>, then
-<span class="math inline">\(A \in \mathcal{F}_i\)</span> for all <span class="math inline">\(i\)</span>, hence <span class="math inline">\(A^c
-\in \mathcal{F}_i\)</span> for all <span class="math inline">\(i\)</span>, so <span class="math inline">\(A^c \in
-\mathcal{G}\)</span>.</li>
-<li>If <span class="math inline">\(A_n \in \mathcal{G}\)</span>, then
-<span class="math inline">\(A_n \in \mathcal{F}_i\)</span> for all <span class="math inline">\(n\)</span> and all <span class="math inline">\(i\)</span>, so<br />
-<span class="math display">\[
-\bigcup_{n=1}^{\infty} A_n \in \mathcal{F}_i \quad\forall i.
-\]</span> Thus<br />
-<span class="math display">\[
-\bigcup_{n=1}^{\infty} A_n \in \mathcal{G}.
-\]</span></li>
-</ul>
-</div>
-<div id="important-warning" class="section level3">
-<h3>Important warning</h3>
-<p><strong>Union of σ-fields is NOT generally a σ-field.</strong></p>
-<div id="counterexample" class="section level4">
-<h4>Counterexample</h4>
-<p>Let <span class="math inline">\(\Omega = \{a,b,c\}\)</span>.</p>
-<p><span class="math display">\[
-\mathcal{F}_1 = \{\varnothing, \Omega, \{a\}, \{b,c\}\}
-\]</span> <span class="math display">\[
-\mathcal{F}_2 = \{\varnothing, \Omega, \{b\}, \{a,c\}\}
-\]</span></p>
-<p>Then:</p>
-<p><span class="math display">\[
-\mathcal{F}_1 \cup \mathcal{F}_2
-= \{\varnothing, \Omega, \{a\}, \{b\}, \{b,c\}, \{a,c\} \}
-\]</span></p>
-<p>But<br />
-<span class="math display">\[
-\{a\} \cup \{b\} = \{a,b\} \notin \mathcal{F}_1 \cup \mathcal{F}_2,
-\]</span> so the union is <strong>not</strong> a σ-field.</p>
+<div id="example-explicit-construction" class="section level3">
+<h3>Example: Explicit Construction</h3>
+<p>Let <span class="math inline">\(\Omega = [0,4)\)</span>, <span class="math inline">\(\mathcal{A} = \{A = [0,3), B =
+[1,4)\}\)</span>.<br />
+Then <span class="math inline">\(\sigma(\mathcal{A}) = \{\varnothing,
+[0,4), [0,3), [1,4), [3,4), [0,1), [0,1) \cup [3,4),
+[1,3)\}\)</span>.<br />
+- Generated by including complements, unions, etc.</p>
+<p><strong>Additional Notes</strong>: In practice, <span class="math inline">\(\sigma(\mathcal{C})\)</span> is often infinite and
+hard to list explicitly, but we work with generators.</p>
 <hr />
 </div>
 </div>
-</div>
-<div id="constructing-σmathcalc-explicitly" class="section level1">
-<h1>5. Constructing σ(<span class="math inline">\(\mathcal{C}\)</span>)
-explicitly</h1>
-<p>Let<br />
-<span class="math display">\[
-\mathcal{A} = \{A, B\},\qquad
-\Omega = [0,4),\quad
-A = [0,3),\ B = [1,4).
-\]</span></p>
-<p>We wish to compute <span class="math inline">\(\sigma(\mathcal{A})\)</span>.</p>
-<div id="step-1-list-a-b-and-complements" class="section level3">
-<h3>Step 1 — list A, B, and complements</h3>
-<p><span class="math display">\[
-A^c = [3,4),\qquad
-B^c = [0,1).
-\]</span></p>
-</div>
-<div id="step-2-generate-all-unions" class="section level3">
-<h3>Step 2 — generate all unions</h3>
-<p><span class="math display">\[
-A \cup B = [0,4).
-\]</span> <span class="math display">\[
-A^c \cup B^c = [0,1) \cup [3,4).
-\]</span></p>
-</div>
-<div id="step-3-put-everything-together" class="section level3">
-<h3>Step 3 — put everything together</h3>
-<p><span class="math display">\[
-\sigma(\mathcal{A}) =
-\{
-\varnothing,\ [0,4),\ [0,3),\ [1,4),\ [3,4),\ [0,1),\
-[0,1) \cup [3,4),\ [1,3)
-\}.
-\]</span></p>
-<p>This is exactly the smallest σ-field containing both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
-</div>
-</div>
-<div id="part-3" class="section level1">
-<h1>Part 3:</h1>
-</div>
-<div id="constructing-a-measure" class="section level1">
-<h1>1. Constructing a Measure</h1>
-<p>Often we begin by defining a measure <span class="math inline">\(\mu\)</span> on a small collection of sets:</p>
-<p><span class="math display">\[
-\mu : \mathcal{R} \to \mathbb{R}_+,
-\]</span></p>
-<p>and then extend it to a larger σ-field:</p>
-<p><span class="math display">\[
-\mu : \sigma(\mathcal{R}) \to \mathbb{R}_+.
-\]</span></p>
-<p>This is the general idea behind <strong>Carathéodory’s extension
-theorem</strong>.</p>
-<hr />
-</div>
-<div id="sets-defined-by-limits-of-functions" class="section level1">
-<h1>2. Sets Defined by Limits of Functions</h1>
-<p>Let <span class="math inline">\(f_n : X \to \mathbb{R}\)</span>.
-Suppose <span class="math inline">\(f_n(x) \to f(x)\)</span>. For any
-<span class="math inline">\(\varepsilon &gt; 0\)</span>,</p>
-<p><span class="math display">\[
-\exists N \ \forall m,n \ge N:\ |f_m(x) - f_n(x)| &lt; \varepsilon.
-\]</span></p>
-<p>Then</p>
-<p><span class="math display">\[
-\{x : |f_m(x) - f_n(x)| &lt; \varepsilon\}
-= \bigcup_{N=1}^\infty \bigcap_{m,n \ge N}
-\{x : |f_m(x)-f_n(x)| &lt; \varepsilon\}.
-\]</span></p>
-<p>Thus</p>
-<p><span class="math display">\[
-\bigcap_{k=1}^\infty \bigcup_{N=1}^\infty
-\bigcap_{m,n \ge N} \{|f_m(x)-f_n(x)|&lt;1/k\}
-=
-\liminf_{N \to \infty}
-\{x : |f_N(x) - f(x)| &lt; 1/k\}.
-\]</span></p>
-<hr />
-<div id="example-limsup-of-sets-defined-by-functions" class="section level2">
-<h2>Example: limsup of sets defined by functions</h2>
-<p><span class="math display">\[
-\{x : \limsup_{n\to\infty} f_n(x) &gt; a\}
-= \limsup_{n\to\infty} \{x : f_n(x) &gt; a\}.
-\]</span></p>
-<p>Similarly,</p>
-<p><span class="math display">\[
-\{x : \limsup_{n\to\infty} f_n(x) \ge a\}
-= \limsup_{n\to\infty} \{x : f_n(x) \ge a\}.
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="borel-σ-field-on-a-metric-space" class="section level1">
-<h1>3. Borel σ-field on a Metric Space</h1>
+<div id="borel-sigma-field-on-metric-spaces" class="section level2">
+<h2>3. Borel Sigma-Field on Metric Spaces</h2>
 <p>Let <span class="math inline">\((\Omega, d)\)</span> be a metric
-space. Denote by:</p>
-<p><span class="math display">\[
-\tau = \text{the collection of all open sets}.
-\]</span></p>
-<p>The <strong>Borel σ-field</strong> is:</p>
-<p><span class="math display">\[
-\mathcal{B}(\Omega) = \sigma(\tau).
-\]</span></p>
-<p>This is the smallest σ-field containing all open sets.</p>
-<hr />
-</div>
-<div id="separability-and-countable-bases" class="section level1">
-<h1>4. Separability and Countable Bases</h1>
-<p>A metric space <span class="math inline">\((\Omega, d)\)</span> is
-<strong>separable</strong> if it contains a <strong>countable dense
-subset</strong> <span class="math inline">\(Q\)</span>.</p>
-<p>Dense means:</p>
-<p><span class="math display">\[
-\forall x\in\Omega,\ \forall \varepsilon&gt;0,\ \exists q\in Q:
-d(x,q)&lt;\varepsilon.
-\]</span></p>
-<hr />
-<div id="lemma-key-fact" class="section level2">
-<h2>Lemma (Key Fact)</h2>
-<p>If <span class="math inline">\((\Omega,d)\)</span> is separable and
-<span class="math inline">\(Q\)</span> is a countable dense subset, then
-<strong>every open set</strong> <span class="math inline">\(G \in
-\tau\)</span> can be written as a <strong>countable union of open balls
-with centers in</strong> <span class="math inline">\(Q\)</span>:</p>
-<p><span class="math display">\[
-G = \bigcup_{(q,r)\in B} B_r(q),
-\]</span></p>
-<p>where <span class="math inline">\(B\)</span> is a countable index set
-and</p>
-<p><span class="math display">\[
-B_r(q) = \{y \in \Omega : d(y,q)&lt;r\}.
-\]</span></p>
-<div id="intuition" class="section level3">
-<h3>Intuition</h3>
-<p>Countable dense subset ⇒ we can approximate each point of an open set
-by rationals, giving a countable basis for the topology.</p>
+space, <span class="math inline">\(\tau\)</span> the collection of all
+open sets (topology).<br />
+The <strong>Borel σ-field</strong> is <span class="math inline">\(\mathcal{B}(\Omega) = \sigma(\tau)\)</span>, the
+smallest σ-field containing all open sets.<br />
+- Contains all closed sets (complements of open), countable
+intersections/unions thereof.</p>
+<div id="separability-and-countable-bases" class="section level3">
+<h3>Separability and Countable Bases</h3>
+<p><span class="math inline">\((\Omega, d)\)</span> is
+<strong>separable</strong> if it has a countable dense subset <span class="math inline">\(Q\)</span> (every point approximable by <span class="math inline">\(Q\)</span>).<br />
+<strong>Lemma</strong>: In a separable metric space, every open set
+<span class="math inline">\(G\)</span> is a countable union of open
+balls <span class="math inline">\(\{B_r(q) : q \in Q, r \in
+\mathbb{Q}_+\}\)</span>.<br />
+<strong>Proof Sketch</strong>: For each <span class="math inline">\(x
+\in G\)</span>, find ball around <span class="math inline">\(x\)</span>
+in <span class="math inline">\(G\)</span>; approximate center with <span class="math inline">\(q \in Q\)</span> and rationalize radius.</p>
+<p><strong>Application to <span class="math inline">\(\mathbb{R}\)</span></strong>: <span class="math inline">\(\Omega = \mathbb{R}\)</span>, <span class="math inline">\(Q = \mathbb{Q}\)</span> (dense).<br />
+- Every open set is countable union of open intervals.<br />
+- <span class="math inline">\(\mathcal{B}(\mathbb{R}) = \sigma(\{(a,b) :
+a &lt; b\}) = \sigma(\{[a,b) : a &lt; b\}) = \sigma(\{(-\infty, b) : b
+\in \mathbb{R}\})\)</span>.</p>
+<p><strong>Examples of Borel Sets in <span class="math inline">\(\mathbb{R}\)</span></strong>:<br />
+- Intervals: <span class="math inline">\([a,b]\)</span>, <span class="math inline">\((a,b]\)</span>, <span class="math inline">\((1,2]
+\cup [4,5)\)</span>.<br />
+- Cantor Set: Countable intersection of closed sets, hence Borel.</p>
+<p><strong>Non-Borel Sets</strong>: Exist (e.g., Vitali sets), but
+require axiom of choice; not measurable.</p>
 <hr />
 </div>
 </div>
-<div id="proof-sketch" class="section level2">
-<h2>Proof Sketch</h2>
-<p>Let <span class="math inline">\(G\)</span> be open. For each <span class="math inline">\(x\in G\)</span>, choose <span class="math inline">\(\varepsilon_x&gt;0\)</span> such that:</p>
-<p><span class="math display">\[
-B_{\varepsilon_x}(x) \subseteq G.
-\]</span></p>
-<p>By density of <span class="math inline">\(Q\)</span>, choose <span class="math inline">\(q_x\in Q\)</span> satisfying:</p>
-<p><span class="math display">\[
-d(x,q_x)&lt;\varepsilon_x/2.
-\]</span></p>
-<p>Then</p>
-<p><span class="math display">\[
-B_{\varepsilon_x/2}(q_x) \subseteq B_{\varepsilon_x}(x) \subseteq G.
-\]</span></p>
-<p>Let</p>
-<p><span class="math display">\[
-B = \{ (q_x,\varepsilon_x/2) : x\in G \}.
-\]</span></p>
-<p>Since every radius chosen can be taken from a countable set
-(e.g. rationals), <span class="math inline">\(B\)</span> is
-countable.<br />
-Thus:</p>
-<p><span class="math display">\[
-G = \bigcup_{(q,r)\in B} B_r(q).
-\]</span></p>
+<div id="sets-defined-by-limits-of-functions" class="section level2">
+<h2>4. Sets Defined by Limits of Functions</h2>
+<p>Let <span class="math inline">\(f_n : X \to \mathbb{R}\)</span>
+converge pointwise to <span class="math inline">\(f\)</span>.<br />
+- Cauchy criterion: For <span class="math inline">\(\varepsilon &gt;
+0\)</span>, <span class="math inline">\(\{x : |f_m(x) - f_n(x)| &lt;
+\varepsilon \ \forall m,n \geq N\} = \bigcup_N \bigcap_{m,n \geq N}
+\{|f_m - f_n| &lt; \varepsilon\}\)</span>.<br />
+- Convergence set: Intersection over <span class="math inline">\(\varepsilon = 1/k\)</span>.</p>
+<p><strong>Limsup/Inf of Functions via Sets</strong>:<br />
+- <span class="math inline">\(\{x : \limsup f_n(x) &gt; a\} = \limsup
+\{x : f_n(x) &gt; a\}\)</span>.<br />
+- Similarly for <span class="math inline">\(\geq, &lt;\)</span> etc.
+(useful in measurability proofs).</p>
 <hr />
 </div>
-</div>
-<div id="application-to-mathbbr" class="section level1">
-<h1>5. Application to <span class="math inline">\(\mathbb{R}\)</span></h1>
-<p>Let</p>
-<p><span class="math display">\[
-\Omega = \mathbb{R},\qquad Q = \mathbb{Q}.
-\]</span></p>
-<p>Since <span class="math inline">\(\mathbb{Q}\)</span> is countable
-and dense in <span class="math inline">\(\mathbb{R}\)</span>, every open
-set can be written as a <strong>countable union of open
-intervals</strong>.</p>
-<div id="classical-corollary" class="section level3">
-<h3>Classical Corollary</h3>
-<p><span class="math display">\[
-\mathcal{B}(\mathbb{R})
-= \sigma\bigl(\{(a,b): a&lt;b\}\bigr)
-= \sigma\bigl(\{[a,b): a&lt;b\}\bigr).
-\]</span></p>
-<p>Because:</p>
-<p><span class="math display">\[
-(a,b) = \bigcup_{n=1}^\infty (a+1/n, b),
-\]</span></p>
-<p>and half-open intervals generate the same σ-field.</p>
-<p>Thus:</p>
-<p><span class="math display">\[
-\mathcal{B}(\mathbb{R})
-= \sigma(\mathcal{L}),
-\]</span></p>
-<p>where</p>
-<p><span class="math display">\[
-\mathcal{L} = \{ (a,b) : a&lt;b\}.
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="examples-of-borel-sets" class="section level1">
-<h1>6. Examples of Borel Sets</h1>
-<div id="closed-or-half-open-intervals" class="section level3">
-<h3>(1) Closed or half-open intervals</h3>
-<p><span class="math display">\[
-[a,b] \in \mathcal{B}(\mathbb{R}),\quad
-(a,b] \in \mathcal{B}(\mathbb{R}),\quad
-(1,2]\cup[4,5) \in \mathcal{B}(\mathbb{R}).
-\]</span></p>
-</div>
-<div id="cantor-set" class="section level3">
-<h3>(2) Cantor Set</h3>
-<p>Let <span class="math display">\[
-C = \bigcap_{n=1}^{\infty} C_n
-\]</span> where <span class="math inline">\(C_n\)</span> is the nth step
-of the Cantor set construction.<br />
-Each <span class="math inline">\(C_n\)</span> is closed, hence
-Borel.<br />
-Countable intersection of Borel sets ⇒ Borel.</p>
-<p>Thus:</p>
-<p><span class="math display">\[
-C \in \mathcal{B}(\mathbb{R}).
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="part-4" class="section level1">
-<h1>Part 4:</h1>
-</div>
-<div id="motivation" class="section level1">
-<h1>1. Motivation</h1>
-<p>For sets in the Borel σ-field <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span>, the structure
-can be complicated.<br />
-Given a class <span class="math inline">\(\mathcal{G}\)</span>, how can
-we prove:</p>
-<p><span class="math display">\[
-\sigma(\mathcal{G}) \subseteq \mathcal{F}?
-\]</span></p>
-<p>Directly verifying closure under countable unions is usually very
-hard.</p>
-<p>The π–λ theorem solves this problem.</p>
-<hr />
-</div>
-<div id="π-system-and-λ-system" class="section level1">
-<h1>2. π-system and λ-system</h1>
-<div id="definition-π-system" class="section level2">
-<h2>Definition: π-system</h2>
-<p>A collection of sets <span class="math inline">\(\mathcal{P}\)</span>
-is a <strong>π-system</strong> if it is closed under finite
-intersections:</p>
-<p><span class="math display">\[
-A,B \in \mathcal{P} \quad \Rightarrow \quad A \cap B \in \mathcal{P}.
-\]</span></p>
-<hr />
-</div>
-<div id="definition-λ-system-dynkin-system" class="section level2">
-<h2>Definition: λ-system (Dynkin system)</h2>
-<p>A collection <span class="math inline">\(\mathcal{L}\)</span> is a
-<strong>λ-system</strong> if:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\Omega \in \mathcal{L}\)</span></li>
-<li>If <span class="math inline">\(A,B \in \mathcal{L}\)</span> and
-<span class="math inline">\(A \subseteq B\)</span>, then<br />
-<span class="math display">\[
-B\setminus A \in \mathcal{L}.
-\]</span></li>
-<li>If <span class="math inline">\(A_n \uparrow A\)</span>, then<br />
-<span class="math display">\[
-A \in \mathcal{L}.
-\]</span></li>
-</ol>
-<p>Equivalently, λ-systems are closed under:</p>
+<div id="π-systems-and-λ-systems-dynkin-systems" class="section level2">
+<h2>5. π-Systems and λ-Systems (Dynkin Systems)</h2>
+<div id="definitions" class="section level3">
+<h3>Definitions</h3>
 <ul>
-<li>complements w.r.t. <span class="math inline">\(\Omega\)</span></li>
-<li>disjoint countable unions</li>
-</ul>
-<hr />
-</div>
-</div>
-<div id="lemma-π-system-λ-system-σ-field" class="section level1">
-<h1>3. Lemma: π-system + λ-system ⇒ σ-field</h1>
-<p><strong>Lemma.</strong><br />
-If <span class="math inline">\(\mathcal{F}\)</span> is both a π-system
-and a λ-system, then <span class="math inline">\(\mathcal{F}\)</span> is
-a σ-field.</p>
-<div id="sketch-of-proof" class="section level3">
-<h3>Sketch of proof</h3>
-<ul>
-<li><span class="math inline">\(\varnothing, \Omega \in
-\mathcal{F}\)</span></li>
-<li>Closure under complement comes from λ-system</li>
-<li>Closure under finite intersections comes from π-system<br />
+<li><strong>π-System</strong>: Collection <span class="math inline">\(\mathcal{P}\)</span> closed under finite
+intersections: <span class="math inline">\(A, B \in \mathcal{P} \implies
+A \cap B \in \mathcal{P}\)</span>.<br />
 </li>
-<li>To show closure under countable unions, write:</li>
-</ul>
-<p><span class="math display">\[
-\bigcup_{n=1}^\infty A_n
-= A_1 \cup (A_1 \cup A_2) \cup (A_1 \cup A_2 \cup A_3) \cup \cdots
-\]</span></p>
-<p>Let</p>
-<p><span class="math display">\[
-B_n = A_1 \cup \cdots \cup A_n.
-\]</span></p>
-<p>Then <span class="math inline">\(B_n \uparrow\)</span>, so by
-λ-system property:</p>
-<p><span class="math display">\[
-\bigcup_{n=1}^\infty A_n = \lim_{n\to\infty} B_n \in \mathcal{F}.
-\]</span></p>
-<p>Thus <span class="math inline">\(\mathcal{F}\)</span> is a
-σ-field.</p>
-<hr />
-</div>
-</div>
-<div id="πλ-theorem" class="section level1">
-<h1>4. π–λ Theorem</h1>
-<p><strong>Theorem (π–λ).</strong><br />
-If <span class="math inline">\(\mathcal{P}\)</span> is a π-system, <span class="math inline">\(\mathcal{P} \subseteq \mathcal{L}\)</span>, and
-<span class="math inline">\(\mathcal{L}\)</span> is a λ-system,
-then:</p>
-<p><span class="math display">\[
-\sigma(\mathcal{P}) \subseteq \mathcal{L}.
-\]</span></p>
-<div id="proof-outline-1" class="section level3">
-<h3>Proof Outline</h3>
-<p>Define:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) = \text{the smallest λ-system containing }
-\mathcal{P}.
-\]</span></p>
-<p>We want:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \text{ is a π-system}.
-\]</span></p>
-<p>Then by the previous lemma, <span class="math inline">\(\lambda(\mathcal{P})\)</span> is a σ-field:</p>
-<p><span class="math display">\[
-\sigma(\mathcal{P}) \subseteq \lambda(\mathcal{P}) \subseteq
-\mathcal{L}.
-\]</span></p>
-<p>So it remains to show:</p>
-<p><span class="math display">\[
-A,B \in \lambda(\mathcal{P}) \ \Rightarrow \ A \cap B \in
-\lambda(\mathcal{P}).
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="strategy-fix-one-set-analyze-intersection" class="section level1">
-<h1>5. Strategy: Fix One Set, Analyze Intersection</h1>
-<p>Fix <span class="math inline">\(A \in
-\lambda(\mathcal{P})\)</span>.<br />
-Define:</p>
-<p><span class="math display">\[
-\mathcal{H}_A
-= \{ B \in \lambda(\mathcal{P}) : A \cap B \in \lambda(\mathcal{P}) \}.
-\]</span></p>
-<p>Goal: show <span class="math inline">\(\mathcal{H}_A \supseteq
-\lambda(\mathcal{P})\)</span>.<br />
-Then every <span class="math inline">\(B\in
-\lambda(\mathcal{P})\)</span> satisfies <span class="math inline">\(A\cap B \in \lambda(\mathcal{P})\)</span>.</p>
-<hr />
-</div>
-<div id="check-λ-system-properties-of-mathcalh_a" class="section level1">
-<h1>6. Check λ-system Properties of <span class="math inline">\(\mathcal{H}_A\)</span></h1>
+<li><strong>λ-System</strong>: Collection <span class="math inline">\(\mathcal{L}\)</span> such that:
 <ol style="list-style-type: decimal">
-<li><p><strong>Show</strong> <span class="math inline">\(\mathcal{H}_A\)</span> is a λ-system.<br />
-(Exercise in measure theory: follows from closure of λ-systems under
-intersection with fixed sets.)</p></li>
-<li><p><strong>Show</strong> <span class="math inline">\(\mathcal{P}
-\subseteq \mathcal{H}_A\)</span>.<br />
-Because if <span class="math inline">\(B \in \mathcal{P}\)</span>, and
-<span class="math inline">\(\mathcal{P}\)</span> is a π-system,<br />
-then <span class="math inline">\(A \cap B \in \mathcal{P} \subseteq
-\lambda(\mathcal{P})\)</span>.</p></li>
-</ol>
-<p>Since <span class="math inline">\(\lambda(\mathcal{P})\)</span> is
-the smallest λ-system containing <span class="math inline">\(\mathcal{P}\)</span>:</p>
-<p><span class="math display">\[
-\mathcal{H}_A \supseteq \lambda(\mathcal{P}).
-\]</span></p>
-<p>Thus:</p>
-<p><span class="math display">\[
-A\cap B \in \lambda(\mathcal{P}) \quad \forall A,B \in
-\lambda(\mathcal{P}).
-\]</span></p>
-<p>So <span class="math inline">\(\lambda(\mathcal{P})\)</span> is a
-π-system.</p>
-<p>Therefore, <span class="math inline">\(\lambda(\mathcal{P})\)</span>
-is a σ-field, completing the proof.</p>
-<hr />
-</div>
-<div id="typical-use-case-of-πλ-theorem" class="section level1">
-<h1>7. Typical Use Case of π–λ Theorem</h1>
-<p>Set:</p>
-<p><span class="math display">\[
-\mathcal{P} = \{(-\infty, x] : x\in \mathbb{R}\}.
-\]</span></p>
-<p><span class="math display">\[
-\sigma(\mathcal{P}) = \mathcal{B}(\mathbb{R}) \quad \text{(the Borel
-σ-field)}.
-\]</span></p>
-<p>Let:</p>
-<p><span class="math display">\[
-\mathcal{L} = \{ \text{collection of sets satisfying property } P \}.
-\]</span></p>
-<p><strong>Scheme:</strong></p>
-<ol style="list-style-type: decimal">
-<li>Prove property <span class="math inline">\(P\)</span> holds for
-every set <span class="math inline">\((-\infty, x]\)</span>.</li>
-<li>Collect all sets satisfying <span class="math inline">\(P\)</span>,
-show this collection is a <strong>λ-system</strong>.</li>
-<li>Conclude property <span class="math inline">\(P\)</span> holds for
-all Borel sets via π–λ theorem.</li>
-</ol>
-<p>This is the standard technique used throughout probability and
-measure theory.</p>
-<hr />
-</div>
-<div id="reminder-lemma-used-earlier-open-sets-in-separable-metric-space" class="section level1">
-<h1>8. Reminder: Lemma Used Earlier (Open Sets in Separable Metric
-Space)</h1>
-<p>If <span class="math inline">\((\Omega,d)\)</span> is separable, and
-<span class="math inline">\(Q\subseteq \Omega\)</span> is a countable
-dense subset, then every open set is a <strong>countable union of open
-balls</strong>:</p>
-<p><span class="math display">\[
-G = \bigcup_{n=1}^\infty B_{r_n}(q_n), \qquad q_n \in Q.
-\]</span></p>
-<p>This was used earlier when showing:</p>
-<p><span class="math display">\[
-\mathcal{B}(\Omega) = \sigma(\{B_r(q): q \in Q, r \in \mathbb{Q}_+\}).
-\]</span></p>
-</div>
-<div id="part-5" class="section level1">
-<h1>Part 5:</h1>
-</div>
-<div id="dynkins-πλ-theorem" class="section level1">
-<h1>Dynkin’s π–λ Theorem</h1>
-<div id="definitions" class="section level2">
-<h2>1. Definitions</h2>
-<div id="π-system" class="section level3">
-<h3>π-system</h3>
-<p>A collection <span class="math inline">\(\mathcal{A}\)</span> is a
-<strong>π-system</strong> if: <span class="math display">\[
-A, B \in \mathcal{A} \ \Rightarrow\ A \cap B \in \mathcal{A}.
-\]</span></p>
-</div>
-<div id="λ-system-dynkin-system" class="section level3">
-<h3>λ-system (Dynkin system)</h3>
-<p>A collection <span class="math inline">\(\mathcal{L}\)</span> is a
-<strong>λ-system</strong> if:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\Omega \in \mathcal{L}\)</span></li>
-<li>If <span class="math inline">\(A,B \in \mathcal{L}\)</span> and
-<span class="math inline">\(A \subseteq B\)</span>, then:<br />
-<span class="math display">\[
-B \setminus A \in \mathcal{L}
-\]</span></li>
-<li>If <span class="math inline">\(A_n \uparrow A\)</span>, then: <span class="math display">\[
-A = \bigcup_{n=1}^\infty A_n \in \mathcal{L}
-\]</span></li>
-</ol>
-<hr />
-</div>
-</div>
-</div>
-<div id="lemma-1-π-system-λ-system-σ-field" class="section level1">
-<h1>2. Lemma 1 — π-system + λ-system ⇒ σ-field</h1>
-<p><strong>Lemma 1.</strong><br />
-If <span class="math inline">\(\mathcal{F}\)</span> is both a π-system
-and a λ-system, then <span class="math inline">\(\mathcal{F}\)</span> is
-a σ-field.</p>
-<p>This is because closure under:</p>
-<ul>
-<li>complements → part of λ-system<br />
+<li><span class="math inline">\(\Omega \in \mathcal{L}\)</span>.<br />
 </li>
-<li>finite intersections → π-system<br />
+<li>Closed under proper differences: <span class="math inline">\(A
+\subseteq B\)</span> in <span class="math inline">\(\mathcal{L} \implies
+B \setminus A \in \mathcal{L}\)</span>.<br />
 </li>
-<li>countable disjoint unions → λ-system<br />
+<li>Closed under increasing unions: <span class="math inline">\(A_n
+\uparrow A \implies A \in \mathcal{L}\)</span>.<br />
 </li>
-<li>countable unions → reduce to finite unions of disjoint pieces +
-λ-system property</li>
-</ul>
-<p>Hence <span class="math inline">\(\mathcal{F}\)</span> is a
-σ-field.</p>
-<hr />
-</div>
-<div id="λp-smallest-λ-system-containing-p" class="section level1">
-<h1>3. λ(P): smallest λ-system containing P</h1>
-<p>Let <span class="math inline">\(\mathcal{P}\)</span> be a
-π-system.<br />
-Define:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) = \text{the smallest λ-system containing }
-\mathcal{P}.
-\]</span></p>
-<p>If <span class="math inline">\(\mathcal{L}\)</span> is any λ-system
-with <span class="math inline">\(\mathcal{L} \supseteq
-\mathcal{P}\)</span>, then: <span class="math display">\[
-\mathcal{L} \supseteq \lambda(\mathcal{P}).
-\]</span></p>
-<hr />
-</div>
-<div id="lemma-2-key-construction" class="section level1">
-<h1>4. Lemma 2 — Key Construction</h1>
-<p>Fix <span class="math inline">\(A \in \lambda(\mathcal{P})\)</span>.
-Define:</p>
-<p><span class="math display">\[
-\mathcal{H}_A = \{ B \in \sigma(\mathcal{P}) : A \cap B \in
-\lambda(\mathcal{P}) \}.
-\]</span></p>
-<p>Lemma 2 states:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \subseteq \mathcal{H}_A.
-\]</span></p>
-<p>This is the crucial step to prove that:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \text{ is itself a π-system}.
-\]</span></p>
-<hr />
-</div>
-<div id="proof-of-lemma-2-step-1-show-mathcalh_a-is-a-λ-system" class="section level1">
-<h1>5. Proof of Lemma 2 (Step 1): Show <span class="math inline">\(\mathcal{H}_A\)</span> is a λ-system</h1>
-<div id="omega-in-mathcalh_a" class="section level3">
-<h3>(1) <span class="math inline">\(\Omega \in
-\mathcal{H}_A\)</span></h3>
-<p>Trivial, since <span class="math inline">\(A \cap \Omega = A \in
-\lambda(\mathcal{P})\)</span>.</p>
-<hr />
-</div>
-<div id="closed-under-relative-complement" class="section level3">
-<h3>(2) Closed under relative complement</h3>
-<p>Let <span class="math inline">\(B_1, B_2 \in \mathcal{H}_A\)</span>
-with <span class="math inline">\(B_1 \subseteq B_2\)</span>.<br />
-Then:</p>
-<p><span class="math display">\[
-A \cap B_1, \ A \cap B_2 \in \lambda(\mathcal{P})
-\]</span></p>
-<p>Since λ-systems are closed under differences:</p>
-<p><span class="math display">\[
-(A \cap B_2) \setminus (A \cap B_1) = A \cap (B_2 \setminus B_1) \in
-\lambda(\mathcal{P})
-\]</span></p>
-<p>Thus:</p>
-<p><span class="math display">\[
-B_2 \setminus B_1 \in \mathcal{H}_A.
-\]</span></p>
-<hr />
-</div>
-<div id="closed-under-increasing-unions" class="section level3">
-<h3>(3) Closed under increasing unions</h3>
-<p>Let <span class="math inline">\(B_n \uparrow B\)</span> with each
-<span class="math inline">\(B_n \in \mathcal{H}_A\)</span>.<br />
-Then:</p>
-<p><span class="math display">\[
-A \cap B_n \in \lambda(\mathcal{P})
-\]</span></p>
-<p>and <span class="math inline">\(\{A \cap B_n\}\)</span> is monotone
-↑.<br />
-Since λ-systems are closed under ↑ unions:</p>
-<p><span class="math display">\[
-A \cap \left( \bigcup_{n=1}^\infty B_n \right)
-= \bigcup_{n=1}^\infty (A \cap B_n)
-\in \lambda(\mathcal{P})
-\]</span></p>
-<p>Thus:</p>
-<p><span class="math display">\[
-\bigcup_{n=1}^\infty B_n \in \mathcal{H}_A.
-\]</span></p>
-<p>Therefore <span class="math inline">\(\mathcal{H}_A\)</span> is a
-λ-system.</p>
-<hr />
-</div>
-</div>
-<div id="proof-of-lemma-2-step-2-show-mathcalp-subseteq-mathcalh_a" class="section level1">
-<h1>6. Proof of Lemma 2 (Step 2): Show <span class="math inline">\(\mathcal{P} \subseteq \mathcal{H}_A\)</span></h1>
-<p>We need to show:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \subseteq \mathcal{H}_A
-\quad \Longleftrightarrow \quad
-\mathcal{P} \subseteq \mathcal{H}_A.
-\]</span></p>
-<hr />
-<div id="case-1-a-in-mathcalp" class="section level2">
-<h2>Case 1: <span class="math inline">\(A \in \mathcal{P}\)</span></h2>
-<p>Take <span class="math inline">\(B \in \mathcal{P}\)</span>.<br />
-Since <span class="math inline">\(\mathcal{P}\)</span> is a
-π-system:</p>
-<p><span class="math display">\[
-A \cap B \in \mathcal{P} \subseteq \lambda(\mathcal{P})
-\]</span></p>
-<p>Thus <span class="math inline">\(B \in \mathcal{H}_A\)</span>.<br />
-Since <span class="math inline">\(\mathcal{P} \subseteq
-\mathcal{H}_A\)</span> and <span class="math inline">\(\mathcal{H}_A\)</span> is a λ-system:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \subseteq \mathcal{H}_A.
-\]</span></p>
-<hr />
-</div>
-<div id="case-2-a-in-lambdamathcalp-but-not-necessarily-in-mathcalp" class="section level2">
-<h2>Case 2: <span class="math inline">\(A \in
-\lambda(\mathcal{P})\)</span> but not necessarily in <span class="math inline">\(\mathcal{P}\)</span></h2>
-<p>Fix <span class="math inline">\(B \in \mathcal{P}\)</span>.<br />
-Define:</p>
-<p><span class="math display">\[
-\mathcal{H}_B = \{ D \in \sigma(\mathcal{P}) : D \cap B \in
-\lambda(\mathcal{P}) \}.
-\]</span></p>
-<p>Case 1 implies:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \subseteq \mathcal{H}_B.
-\]</span></p>
-<p>Since <span class="math inline">\(A \in
-\lambda(\mathcal{P})\)</span>, we have:</p>
-<p><span class="math display">\[
-A \in \mathcal{H}_B
-\quad \Rightarrow \quad
-A \cap B \in \lambda(\mathcal{P}).
-\]</span></p>
-<p>Thus <span class="math inline">\(B \in \mathcal{H}_A\)</span>.<br />
-Hence:</p>
-<p><span class="math display">\[
-\mathcal{P} \subseteq \mathcal{H}_A.
-\]</span></p>
-<p>which gives:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) \subseteq \mathcal{H}_A.
-\]</span></p>
-<p>And Lemma 2 is proved.</p>
-<hr />
-</div>
-</div>
-<div id="dynkins-πλ-theorem-final-statement" class="section level1">
-<h1>7. Dynkin’s π–λ Theorem (Final Statement)</h1>
-<p><strong>Theorem (Dynkin π–λ).</strong><br />
-Let <span class="math inline">\(\mathcal{P}\)</span> be a
-π-system.<br />
-Let <span class="math inline">\(\mathcal{L}\)</span> be a λ-system with
-<span class="math inline">\(\mathcal{L} \supseteq
-\mathcal{P}\)</span>.<br />
-Then:</p>
-<p><span class="math display">\[
-\mathcal{L} \supseteq \sigma(\mathcal{P}).
-\]</span></p>
-<hr />
-</div>
-<div id="corollary-λp-σp" class="section level1">
-<h1>8. Corollary: λ(P) = σ(P)</h1>
-<p>If <span class="math inline">\(\mathcal{P}\)</span> is a π-system,
-then:</p>
-<p><span class="math display">\[
-\lambda(\mathcal{P}) = \sigma(\mathcal{P}).
-\]</span></p>
-<div id="proof" class="section level3">
-<h3>Proof</h3>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\lambda(\mathcal{P}) \subseteq
-\sigma(\mathcal{P})\)</span> is trivial because σ(P) is a λ-system.</li>
-<li>By Lemma 2, λ(P) is a π-system.</li>
-<li>λ(P) is both π-system and λ-system ⇒ λ(P) is a σ-field (Lemma
-1).<br />
-</li>
-<li>Since σ(P) is the <strong>smallest</strong> σ-field containing
-P:</li>
-</ol>
-<p><span class="math display">\[
-\sigma(P) \subseteq \lambda(P)
-\]</span></p>
-<p>Thus:</p>
-<p><span class="math display">\[
-\sigma(P) = \lambda(P).
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="summary-diagram" class="section level1">
-<h1>9. Summary Diagram</h1>
-<p><span class="math display">\[
-\mathcal{P}
-\subseteq
-\lambda(\mathcal{P})
-=
-\sigma(\mathcal{P})
-\subseteq
-\mathcal{L}
-\]</span></p>
-<p>This theorem is the backbone of probability theory proofs, especially
-for:</p>
-<ul>
-<li>uniqueness of measures<br />
-</li>
-<li>extension of properties from simple sets to Borel sets<br />
-</li>
-<li>properties of expectations and independence</li>
-</ul>
-<hr />
-</div>
-<div id="part-6" class="section level1">
-<h1>Part 6:</h1>
-</div>
-<div id="measure" class="section level1">
-<h1>Measure</h1>
-<div id="definition-1-measure" class="section level2">
-<h2>Definition 1 (Measure)</h2>
-<p>Let <span class="math inline">\((\Omega, \mathcal{F})\)</span> be a
-measurable space.<br />
-A function<br />
-<span class="math display">\[
-\mu : \mathcal{F} \to [0, +\infty]
-\]</span> is called a <strong>measure</strong> if:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Null empty set:</strong><br />
-<span class="math display">\[
-\mu(\varnothing) = 0.
-\]</span></p></li>
-<li><p><strong>Countable additivity (σ-additivity):</strong><br />
-If <span class="math inline">\(\{F_n\} \subset \mathcal{F}\)</span> are
-<strong>pairwise disjoint</strong>, then <span class="math display">\[
-\mu\!\left(\bigcup_{n=1}^{\infty} F_n\right)
-= \sum_{n=1}^{\infty} \mu(F_n).
-\]</span></p></li>
-</ol>
-<hr />
-</div>
-<div id="finite-and-σ-finite-measures" class="section level2">
-<h2>Finite and σ-finite Measures</h2>
-<p>A measure <span class="math inline">\(\mu\)</span> is:</p>
-<ul>
-<li><strong>finite</strong> if <span class="math inline">\(\mu(\Omega)
-&lt; \infty\)</span>.</li>
-<li><strong>σ-finite</strong> if there exists a sequence <span class="math inline">\(\{F_n\} \subset \mathcal{F}\)</span> such
-that<br />
-<span class="math display">\[
-\Omega = \bigcup_{n=1}^{\infty} F_n,
-\qquad \mu(F_n) &lt; \infty.
-\]</span></li>
-</ul>
-<p>A measure is a <strong>probability measure</strong> if <span class="math inline">\(\mu(\Omega) = 1\)</span>.</p>
-<hr />
-</div>
-<div id="examples" class="section level2">
-<h2>Examples</h2>
-<div id="lebesgue-measure-lambda-on-mathbbr" class="section level3">
-<h3>1. Lebesgue measure <span class="math inline">\(\lambda\)</span> on
-<span class="math inline">\(\mathbb{R}\)</span></h3>
-<p><span class="math display">\[
-\lambda([a,b]) = b - a.
-\]</span> Let <span class="math inline">\(F_n = [-n, n]\)</span>.<br />
-Then<br />
-<span class="math display">\[
-\mathbb{R} = \bigcup_{n=1}^{\infty} F_n,
-\qquad \lambda(F_n) = 2n &lt; \infty.
-\]</span> Thus <strong>Lebesgue measure is σ-finite</strong>.</p>
-<hr />
-</div>
-<div id="counting-measure-on-mathbbr-mathcalf" class="section level3">
-<h3>2. Counting measure on <span class="math inline">\((\mathbb{R},
-\mathcal{F})\)</span></h3>
-<p><span class="math display">\[
-\mu(A) = \#\{ \text{integers in } A\}.
-\]</span> This is σ-finite since integers can be partitioned using
-finite sets.</p>
-<hr />
-</div>
-<div id="counting-measure-on-all-points" class="section level3">
-<h3>3. Counting measure on all points</h3>
-<p><span class="math display">\[
-\mu(A) = \# A.
-\]</span> Not σ-finite because no countable cover of <span class="math inline">\(\mathbb{R}\)</span> has finite measure.</p>
-<hr />
-</div>
-<div id="probability-measure-omega-mathcalf-mathbbp" class="section level3">
-<h3>4. Probability measure <span class="math inline">\((\Omega,
-\mathcal{F}, \mathbb{P})\)</span></h3>
-<p><span class="math display">\[
-\mathbb{P}(\Omega)=1.
-\]</span></p>
-<hr />
-</div>
-</div>
-</div>
-<div id="fundamental-lemmas-for-measures" class="section level1">
-<h1>Fundamental Lemmas for Measures</h1>
-<p>Let <span class="math inline">\(\mu\)</span> be a measure on <span class="math inline">\((\Omega, \mathcal{F})\)</span>.</p>
-<hr />
-<div id="lemma-a-monotonicity" class="section level2">
-<h2>Lemma A: Monotonicity</h2>
-<p>If <span class="math inline">\(A \subseteq B\)</span>, then <span class="math display">\[
-\mu(A) \le \mu(B).
-\]</span></p>
-<p><strong>Proof:</strong><br />
-Write <span class="math inline">\(B = A \cup (B \setminus A)\)</span>, a
-disjoint union: <span class="math display">\[
-\mu(B) = \mu(A) + \mu(B\setminus A) \ge \mu(A).
-\]</span></p>
-<hr />
-</div>
-<div id="lemma-b-subadditivity" class="section level2">
-<h2>Lemma B: Subadditivity</h2>
-<p>If <span class="math inline">\(\{A_n\} \subset \mathcal{F}\)</span>,
-then <span class="math display">\[
-\mu\!\left( \bigcup_{n=1}^{\infty} A_n \right)
-\le \sum_{n=1}^{\infty} \mu(A_n).
-\]</span></p>
-<p><strong>Proof:</strong><br />
-Define <span class="math display">\[
-B_n = A_n \setminus \bigcup_{i &lt; n} A_i.
-\]</span> Then <span class="math inline">\(\{B_n\}\)</span> is disjoint
-and<br />
-<span class="math display">\[
-\bigcup_n A_n = \bigcup_n B_n.
-\]</span> Thus <span class="math display">\[
-\mu\!\left(\bigcup_n A_n\right)
-= \sum_n \mu(B_n)
-\le \sum_n \mu(A_n).
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="monotone-convergence-of-measures" class="section level1">
-<h1>Monotone Convergence of Measures</h1>
-<div id="lemma-c-continuity-from-below" class="section level2">
-<h2>Lemma C (Continuity from Below)</h2>
-<p>If <span class="math inline">\(A_n \uparrow A\)</span>, i.e., <span class="math display">\[
-A_1 \subseteq A_2 \subseteq \cdots,
-\qquad A=\bigcup_n A_n,
-\]</span> then<br />
-<span class="math display">\[
-\mu(A_n) \uparrow \mu(A).
-\]</span></p>
-<p><strong>Proof:</strong><br />
-Define: <span class="math display">\[
-B_1 = A_1, \qquad B_n = A_n \setminus A_{n-1}.
-\]</span> Then <span class="math inline">\(A = \bigcup_{n=1}^\infty
-B_n\)</span> disjointly, hence <span class="math display">\[
-\mu(A) = \sum_{n=1}^\infty\mu(B_n)
-= \lim_{N\to\infty} \sum_{n=1}^N \mu(B_n)
-= \lim_{n\to\infty} \mu(A_n).
-\]</span></p>
-<hr />
-</div>
-<div id="lemma-d-fatous-lemma-for-sets" class="section level2">
-<h2>Lemma D (Fatou’s Lemma for Sets)</h2>
-<p>If <span class="math inline">\(A_n \downarrow A\)</span>, i.e., <span class="math display">\[
-A_1 \supseteq A_2 \supseteq \cdots,
-\qquad A = \bigcap_n A_n,
-\]</span> then<br />
-<span class="math display">\[
-\mu(A) \le \liminf_{n\to\infty}\mu(A_n).
-\]</span></p>
-<p><strong>Proof:</strong><br />
-Let<br />
-<span class="math display">\[
-B_n = \bigcap_{i\ge n} A_i.
-\]</span> Then <span class="math inline">\(B_n \uparrow
-A\)</span>.<br />
-By continuity from below: <span class="math display">\[
-\mu(A)=\mu\!\left(\bigcup_n B_n\right)
-= \lim_{n\to\infty}\mu(B_n)
-\le \liminf_{n\to\infty}\mu(A_n).
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="summary-of-part-6" class="section level1">
-<h1>Summary of Part 6</h1>
-<ul>
-<li>Defined measures, finite measures, σ-finite measures.</li>
-<li>Gave key examples including Lebesgue measure.</li>
-<li>Proved monotonicity, subadditivity, continuity from below.</li>
-<li>Proved Fatou’s lemma for sets.</li>
+</ol></li>
+<li>Equivalent: Closed under complements, disjoint countable
+unions.</li>
 </ul>
 </div>
-<div id="part-7" class="section level1">
-<h1>Part 7:</h1>
+<div id="lemma-π-λ-σ-field" class="section level3">
+<h3>Lemma: π + λ = σ-Field</h3>
+<p>If <span class="math inline">\(\mathcal{F}\)</span> is both π-system
+and λ-system, then <span class="math inline">\(\mathcal{F}\)</span> is a
+σ-field.<br />
+<strong>Proof Sketch</strong>: Complements from λ; finite intersections
+from π; countable unions via disjointification and increasing
+limits.</p>
 </div>
-<div id="recap-measure-space" class="section level1">
-<h1>Recap: Measure Space</h1>
-<p>A <strong>measure space</strong> is a pair <span class="math inline">\((\Omega, \mathcal{F})\)</span> together with a
-measure<br />
-<span class="math display">\[
-\mu:\mathcal{F}\to [0,+\infty]
-\]</span> satisfying:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mu(\varnothing)=0\)</span>.</li>
-<li>If <span class="math inline">\(\{F_n\}\subset \mathcal{F}\)</span>
-are pairwise disjoint, then <span class="math display">\[
-\mu\left(\bigcup_{n=1}^{\infty} F_n\right)
-= \sum_{n=1}^{\infty}\mu(F_n).
-\]</span></li>
-</ol>
-<hr />
-</div>
-<div id="lemma-basic-properties-of-measures" class="section level1">
-<h1>Lemma: Basic Properties of Measures</h1>
-<p>Let <span class="math inline">\(\mu\)</span> be a measure on <span class="math inline">\((\Omega, \mathcal{F})\)</span>.</p>
-<div id="difference-of-measures" class="section level2">
-<h2>1. Difference of measures</h2>
-<p>If <span class="math inline">\(A\subseteq B\)</span> and <span class="math inline">\(\mu(A)&lt;\infty\)</span>, then<br />
-<span class="math display">\[
-\mu(B\setminus A) = \mu(B) - \mu(A).
-\]</span></p>
-</div>
-<div id="continuity-from-above-finite-case" class="section level2">
-<h2>2. Continuity from above (finite case)</h2>
-<p>If <span class="math inline">\(\{A_n\}\subset \mathcal{F}\)</span> is
-decreasing: <span class="math display">\[
-A_1 \supseteq A_2 \supseteq \cdots,
-\qquad \mu(A_n)&lt;\infty,
-\]</span> then <span class="math display">\[
-\lim_{n\to\infty} \mu(A_n)
-= \mu\left(\bigcap_{n=1}^{\infty} A_n\right).
-\]</span></p>
-</div>
-<div id="warning" class="section level2">
-<h2>Warning</h2>
-<p>The condition <span class="math inline">\(\mu(A_n)&lt;\infty\)</span>
-is essential.</p>
-<p><a href="Example:\" class="uri">Example:\</a> <span class="math display">\[
-A_n = (n, \infty).
-\]</span> Then <span class="math display">\[
-\mu(A_n)=\infty,\qquad
-\bigcap_{n=1}^\infty A_n = \varnothing,
-\qquad \mu(\varnothing)=0,
-\]</span> so<br />
-<span class="math display">\[
-\lim_{n\to\infty}\mu(A_n)=\infty \ne 0.
-\]</span></p>
-<hr />
-</div>
-<div id="inequality-for-limsup" class="section level2">
-<h2>3. Inequality for limsup</h2>
-<p>If <span class="math inline">\(\mu(\bigcup_n A_n)&lt;\infty\)</span>,
-then <span class="math display">\[
-\limsup_{n\to\infty}\mu(A_n)
-\;\le\; \mu\!\left( \limsup_{n\to\infty} A_n \right).
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="proofs-of-lemma-components" class="section level1">
-<h1>Proofs of Lemma Components</h1>
-<hr />
-</div>
-<div id="proof-of-1-difference-of-measures" class="section level1">
-<h1>Proof of (1): Difference of measures</h1>
-<p>If <span class="math inline">\(A\subseteq B\)</span>, write: <span class="math display">\[
-B = A \cup (B\setminus A),
-\]</span> a disjoint union.<br />
-Thus: <span class="math display">\[
-\mu(B)
-= \mu(A) + \mu(B\setminus A).
-\]</span> If <span class="math inline">\(\mu(A)&lt;\infty\)</span>,
-subtract: <span class="math display">\[
-\mu(B\setminus A) = \mu(B) - \mu(A).
-\]</span></p>
-<hr />
-</div>
-<div id="proof-of-2-continuity-from-above-finite-case" class="section level1">
-<h1>Proof of (2): Continuity from above (finite case)</h1>
-<p>Let <span class="math display">\[
-A_\infty = \bigcap_{n=1}^{\infty} A_n.
-\]</span> Define <span class="math display">\[
-B_n = A_1 \setminus A_n.
-\]</span> Then:</p>
-<ul>
-<li><span class="math inline">\(B_n\)</span> is increasing: <span class="math display">\[
-B_1 \subseteq B_2 \subseteq \cdots
-\]</span></li>
-<li>Also <span class="math display">\[
-\bigcup_{n=1}^{\infty} B_n
-= A_1 \setminus A_\infty.
-\]</span></li>
-</ul>
-<p>Since <span class="math inline">\(\mu(A_1)&lt;\infty\)</span>, apply
-continuity from <strong>below</strong>:</p>
-<p><span class="math display">\[
-\mu\left(\bigcup_n B_n\right)
-= \lim_{n\to\infty}\mu(B_n).
-\]</span></p>
-<p>But <span class="math display">\[
-\mu(B_n)=\mu(A_1)-\mu(A_n)
-\]</span> using part (1).<br />
-Thus: <span class="math display">\[
-\mu(A_1)-\lim_n\mu(A_n)
-= \mu(A_1)-\mu(A_\infty),
-\]</span> hence: <span class="math display">\[
-\lim_{n\to\infty}\mu(A_n)=\mu(A_\infty).
-\]</span></p>
-<hr />
-</div>
-<div id="proof-of-3-limsup-inequality" class="section level1">
-<h1>Proof of (3): limsup inequality</h1>
-<p>Recall: <span class="math display">\[
-\limsup_{n\to\infty} A_n
-= \bigcap_{n=1}^{\infty}\bigcup_{k\ge n} A_k.
-\]</span></p>
-<p>Let: <span class="math display">\[
-C_n = \bigcup_{k\ge n} A_k.
-\]</span></p>
-<p>Then:</p>
-<ul>
-<li><span class="math inline">\(C_n\)</span> is decreasing: <span class="math display">\[
-C_1 \supseteq C_2 \supseteq \cdots
-\]</span></li>
-<li><span class="math inline">\(\displaystyle \bigcap_n C_n = \limsup
-A_n\)</span>.</li>
-<li><span class="math inline">\(\mu(C_1) = \mu\left(\bigcup_{n=1}^\infty
-A_n\right)&lt;\infty\)</span>.</li>
-</ul>
-<p>Thus we may apply continuity from above:</p>
-<p><span class="math display">\[
-\mu(\limsup A_n)
-= \mu\left(\bigcap_n C_n\right)
-= \lim_{n\to\infty}\mu(C_n).
-\]</span></p>
-<p>But: <span class="math display">\[
-\mu(C_n) = \mu\left(\bigcup_{k\ge n} A_k\right)
-\ge \sup_{k\ge n} \mu(A_k).
-\]</span></p>
-<p>Therefore: <span class="math display">\[
-\lim_{n\to\infty}\mu(C_n)
-\ge \lim_{n\to\infty}\sup_{k\ge n}\mu(A_k)
-= \limsup_{n\to\infty}\mu(A_n).
-\]</span></p>
-<p>So we conclude: <span class="math display">\[
-\boxed{\
-\limsup_{n\to\infty}\mu(A_n)
-\;\le\; \mu(\limsup A_n)
-\ }.
-\]</span></p>
-</div>
-<div id="part-8" class="section level1">
-<h1>Part 8:</h1>
-</div>
-<div id="theorem-uniqueness-of-measures-on-a-π-system" class="section level1">
-<h1>Theorem: Uniqueness of Measures on a π-system</h1>
-<p>Let <span class="math inline">\((\Omega,\mathcal{F})\)</span> be a
-measurable space.<br />
-Let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be measures on <span class="math inline">\((\Omega,\mathcal{F})\)</span>.<br />
-Let <span class="math inline">\(G \subseteq \mathcal{F}\)</span> be a
-<strong>π-system</strong>, meaning closed under finite
-intersections.</p>
-<p>Suppose:</p>
-<ol style="list-style-type: decimal">
-<li><p>(<strong>Agreement on</strong> <span class="math inline">\(G\)</span>)<br />
-<span class="math display">\[
-\mu(A)=\nu(A) \qquad \forall A\in G.
-\]</span></p></li>
-<li><p>(<strong>Existence of finite-measure cover</strong>)<br />
-There exists a sequence <span class="math inline">\(\{D_n\}\subseteq
-G\)</span> such that<br />
-<span class="math display">\[
-\Omega = \bigcup_{n=1}^\infty D_n,
-\qquad
-\mu(D_n)&lt;\infty \quad \text{for all } n.
-\]</span></p></li>
-</ol>
-<p>Then<br />
-<span class="math display">\[
-\boxed{\mu=\nu \text{ on } \sigma(G).}
-\]</span></p>
-<p>This is often called the <strong>Uniqueness Theorem for
-π-systems</strong> or the <strong>Carathéodory Extension
-Uniqueness</strong> lemma.</p>
-<hr />
-</div>
-<div id="example-remark-important" class="section level1">
-<h1>Example / Remark (Important)</h1>
-<p>Let: - <span class="math inline">\(\Omega=\mathbb{R}\)</span>, -
-<span class="math inline">\(\mathcal{F} =
-\mathcal{B}(\mathbb{R})\)</span>, the Borel σ-field, - <span class="math inline">\(G = \{(-\infty, a] : a\in\mathbb{R}\} \cup
-\{\varnothing, \mathbb{R}\}\)</span>.</p>
-<p>Then <span class="math inline">\(G\)</span> <strong>is</strong> a
-π-system.</p>
-<p>Let <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> be <strong>probability
-measures</strong> on <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span> such that: <span class="math display">\[
-\mu((-\infty,a]) = \nu((-\infty,a])\quad \forall a\in\mathbb{R}.
-\]</span> Then by the theorem, <span class="math display">\[
-\mu=\nu \text{ on } \mathcal{B}(\mathbb{R}).
-\]</span></p>
-<p>Since <span class="math inline">\(\mathcal{B}(\mathbb{R}) =
-\sigma(G)=\lambda(G)\)</span>,<br />
-the distribution function fully determines the measure.</p>
-<hr />
-</div>
-<div id="counterexample-when-condition-2-fails" class="section level1">
-<h1>Counterexample When Condition (2) Fails</h1>
-<p>Let:</p>
-<ul>
-<li><span class="math inline">\(\mu\)</span> = Lebesgue measure,</li>
-<li><span class="math inline">\(\nu\)</span> = counting measure of
-integers: <span class="math display">\[
-\nu(A)=\#\big(A\cap\mathbb{Z}\big).
-\]</span></li>
-</ul>
-<p>Then: <span class="math display">\[
-\mu((-\infty,a]) = \nu((-\infty,a]) = +\infty
-\]</span> so the two <strong>agree</strong> on all <span class="math inline">\((-\infty,a]\)</span>.</p>
-<p>BUT there is <strong>no</strong> sequence <span class="math inline">\(D_n \in G\)</span> with<br />
-<span class="math display">\[
-\mu(D_n),\nu(D_n)&lt;\infty.
-\]</span></p>
-<p>Thus uniqueness fails, and indeed <span class="math inline">\(\mu \ne
-\nu\)</span>.<br />
-This shows the necessity of the finite-measure-cover condition.</p>
-<hr />
-</div>
-<div id="full-proof-of-the-π-system-uniqueness-theorem" class="section level1">
-<h1>Full Proof of the π-system Uniqueness Theorem</h1>
-<p>Define: <span class="math display">\[
-\mathcal{L}
-= \{ A\in\mathcal{F} : \mu(A\cap D_i)=\nu(A\cap D_i),\ \forall i\ge 1\}.
-\]</span></p>
-<p>We will show:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathcal{L}\)</span> is a
-<strong>λ-system</strong>.</li>
-<li><span class="math inline">\(G\subseteq\mathcal{L}\)</span>.</li>
-<li>By the <strong>π–λ Theorem</strong>, <span class="math display">\[
-\sigma(G)=\lambda(G)\subseteq\mathcal{L}.
-\]</span></li>
-<li>Then for any <span class="math inline">\(A\in\sigma(G)\)</span>,
-<span class="math inline">\(\mu(A)=\nu(A)\)</span>.</li>
-</ol>
-<hr />
-</div>
-<div id="step-1-show-mathcall-is-a-λ-system" class="section level1">
-<h1>Step 1: Show <span class="math inline">\(\mathcal{L}\)</span> is a
-λ-system</h1>
-<p>A λ-system requires:</p>
-<div id="omegainmathcall" class="section level3">
-<h3>1. <span class="math inline">\(\Omega\in\mathcal{L}\)</span></h3>
-<p>For each <span class="math inline">\(i\)</span>, <span class="math display">\[
-\mu(\Omega\cap D_i)=\mu(D_i)=\nu(D_i)=\nu(\Omega\cap D_i).
-\]</span> So <span class="math inline">\(\Omega\in\mathcal{L}\)</span>.</p>
-<hr />
-</div>
-<div id="closed-under-differences" class="section level3">
-<h3>2. Closed under differences</h3>
-<p>Let <span class="math inline">\(A\subseteq B\)</span> and <span class="math inline">\(A,B\in\mathcal{L}\)</span>.<br />
-We want to show <span class="math inline">\(B\setminus
-A\in\mathcal{L}\)</span>.</p>
-<p>For any fixed <span class="math inline">\(i\)</span>:</p>
-<p><span class="math display">\[
-(B\setminus A)\cap D_i = (B\cap D_i)\setminus(A\cap D_i).
-\]</span></p>
-<p>Since both <span class="math inline">\(A\cap D_i\)</span> and <span class="math inline">\(B\cap D_i\)</span> have <strong>finite
-measure</strong><br />
-(<span class="math inline">\(\mu(D_i)&lt;\infty\)</span>), we may
-write:</p>
-<p><span class="math display">\[
-\mu((B\setminus A)\cap D_i)
-= \mu(B\cap D_i) - \mu(A\cap D_i)
-= \nu(B\cap D_i) - \nu(A\cap D_i)
-= \nu((B\setminus A)\cap D_i),
-\]</span> showing <span class="math inline">\(B\setminus A \in
+<div id="dynkins-π-λ-theorem" class="section level3">
+<h3>Dynkin’s π-λ Theorem</h3>
+<p>Let <span class="math inline">\(\mathcal{P}\)</span> be a π-system,
+<span class="math inline">\(\mathcal{L}\)</span> a λ-system with <span class="math inline">\(\mathcal{P} \subseteq \mathcal{L}\)</span>. Then
+<span class="math inline">\(\sigma(\mathcal{P}) \subseteq
 \mathcal{L}\)</span>.</p>
-<hr />
-</div>
-<div id="closed-under-monotone-union" class="section level3">
-<h3>3. Closed under monotone union</h3>
-<p>Let <span class="math inline">\(A_n \uparrow A\)</span> with each
-<span class="math inline">\(A_n\in\mathcal{L}\)</span>.<br />
-Fix an index <span class="math inline">\(i\)</span>. Then:</p>
-<p><span class="math display">\[
-A_n\cap D_i \uparrow A\cap D_i.
-\]</span></p>
-<p>Using continuity from below and the fact that<br />
-<span class="math inline">\(\mu(D_i), \nu(D_i)&lt;\infty\)</span>:</p>
-<p><span class="math display">\[
-\mu(A\cap D_i)
-= \lim_{n\to\infty} \mu(A_n\cap D_i)
-= \lim_{n\to\infty} \nu(A_n\cap D_i)
-= \nu(A\cap D_i).
-\]</span></p>
-<p>Thus <span class="math inline">\(A\in\mathcal{L}\)</span>, meaning
-<span class="math inline">\(\mathcal{L}\)</span> is closed under
-increasing unions.</p>
-<hr />
-</div>
-<div id="therefore-mathcall-is-a-λ-system." class="section level3">
-<h3>⟹ Therefore, <span class="math inline">\(\mathcal{L}\)</span> is a
-λ-system.</h3>
+<p><strong>Proof Outline</strong>:<br />
+- Let <span class="math inline">\(\lambda(\mathcal{P})\)</span> be
+smallest λ-system containing <span class="math inline">\(\mathcal{P}\)</span>.<br />
+- Show <span class="math inline">\(\lambda(\mathcal{P})\)</span> is a
+π-system (fix <span class="math inline">\(A\)</span>, define <span class="math inline">\(\mathcal{H}_A = \{B : A \cap B \in
+\lambda(\mathcal{P})\}\)</span>; prove it’s λ-system containing <span class="math inline">\(\mathcal{P}\)</span>).<br />
+- Thus <span class="math inline">\(\lambda(\mathcal{P})\)</span> is
+σ-field, so <span class="math inline">\(\sigma(\mathcal{P}) =
+\lambda(\mathcal{P}) \subseteq \mathcal{L}\)</span>.</p>
+<p><strong>Corollary</strong>: For π-system <span class="math inline">\(\mathcal{P}\)</span>, <span class="math inline">\(\lambda(\mathcal{P}) =
+\sigma(\mathcal{P})\)</span>.</p>
+<p><strong>Typical Use</strong>: Extend properties from π-system (e.g.,
+intervals) to Borel sets.<br />
+- Example: <span class="math inline">\(\mathcal{P} = \{(-\infty, x] : x
+\in \mathbb{R}\}\)</span>, <span class="math inline">\(\sigma(\mathcal{P}) =
+\mathcal{B}(\mathbb{R})\)</span>. Prove property on <span class="math inline">\(\mathcal{P}\)</span>, show λ-system, conclude for
+Borel.</p>
 <hr />
 </div>
 </div>
-<div id="step-2-show-gsubseteqmathcall" class="section level1">
-<h1>Step 2: Show <span class="math inline">\(G\subseteq\mathcal{L}\)</span></h1>
-<p>For any <span class="math inline">\(A\in G\)</span> and each <span class="math inline">\(i\)</span>:</p>
-<p>Since <span class="math inline">\(G\)</span> is a π-system,<br />
-<span class="math display">\[
-A\cap D_i \in G.
-\]</span></p>
-<p>And by assumption <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> agree on <span class="math inline">\(G\)</span>, so: <span class="math display">\[
-\mu(A\cap D_i) = \nu(A\cap D_i).
-\]</span></p>
-<p>Thus <span class="math inline">\(A\in\mathcal{L}\)</span>.<br />
-So <span class="math inline">\(G\subseteq\mathcal{L}\)</span>.</p>
-<hr />
-</div>
-<div id="step-3-apply-the-πλ-theorem" class="section level1">
-<h1>Step 3: Apply the π–λ Theorem</h1>
-<p>Since:</p>
+<div id="measures" class="section level2">
+<h2>6. Measures</h2>
+<div id="definition-1" class="section level3">
+<h3>Definition</h3>
+<p>On measurable space <span class="math inline">\((\Omega,
+\mathcal{F})\)</span>, a <strong>measure</strong> <span class="math inline">\(\mu: \mathcal{F} \to [0, \infty]\)</span>
+satisfies:<br />
+1. <span class="math inline">\(\mu(\varnothing) = 0\)</span>.<br />
+2. Countable additivity: For disjoint <span class="math inline">\(\{F_n\} \subset \mathcal{F}\)</span>, <span class="math inline">\(\mu(\bigcup F_n) = \sum \mu(F_n)\)</span>.</p>
 <ul>
-<li><span class="math inline">\(G\subseteq\mathcal{L}\)</span>,</li>
-<li><span class="math inline">\(G\)</span> is a π-system,</li>
-<li><span class="math inline">\(\mathcal{L}\)</span> is a λ-system,</li>
+<li><strong>Finite</strong>: <span class="math inline">\(\mu(\Omega)
+&lt; \infty\)</span>.<br />
+</li>
+<li><strong>σ-Finite</strong>: <span class="math inline">\(\Omega =
+\bigcup F_n\)</span> with <span class="math inline">\(\mu(F_n) &lt;
+\infty\)</span>.<br />
+</li>
+<li><strong>Probability Measure</strong>: <span class="math inline">\(\mu(\Omega) = 1\)</span>.</li>
 </ul>
-<p>We obtain: <span class="math display">\[
-\sigma(G) = \lambda(G) \subseteq \mathcal{L}.
-\]</span></p>
-<p>Thus for any <span class="math inline">\(A\in\sigma(G)\)</span>:
-<span class="math display">\[
-\mu(A\cap D_i)=\nu(A\cap D_i),\quad \forall i.
-\]</span></p>
+<p>The triple <span class="math inline">\((\Omega, \mathcal{F},
+\mu)\)</span> is a <strong>measure space</strong>.</p>
+</div>
+<div id="examples-1" class="section level3">
+<h3>Examples</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Lebesgue Measure</strong> <span class="math inline">\(\lambda\)</span> on <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span>: <span class="math inline">\(\lambda([a,b]) = b-a\)</span>; σ-finite (<span class="math inline">\(\mathbb{R} = \bigcup [-n,n]\)</span>).<br />
+</li>
+<li><strong>Counting Measure</strong>: <span class="math inline">\(\mu(A) = |A|\)</span> (cardinality); finite if
+<span class="math inline">\(A\)</span> finite, not σ-finite on
+uncountable sets.<br />
+</li>
+<li><strong>Dirac Measure</strong>: <span class="math inline">\(\mu(A) =
+1\)</span> if <span class="math inline">\(x_0 \in A\)</span>, else 0;
+finite.</li>
+</ol>
+</div>
+<div id="basic-properties-lemmas" class="section level3">
+<h3>Basic Properties (Lemmas)</h3>
+<p>Let <span class="math inline">\(\mu\)</span> be a measure.<br />
+- <strong>Monotonicity</strong>: <span class="math inline">\(A \subseteq
+B \implies \mu(A) \leq \mu(B)\)</span>.<br />
+- <strong>Subadditivity</strong>: <span class="math inline">\(\mu(\bigcup A_n) \leq \sum
+\mu(A_n)\)</span>.<br />
+- <strong>Continuity from Below</strong>: <span class="math inline">\(A_n \uparrow A \implies \mu(A_n) \uparrow
+\mu(A)\)</span>.<br />
+- <strong>Continuity from Above</strong>: <span class="math inline">\(A_n \downarrow A\)</span> and <span class="math inline">\(\mu(A_1) &lt; \infty \implies \mu(A_n) \downarrow
+\mu(A)\)</span>.<br />
+- <strong>Fatou for Sets</strong>: <span class="math inline">\(A_n
+\downarrow A \implies \mu(A) \leq \liminf \mu(A_n)\)</span>.<br />
+- <strong>Limsup Inequality</strong>: If <span class="math inline">\(\mu(\bigcup A_n) &lt; \infty\)</span>, <span class="math inline">\(\limsup \mu(A_n) \leq \mu(\limsup
+A_n)\)</span>.<br />
+- <strong>Difference</strong>: <span class="math inline">\(A \subseteq
+B\)</span>, <span class="math inline">\(\mu(A) &lt; \infty \implies
+\mu(B \setminus A) = \mu(B) - \mu(A)\)</span>.</p>
+<p><strong>Proofs</strong>: Mostly via disjoint decompositions and
+additivity (e.g., for subadditivity, disjointify unions).<br />
+<strong>Warning</strong>: Finite measure condition essential for “from
+above” (counterexample: <span class="math inline">\(A_n = (n,
+\infty)\)</span> in Lebesgue).</p>
 <hr />
 </div>
-<div id="step-4-recover-equality-of-measures-on-σg" class="section level1">
-<h1>Step 4: Recover equality of measures on σ(G)</h1>
-<p>Since <span class="math inline">\(\Omega=\bigcup_i D_i\)</span> and
-<span class="math inline">\(\{D_i\}\)</span> can be refined to be
-pairwise disjoint:</p>
-<p>Let <span class="math display">\[
-B_1=D_1,\qquad
-B_n = D_n \setminus \bigcup_{k&lt;n}D_k.
-\]</span></p>
-<p>Then <span class="math inline">\(\{B_n\}\)</span> are pairwise
-disjoint and cover <span class="math inline">\(\Omega\)</span>.<br />
-For any <span class="math inline">\(A\in\sigma(G)\)</span>:</p>
-<p><span class="math display">\[
-\mu(A)
-= \sum_n \mu(A\cap B_n)
-= \sum_n \nu(A\cap B_n)
-= \nu(A),
-\]</span> because each <span class="math inline">\(A\cap B_n \subseteq
-D_n\)</span>, and <span class="math inline">\(D_n\in
-G\subseteq\mathcal{L}\)</span>.</p>
+</div>
+<div id="uniqueness-of-measures" class="section level2">
+<h2>7. Uniqueness of Measures</h2>
+<p><strong>Theorem (Uniqueness on π-Systems)</strong>: Let <span class="math inline">\(\mu, \nu\)</span> be measures on <span class="math inline">\((\Omega, \mathcal{F})\)</span>, <span class="math inline">\(\mathcal{G} \subseteq \mathcal{F}\)</span> a
+π-system. Suppose:<br />
+1. <span class="math inline">\(\mu(A) = \nu(A)\)</span> for all <span class="math inline">\(A \in \mathcal{G}\)</span>.<br />
+2. <span class="math inline">\(\Omega = \bigcup D_n\)</span> with <span class="math inline">\(D_n \in \mathcal{G}\)</span>, <span class="math inline">\(\mu(D_n) &lt; \infty\)</span>.<br />
+Then <span class="math inline">\(\mu = \nu\)</span> on <span class="math inline">\(\sigma(\mathcal{G})\)</span>.</p>
+<p><strong>Proof</strong>: Define <span class="math inline">\(\mathcal{L} = \{A \in \mathcal{F} : \mu(A \cap
+D_i) = \nu(A \cap D_i) \ \forall i\}\)</span>.<br />
+- Show <span class="math inline">\(\mathcal{L}\)</span> is λ-system
+(uses finite measures for differences/unions).<br />
+- <span class="math inline">\(\mathcal{G} \subseteq \mathcal{L}\)</span>
+(by π-property and agreement).<br />
+- By π-λ: <span class="math inline">\(\sigma(\mathcal{G}) \subseteq
+\mathcal{L}\)</span>.<br />
+- Recover full equality via disjoint cover of <span class="math inline">\(\Omega\)</span>.</p>
+<p><strong>Example</strong>: Probability measures on <span class="math inline">\(\mathbb{R}\)</span> with same CDF are equal
+(π-system of <span class="math inline">\((-\infty, a]\)</span>).<br />
+<strong>Counterexample Without Condition 2</strong>: Lebesgue
+vs. integer-counting on <span class="math inline">\(\mathbb{R}\)</span>
+agree on unbounded rays but differ elsewhere.</p>
+<p><strong>Applications</strong>: Uniqueness in Carathéodory extension;
+distribution determined by CDF.</p>
 <hr />
 </div>
-<div id="final-conclusion" class="section level1">
-<h1>Final Conclusion</h1>
-<p><span class="math display">\[
-\boxed{\mu=\nu \text{ on } \sigma(G).}
-\]</span></p>
-<p>This completes the proof.</p>
+<div id="constructing-measures-overview" class="section level2">
+<h2>8. Constructing Measures (Overview)</h2>
+<p>Start with measure on small class <span class="math inline">\(\mathcal{R}\)</span> (e.g., semi-ring), extend to
+<span class="math inline">\(\sigma(\mathcal{R})\)</span> via
+Carathéodory theorem (ensures unique extension if σ-finite).<br />
+- Details in later chapters, but motivates why σ-fields and uniqueness
+are key.</p>
+<p><strong>Additional Notes</strong>: These concepts form the basis for
+probability spaces (<span class="math inline">\(\mathbb{P}\)</span> as
+measure), integration (Lebesgue integral), and stochastic processes.</p>
+</div>
 </div>
 
 

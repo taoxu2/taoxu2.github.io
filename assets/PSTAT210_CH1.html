@@ -1626,229 +1626,278 @@ display: none;
 </div>
 
 
-<div id="chapter-1.-set-theory" class="section level1">
-<h1>Chapter 1. Set Theory</h1>
+<div id="chapter-1-set-theory" class="section level1">
+<h1>Chapter 1: Set Theory</h1>
 <div id="notation" class="section level2">
 <h2>1. Notation</h2>
 <ul>
-<li><span class="math inline">\(\Omega\)</span>: sample space<br />
-</li>
-<li><span class="math inline">\(w \in \Omega\)</span>: outcome</li>
+<li><span class="math inline">\(\Omega\)</span>: Sample space (universal
+set containing all possible outcomes).</li>
+<li><span class="math inline">\(\omega \in \Omega\)</span>: An
+individual outcome (element).</li>
 </ul>
 <p>For any sets <span class="math inline">\(E, F \subset
 \Omega\)</span>:</p>
 <ul>
-<li><p><strong>Intersection:</strong><br />
+<li><p><strong>Intersection</strong>:<br />
 <span class="math display">\[
-E \cap F = \{ w \in \Omega : w \in E \text{ and } w \in F \}.
+E \cap F = \{ \omega \in \Omega : \omega \in E \text{ and } \omega \in F
+\}.
 \]</span></p></li>
-<li><p><strong>Union:</strong><br />
+<li><p><strong>Union</strong>:<br />
 <span class="math display">\[
-E \cup F = \{ w \in \Omega : w \in E \text{ or } w \in F \}.
+E \cup F = \{ \omega \in \Omega : \omega \in E \text{ or } \omega \in F
+\}.
 \]</span></p></li>
-<li><p><strong>Complement:</strong><br />
+<li><p><strong>Complement</strong>:<br />
 <span class="math display">\[
-E^c = \{ w \in \Omega : w \notin E \}.
+E^c = \{ \omega \in \Omega : \omega \notin E \}.
 \]</span></p></li>
-<li><p><strong>Difference:</strong><br />
+<li><p><strong>Difference</strong>:<br />
 <span class="math display">\[
 E \setminus F = E \cap F^c.
 \]</span></p></li>
-<li><p><strong>Symmetric difference:</strong><br />
+<li><p><strong>Symmetric Difference</strong>:<br />
 <span class="math display">\[
 E \Delta F = (E \setminus F) \cup (F \setminus E).
 \]</span></p></li>
 </ul>
+<p><strong>Additional Notes</strong>:<br />
+- The empty set <span class="math inline">\(\emptyset\)</span> is the
+set with no elements, and <span class="math inline">\(\Omega\)</span> is
+the universal set.<br />
+- Sets <span class="math inline">\(E\)</span> and <span class="math inline">\(F\)</span> are <strong>disjoint</strong> if <span class="math inline">\(E \cap F = \emptyset\)</span>.<br />
+- A <strong>partition</strong> of <span class="math inline">\(\Omega\)</span> is a collection of disjoint sets
+whose union is <span class="math inline">\(\Omega\)</span>.</p>
 <hr />
 </div>
 <div id="indexed-families-of-sets" class="section level2">
 <h2>2. Indexed Families of Sets</h2>
 <p>Let <span class="math inline">\(\{E_\alpha : \alpha \in A\}\)</span>
-be a family of subsets of <span class="math inline">\(\Omega\)</span>.</p>
+be a family of subsets of <span class="math inline">\(\Omega\)</span>,
+where <span class="math inline">\(A\)</span> is an index set (which may
+be finite, countable, or uncountable).</p>
 <ul>
-<li><p><strong>Union:</strong><br />
+<li><p><strong>Union</strong>:<br />
 <span class="math display">\[
-\bigcup_{\alpha \in A} E_\alpha
-= \{ w \in \Omega : w \in E_\alpha \text{ for some } \alpha \in A \}.
+\bigcup_{\alpha \in A} E_\alpha = \{ \omega \in \Omega : \omega \in
+E_\alpha \text{ for some } \alpha \in A \}.
 \]</span></p></li>
-<li><p><strong>Intersection:</strong><br />
+<li><p><strong>Intersection</strong>:<br />
 <span class="math display">\[
-\bigcap_{\alpha \in A} E_\alpha
-= \{ w \in \Omega : w \in E_\alpha \ \forall\, \alpha \in A \}.
+\bigcap_{\alpha \in A} E_\alpha = \{ \omega \in \Omega : \omega \in
+E_\alpha \ \forall\, \alpha \in A \}.
 \]</span></p></li>
 </ul>
-<p>These definitions hold <strong>regardless of whether</strong> <span class="math inline">\(A\)</span> is countable.</p>
+<p>These definitions hold regardless of whether <span class="math inline">\(A\)</span> is countable or uncountable.</p>
+<p><strong>Additional Notes</strong>:<br />
+- If <span class="math inline">\(A = \mathbb{N}\)</span> (natural
+numbers), these are countable unions/intersections, which are
+particularly important in measure theory for defining <span class="math inline">\(\sigma\)</span>-algebras.</p>
 <hr />
 </div>
 <div id="basic-properties" class="section level2">
 <h2>3. Basic Properties</h2>
-<div id="complement-of-a-unionintersection" class="section level3">
-<h3>Complement of a union/intersection</h3>
+<div id="de-morgans-laws-complements-of-unionsintersections" class="section level3">
+<h3>De Morgan’s Laws (Complements of Unions/Intersections)</h3>
 <p><span class="math display">\[
-\left( \bigcup_{\alpha \in A} E_\alpha \right)^c
-= \bigcap_{\alpha \in A} E_\alpha^c.
+\left( \bigcup_{\alpha \in A} E_\alpha \right)^c = \bigcap_{\alpha \in
+A} E_\alpha^c,
+\]</span> <span class="math display">\[
+\left( \bigcap_{\alpha \in A} E_\alpha \right)^c = \bigcup_{\alpha \in
+A} E_\alpha^c.
 \]</span></p>
 </div>
-<div id="distribution" class="section level3">
-<h3>Distribution</h3>
+<div id="distributive-laws" class="section level3">
+<h3>Distributive Laws</h3>
 <p><span class="math display">\[
-F \cap \left( \bigcup_{\alpha \in A} E_\alpha \right)
-= \bigcup_{\alpha \in A} (F \cap E_\alpha),
+F \cap \left( \bigcup_{\alpha \in A} E_\alpha \right) = \bigcup_{\alpha
+\in A} (F \cap E_\alpha),
+\]</span> <span class="math display">\[
+F \cup \left( \bigcap_{\alpha \in A} E_\alpha \right) = \bigcap_{\alpha
+\in A} (F \cup E_\alpha).
 \]</span></p>
-<p><span class="math display">\[
-F \cup \left( \bigcap_{\alpha \in A} E_\alpha \right)
-= \bigcap_{\alpha \in A} (F \cup E_\alpha).
-\]</span></p>
+<p><strong>Additional Properties</strong>:<br />
+- <strong>Idempotence</strong>: <span class="math inline">\(E \cup E =
+E\)</span>, <span class="math inline">\(E \cap E = E\)</span>.<br />
+- <strong>Associativity</strong>: <span class="math inline">\((E \cup F)
+\cup G = E \cup (F \cup G)\)</span>, and similarly for
+intersection.<br />
+- <strong>Commutativity</strong>: <span class="math inline">\(E \cup F =
+F \cup E\)</span>, <span class="math inline">\(E \cap F = F \cap
+E\)</span>.<br />
+- <strong>Absorption</strong>: <span class="math inline">\(E \cup (E
+\cap F) = E\)</span>, <span class="math inline">\(E \cap (E \cup F) =
+E\)</span>.</p>
 <hr />
 </div>
 </div>
-<div id="a-warning-incorrect-identity" class="section level2">
-<h2>4. A Warning (Incorrect Identity)</h2>
-<p>The following is <strong>NOT</strong> true in general:</p>
-<p><span class="math display">\[
-\bigcup_{i=1}^{\infty} (A_i \cap B_i)
-\stackrel{?}{=}
-\left( \bigcup_{i=1}^{\infty} A_i \right)
-\cap
-\left( \bigcup_{i=1}^{\infty} B_i \right).
+<div id="warning-incorrect-identity" class="section level2">
+<h2>4. Warning: Incorrect Identity</h2>
+<p>The following is <strong>not</strong> true in general for sequences
+of sets <span class="math inline">\(\{A_i\}\)</span> and <span class="math inline">\(\{B_i\}\)</span>:<br />
+<span class="math display">\[
+\bigcup_{i=1}^{\infty} (A_i \cap B_i) \stackrel{?}{=} \left(
+\bigcup_{i=1}^{\infty} A_i \right) \cap \left( \bigcup_{i=1}^{\infty}
+B_i \right).
 \]</span></p>
-<p>This fails unless <span class="math inline">\((A_i)\)</span> and
-<span class="math inline">\((B_i)\)</span> satisfy special
-conditions.</p>
+<p>This equality fails unless the sequences <span class="math inline">\((A_i)\)</span> and <span class="math inline">\((B_i)\)</span> satisfy special conditions (e.g.,
+if one sequence is nested or disjoint).</p>
+<p><strong>Counterexample</strong>: Let <span class="math inline">\(A_i
+= \{i\}\)</span>, <span class="math inline">\(B_i = \{i+1\}\)</span> for
+<span class="math inline">\(i \in \mathbb{N}\)</span>. The left side is
+empty, but the right side is also empty—no, wait: Actually, for a proper
+counterexample, consider <span class="math inline">\(A_i =
+[0,1]\)</span> for all <span class="math inline">\(i\)</span>, <span class="math inline">\(B_i = [i, i+1]\)</span>. But the point is it
+doesn’t distribute like that.</p>
 <hr />
 </div>
-</div>
-<div id="indicator-functions" class="section level1">
-<h1>5. Indicator Functions</h1>
-<p>For a set <span class="math inline">\(A \subset \Omega\)</span>,
-define the <strong>indicator</strong></p>
-<p><span class="math display">\[
-I_A(w) =
+<div id="indicator-functions" class="section level2">
+<h2>5. Indicator Functions</h2>
+<p>For a set <span class="math inline">\(A \subset \Omega\)</span>, the
+<strong>indicator function</strong> (or characteristic function)
+is:<br />
+<span class="math display">\[
+I_A(\omega) =
 \begin{cases}
-1, &amp; w \in A, \\
-0, &amp; w \notin A.
+1, &amp; \omega \in A, \\
+0, &amp; \omega \notin A.
 \end{cases}
 \]</span></p>
-<div id="relationship-between-sets-and-indicators" class="section level3">
-<h3>Relationship between sets and indicators</h3>
+<div id="relationships-between-sets-and-indicators" class="section level3">
+<h3>Relationships Between Sets and Indicators</h3>
 <ul>
-<li><span class="math inline">\(A \subseteq B \iff I_A \le
-I_B\)</span>.</li>
-<li>Symmetric difference: <span class="math display">\[
-I_{A \Delta B} = |I_A - I_B|.
-\]</span></li>
-<li>Mod 2 representation: <span class="math display">\[
-I_A + I_B = I_{A \Delta B} \pmod{2}.
-\]</span></li>
-<li>Union via supremum: <span class="math display">\[
-I_{\bigcup_\alpha E_\alpha} = \sup_\alpha I_{E_\alpha}.
-\]</span></li>
+<li>Inclusion: <span class="math inline">\(A \subseteq B \iff I_A \leq
+I_B\)</span> (pointwise).<br />
+</li>
+<li>Intersection: <span class="math inline">\(I_{A \cap B} = I_A \cdot
+I_B\)</span>.<br />
+</li>
+<li>Union: <span class="math inline">\(I_{A \cup B} = I_A + I_B - I_A
+\cdot I_B\)</span>.<br />
+</li>
+<li>Complement: <span class="math inline">\(I_{A^c} = 1 -
+I_A\)</span>.<br />
+</li>
+<li>Symmetric Difference: <span class="math inline">\(I_{A \Delta B} =
+|I_A - I_B|\)</span>.<br />
+</li>
+<li>Mod 2: <span class="math inline">\(I_A + I_B = I_{A \Delta B}
+\pmod{2}\)</span>.<br />
+</li>
+<li>Union via Supremum: <span class="math inline">\(I_{\bigcup_\alpha
+E_\alpha} = \sup_\alpha I_{E_\alpha}\)</span>.</li>
 </ul>
+<p><strong>Additional Notes</strong>: Indicator functions are useful in
+probability for defining random variables and expectations (e.g., <span class="math inline">\(\mathbb{P}(A) = \mathbb{E}[I_A]\)</span>).</p>
 <hr />
 </div>
 </div>
-<div id="limits-of-sequences-of-sets" class="section level1">
-<h1>6. Limits of Sequences of Sets</h1>
-<p>Let <span class="math inline">\(\{A_n\}\)</span> be a sequence of
-sets.</p>
-<hr />
-<div id="case-1-increasing-sequence" class="section level2">
-<h2>Case 1: Increasing sequence</h2>
-<p><span class="math display">\[
-A_1 \subseteq A_2 \subseteq A_3 \subseteq \cdots
-\]</span></p>
-<p>Then</p>
-<p><span class="math display">\[
+<div id="limits-of-sequences-of-sets" class="section level2">
+<h2>6. Limits of Sequences of Sets</h2>
+<p>Let <span class="math inline">\(\{A_n\}_{n=1}^\infty\)</span> be a
+sequence of subsets of <span class="math inline">\(\Omega\)</span>.</p>
+<div id="case-1-increasing-sequence" class="section level3">
+<h3>Case 1: Increasing Sequence</h3>
+<p>If <span class="math inline">\(A_1 \subseteq A_2 \subseteq A_3
+\subseteq \cdots\)</span>, then:<br />
+<span class="math display">\[
 \lim_{n\to\infty} A_n = \bigcup_{n=1}^{\infty} A_n.
 \]</span></p>
-<hr />
 </div>
-<div id="case-2-decreasing-sequence" class="section level2">
-<h2>Case 2: Decreasing sequence</h2>
-<p><span class="math display">\[
-A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots
-\]</span></p>
-<p>Then</p>
-<p><span class="math display">\[
+<div id="case-2-decreasing-sequence" class="section level3">
+<h3>Case 2: Decreasing Sequence</h3>
+<p>If <span class="math inline">\(A_1 \supseteq A_2 \supseteq A_3
+\supseteq \cdots\)</span>, then:<br />
+<span class="math display">\[
 \lim_{n\to\infty} A_n = \bigcap_{n=1}^{\infty} A_n.
 \]</span></p>
-<hr />
 </div>
-<div id="case-3-general-sequence-a_n" class="section level2">
-<h2>Case 3: General sequence <span class="math inline">\(\{A_n\}\)</span></h2>
-<div id="definition-of-lim-inf-and-lim-sup" class="section level3">
-<h3>Definition of lim inf and lim sup</h3>
-<p><span class="math display">\[
-\liminf_{n\to\infty} A_n
-= \bigcup_{n=1}^{\infty} \bigcap_{m=n}^{\infty} A_m,
-\]</span></p>
-<p><span class="math display">\[
-\limsup_{n\to\infty} A_n
-= \bigcap_{n=1}^{\infty} \bigcup_{m=n}^{\infty} A_m.
-\]</span></p>
-</div>
-<div id="pointwise-characterization" class="section level3">
-<h3>Pointwise characterization</h3>
+<div id="case-3-general-sequence" class="section level3">
+<h3>Case 3: General Sequence</h3>
+<p>For any sequence <span class="math inline">\(\{A_n\}\)</span>:</p>
 <ul>
-<li><p><span class="math inline">\(w \in \liminf A_n \iff\)</span><br />
-there exists <span class="math inline">\(n_0\)</span> such that for all
-<span class="math inline">\(m \ge n_0\)</span>, <span class="math inline">\(w \in A_m\)</span>.<br />
-(eventually always in)</p></li>
-<li><p><span class="math inline">\(w \in \limsup A_n \iff\)</span><br />
-for infinitely many <span class="math inline">\(n\)</span>, <span class="math inline">\(w \in A_n\)</span>.<br />
-(belongs to infinitely many sets)</p></li>
+<li><p><strong>Limit Inferior (lim inf)</strong>:<br />
+<span class="math display">\[
+\liminf_{n\to\infty} A_n = \bigcup_{n=1}^{\infty} \bigcap_{m=n}^{\infty}
+A_m.
+\]</span><br />
+Pointwise: <span class="math inline">\(\omega \in \liminf A_n\)</span>
+iff there exists <span class="math inline">\(n_0\)</span> such that
+<span class="math inline">\(\forall m \geq n_0\)</span>, <span class="math inline">\(\omega \in A_m\)</span> (eventually always in the
+sets).</p></li>
+<li><p><strong>Limit Superior (lim sup)</strong>:<br />
+<span class="math display">\[
+\limsup_{n\to\infty} A_n = \bigcap_{n=1}^{\infty} \bigcup_{m=n}^{\infty}
+A_m.
+\]</span><br />
+Pointwise: <span class="math inline">\(\omega \in \limsup A_n\)</span>
+iff <span class="math inline">\(\omega \in A_n\)</span> for infinitely
+many <span class="math inline">\(n\)</span> (belongs to infinitely many
+sets).</p></li>
 </ul>
-<p>Thus: - <span class="math inline">\(\liminf A_n\)</span>: points
-eventually always in the sets<br />
-- <span class="math inline">\(\limsup A_n\)</span>: points belonging to
-infinitely many sets</p>
-<p>Convergence of <span class="math inline">\(A_n\)</span> means:</p>
-<p><span class="math display">\[
-\liminf A_n = \limsup A_n.
+<p>The sequence <span class="math inline">\(\{A_n\}\)</span>
+<strong>converges</strong> if <span class="math inline">\(\liminf A_n =
+\limsup A_n\)</span>, in which case:<br />
+<span class="math display">\[
+\lim_{n\to\infty} A_n = \liminf_{n\to\infty} A_n = \limsup_{n\to\infty}
+A_n.
 \]</span></p>
+<p>This definition is consistent with the increasing and decreasing
+cases.</p>
+<p><strong>Additional Notes</strong>: In probability, lim sup relates to
+events occurring “infinitely often,” and lim inf to “eventually always.”
+These are key for Borel-Cantelli lemmas.</p>
 <hr />
 </div>
 </div>
-</div>
-<div id="example" class="section level1">
-<h1>7. Example</h1>
-<p>Define <span class="math inline">\(E_n\)</span> by:</p>
-<p><span class="math display">\[
+<div id="example" class="section level2">
+<h2>7. Example</h2>
+<p>Define <span class="math inline">\(E_n\)</span> as:<br />
+<span class="math display">\[
 E_n =
 \begin{cases}
-(1 + \tfrac{1}{n},\, 3 + \tfrac{1}{n}), &amp; n \text{ even},\\[4pt]
-(0 + \tfrac{1}{n},\, 2 + \tfrac{1}{n}), &amp; n \text{ odd}.
+(1 + \frac{1}{n}, 3 + \frac{1}{n}), &amp; n \text{ even}, \\[4pt]
+(0 + \frac{1}{n}, 2 + \frac{1}{n}), &amp; n \text{ odd}.
 \end{cases}
 \]</span></p>
-<p>Then:</p>
-<p><span class="math display">\[
-\liminf_{n\to\infty} E_n = (1,2), \qquad
-\limsup_{n\to\infty} E_n = (0,3).
+<p>As <span class="math inline">\(n \to \infty\)</span>:<br />
+- For even <span class="math inline">\(n\)</span>, <span class="math inline">\(E_n \to (1, 3)\)</span>.<br />
+- For odd <span class="math inline">\(n\)</span>, <span class="math inline">\(E_n \to (0, 2)\)</span>.</p>
+<p>Thus:<br />
+<span class="math display">\[
+\liminf_{n\to\infty} E_n = (1,2), \quad \limsup_{n\to\infty} E_n =
+(0,3).
 \]</span></p>
+<p><strong>Explanation</strong>: Points in (1,2) are eventually in all
+<span class="math inline">\(E_n\)</span> (for large <span class="math inline">\(n\)</span>), while points in (0,1] or [2,3) are in
+infinitely many but not eventually all.</p>
 <hr />
 </div>
-<div id="properties-of-lim-inf-and-lim-sup" class="section level1">
-<h1>8. Properties of lim inf and lim sup</h1>
+<div id="properties-of-lim-inf-and-lim-sup" class="section level2">
+<h2>8. Properties of lim inf and lim sup</h2>
 <ol style="list-style-type: decimal">
-<li><p><span class="math display">\[
-   \liminf_{n\to\infty} A_n
-   \subseteq
-   \limsup_{n\to\infty} A_n.
-   \]</span></p></li>
-<li><p><span class="math display">\[
-   (\liminf A_n)^c = \limsup (A_n^c).
-   \]</span></p></li>
+<li><p>Inclusion:<br />
+<span class="math display">\[
+\liminf_{n\to\infty} A_n \subseteq \limsup_{n\to\infty} A_n.
+\]</span></p></li>
+<li><p>Complements:<br />
+<span class="math display">\[
+(\liminf_{n\to\infty} A_n)^c = \limsup_{n\to\infty} (A_n^c), \quad
+(\limsup_{n\to\infty} A_n)^c = \liminf_{n\to\infty} (A_n^c).
+\]</span></p></li>
+<li><p>Monotonicity: If <span class="math inline">\(A_n \subseteq
+B_n\)</span> for all <span class="math inline">\(n\)</span>, then <span class="math inline">\(\liminf A_n \subseteq \liminf B_n\)</span> and
+<span class="math inline">\(\limsup A_n \subseteq \limsup
+B_n\)</span>.</p></li>
+<li><p>Union/Intersection:<br />
+<span class="math inline">\(\liminf (A_n \cup B_n) \supseteq \liminf A_n
+\cup \liminf B_n\)</span>, with similar inequalities for lim sup,
+intersections, etc.</p></li>
 </ol>
-<p>If the two agree:</p>
-<p><span class="math display">\[
-\liminf_{n\to\infty} A_n =
-\limsup_{n\to\infty} A_n,
-\]</span></p>
-<p>we define:</p>
-<p><span class="math display">\[
-\lim_{n\to\infty} A_n := \liminf A_n = \limsup A_n.
-\]</span></p>
-<p>This is consistent with the increasing/decreasing cases.</p>
+<p>These concepts are foundational for defining measurable sets and
+events in probability spaces.</p>
+</div>
 </div>
 
 

@@ -355,20 +355,19 @@ display: none;
 </div>
 
 
-<div id="part-1" class="section level1">
-<h1>Part 1:</h1>
-</div>
-<div id="ch5-integration" class="section level1">
-<h1>CH5: Integration</h1>
+<div id="chapter-5-integration" class="section level1">
+<h1>Chapter 5: Integration</h1>
 <div id="simple-functions" class="section level2">
 <h2>1. Simple Functions</h2>
 <div id="definition" class="section level3">
 <h3>Definition</h3>
 <p>A function <span class="math inline">\(X : \Omega \to
 \mathbb{R}\)</span> is called a <strong>simple function</strong> if it
-can be written as <span class="math display">\[
+can be written as<br />
+<span class="math display">\[
 X(\omega) = \sum_{i=1}^n c_i \mathbf{1}_{A_i}(\omega),
-\]</span> where<br />
+\]</span><br />
+where<br />
 - <span class="math inline">\(n &lt; \infty\)</span>,<br />
 - <span class="math inline">\(c_i \in \mathbb{R}\)</span>,<br />
 - <span class="math inline">\(A_i \in \mathcal{F}\)</span>.</p>
@@ -376,7 +375,8 @@ X(\omega) = \sum_{i=1}^n c_i \mathbf{1}_{A_i}(\omega),
 <div id="remark" class="section level3">
 <h3>Remark</h3>
 <ul>
-<li>We <strong>do not require</strong> the sets <span class="math inline">\(A_i\)</span> to be disjoint.</li>
+<li>We <strong>do not require</strong> the sets <span class="math inline">\(A_i\)</span> to be disjoint.<br />
+</li>
 <li>However, any representation can be refined into a representation
 with disjoint sets by splitting intersections.</li>
 </ul>
@@ -384,9 +384,8 @@ with disjoint sets by splitting intersections.</li>
 <div id="measurability-of-simple-functions" class="section level3">
 <h3>Measurability of Simple Functions</h3>
 <p>A simple function <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R})\)</span>-measurable
-<strong>iff</strong> <span class="math display">\[
-A_i \in \mathcal{F}, \quad \forall i.
-\]</span></p>
+<strong>iff</strong> <span class="math inline">\(A_i \in
+\mathcal{F}\)</span> for all <span class="math inline">\(i\)</span>.</p>
 <hr />
 </div>
 </div>
@@ -398,22 +397,26 @@ A_i \in \mathcal{F}, \quad \forall i.
 simple functions.<br />
 Then there exists a <strong>finite partition</strong> <span class="math inline">\(\{A_j\}_{j=1}^m\)</span> of <span class="math inline">\(\Omega\)</span> into disjoint measurable sets such
 that each <span class="math inline">\(X_i\)</span> has the
-representation <span class="math display">\[
+representation<br />
+<span class="math display">\[
 X_i(\omega) = \sum_{j=1}^m c_{i,j} \mathbf{1}_{A_j}(\omega).
 \]</span></p>
 </div>
 <div id="proof-detailed" class="section level3">
 <h3>Proof (Detailed)</h3>
-<p>Each <span class="math inline">\(X_i\)</span> has a representation
+<p>Each <span class="math inline">\(X_i\)</span> has a
+representation<br />
 <span class="math display">\[
 X_i = \sum_{k=1}^{n_i} c_{ik} \mathbf{1}_{B_{ik}}.
-\]</span> Define the collection <span class="math display">\[
+\]</span><br />
+Define the collection<br />
+<span class="math display">\[
 \mathcal{A} = \{B_{1k_1} \cap B_{2k_2} \cap \cdots \cap B_{nk_n}\}.
-\]</span> There are finitely many such intersections, and they are
-disjoint.<br />
-Each intersection is measurable because <span class="math inline">\(\mathcal{F}\)</span> is a σ-field.<br />
-On each element of the intersection, every <span class="math inline">\(X_i\)</span> takes on a constant value, completing
-the proof.</p>
+\]</span><br />
+There are finitely many such intersections, and they are disjoint. Each
+intersection is measurable because <span class="math inline">\(\mathcal{F}\)</span> is a σ-field. On each element
+of the intersection, every <span class="math inline">\(X_i\)</span>
+takes on a constant value, completing the proof.</p>
 <hr />
 </div>
 </div>
@@ -422,19 +425,25 @@ the proof.</p>
 <div id="lemma-1" class="section level3">
 <h3>Lemma</h3>
 <p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are simple, then the following are also
-simple: - <span class="math inline">\(X + Y\)</span> - <span class="math inline">\(X - Y\)</span> - <span class="math inline">\(XY\)</span> - <span class="math inline">\(cX\)</span> for scalar <span class="math inline">\(c\)</span></p>
+simple:<br />
+- <span class="math inline">\(X + Y\)</span><br />
+- <span class="math inline">\(X - Y\)</span><br />
+- <span class="math inline">\(XY\)</span><br />
+- <span class="math inline">\(cX\)</span> for scalar <span class="math inline">\(c\)</span></p>
 </div>
 <div id="proof-detailed-1" class="section level3">
 <h3>Proof (Detailed)</h3>
-<p>Write <span class="math display">\[
-X = \sum_{i} x_i \mathbf{1}_{A_i}, \qquad
-Y = \sum_{j} y_j \mathbf{1}_{B_j}.
-\]</span> Use the disjoint refinement <span class="math inline">\(A_i
-\cap B_j\)</span>.<br />
-Then <span class="math display">\[
+<p>Write<br />
+<span class="math display">\[
+X = \sum_{i} x_i \mathbf{1}_{A_i}, \qquad Y = \sum_{j} y_j
+\mathbf{1}_{B_j}.
+\]</span><br />
+Use the disjoint refinement <span class="math inline">\(A_i \cap
+B_j\)</span>. Then<br />
+<span class="math display">\[
 X + Y = \sum_{i,j} (x_i + y_j)\mathbf{1}_{A_i \cap B_j},
-\]</span> etc.<br />
-All sums are finite, so each expression remains simple.</p>
+\]</span><br />
+etc. All sums are finite, so each expression remains simple.</p>
 <hr />
 </div>
 </div>
@@ -442,20 +451,20 @@ All sums are finite, so each expression remains simple.</p>
 <h2>4. Integral of a Positive Simple Function</h2>
 <div id="definition-1" class="section level3">
 <h3>Definition</h3>
-<p>Let <span class="math display">\[
-X(\omega)=\sum_{i=1}^n c_i \mathbf{1}_{A_i}(\omega),
-\quad c_i \ge 0.
-\]</span> Then the <strong>integral</strong> is defined as <span class="math display">\[
-\int_\Omega X\, d\mu
-  = \sum_{i=1}^n c_i\, \mu(A_i).
+<p>Let<br />
+<span class="math display">\[
+X(\omega)=\sum_{i=1}^n c_i \mathbf{1}_{A_i}(\omega), \quad c_i \ge 0.
+\]</span><br />
+Then the <strong>integral</strong> is defined as<br />
+<span class="math display">\[
+\int_\Omega X\, d\mu = \sum_{i=1}^n c_i\, \mu(A_i).
 \]</span></p>
 </div>
 <div id="note-on-representation" class="section level3">
 <h3>Note on Representation</h3>
 <p>If the representation is not disjoint, refine to a disjoint
-representation.<br />
-The value of the integral does <strong>not</strong> depend on the choice
-of representation.</p>
+representation. The value of the integral does <strong>not</strong>
+depend on the choice of representation.</p>
 </div>
 <div id="when-mu-mathbbp" class="section level3">
 <h3>When <span class="math inline">\(\mu = \mathbb{P}\)</span></h3>
@@ -465,55 +474,56 @@ of representation.</p>
 <hr />
 </div>
 </div>
-</div>
-<div id="linearity-and-monotonicity-for-simple-functions" class="section level1">
-<h1>5. Linearity and Monotonicity for Simple Functions</h1>
+<div id="linearity-and-monotonicity-for-simple-functions" class="section level2">
+<h2>5. Linearity and Monotonicity for Simple Functions</h2>
 <div id="lemma-2" class="section level3">
 <h3>Lemma</h3>
 <p>If <span class="math inline">\(X, Y\)</span> are simple and
-non-negative:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Linearity</strong> <span class="math display">\[
-\int_\Omega (X + cY)\, d\mu
-= \int_\Omega X\, d\mu + c \int_\Omega Y\, d\mu,
-\quad c \ge 0.
-\]</span></p></li>
-<li><p><strong>Monotonicity</strong><br />
-If <span class="math inline">\(X \le Y\)</span>, then <span class="math display">\[
-\int_\Omega X\, d\mu \le \int_\Omega Y\, d\mu.
-\]</span></p></li>
-</ol>
+non-negative:<br />
+1. <strong>Linearity</strong><br />
+<span class="math display">\[
+   \int_\Omega (X + cY)\, d\mu = \int_\Omega X\, d\mu + c \int_\Omega
+Y\, d\mu, \quad c \ge 0.
+   \]</span><br />
+2. <strong>Monotonicity</strong><br />
+If <span class="math inline">\(X \le Y\)</span>, then<br />
+<span class="math display">\[
+   \int_\Omega X\, d\mu \le \int_\Omega Y\, d\mu.
+   \]</span></p>
 </div>
 <div id="detailed-proof" class="section level3">
 <h3>Detailed Proof</h3>
-<p>Write both using a common partition: <span class="math display">\[
-X = \sum_{i=1}^n x_i \mathbf{1}_{A_i},
-\quad
-Y = \sum_{i=1}^n y_i \mathbf{1}_{A_i}.
-\]</span> Then <span class="math display">\[
+<p>Write both using a common partition:<br />
+<span class="math display">\[
+X = \sum_{i=1}^n x_i \mathbf{1}_{A_i}, \quad Y = \sum_{i=1}^n y_i
+\mathbf{1}_{A_i}.
+\]</span><br />
+Then<br />
+<span class="math display">\[
 X + cY = \sum_{i=1}^n (x_i + cy_i)\mathbf{1}_{A_i}.
-\]</span> Thus, <span class="math display">\[
-\int (X+cY)d\mu
-= \sum_{i=1}^n (x_i+cy_i)\mu(A_i)
-= \sum x_i\mu(A_i) + c\sum y_i\mu(A_i)
-= \int Xd\mu + c\int Yd\mu.
-\]</span></p>
-<p>For monotonicity, if <span class="math inline">\(x_i\le y_i\)</span>
-for all <span class="math inline">\(i\)</span>, then <span class="math display">\[
-x_i\mu(A_i)\le y_i\mu(A_i)
-\Rightarrow \sum x_i\mu(A_i)\le\sum y_i\mu(A_i).
+\]</span><br />
+Thus,<br />
+<span class="math display">\[
+\int (X+cY)d\mu = \sum_{i=1}^n (x_i+cy_i)\mu(A_i) = \sum x_i\mu(A_i) +
+c\sum y_i\mu(A_i) = \int Xd\mu + c\int Yd\mu.
+\]</span><br />
+For monotonicity, if <span class="math inline">\(x_i\le y_i\)</span> for
+all <span class="math inline">\(i\)</span>, then<br />
+<span class="math display">\[
+x_i\mu(A_i)\le y_i\mu(A_i) \Rightarrow \sum x_i\mu(A_i)\le\sum
+y_i\mu(A_i).
 \]</span></p>
 <hr />
 </div>
 </div>
-<div id="integration-of-general-non-negative-functions" class="section level1">
-<h1>6. Integration of General Non-Negative Functions</h1>
+<div id="integration-of-general-non-negative-functions" class="section level2">
+<h2>6. Integration of General Non-Negative Functions</h2>
 <div id="definition-general" class="section level3">
 <h3>Definition (General)</h3>
-<p>For a non-negative measurable function <span class="math inline">\(X\)</span>, define <span class="math display">\[
-\int_\Omega X\, d\mu
-= \sup\Big\{ \int_\Omega Y\, d\mu : 0 \le Y \le X,\; Y \text{ simple}
-\Big\}.
+<p>For a non-negative measurable function <span class="math inline">\(X\)</span>, define<br />
+<span class="math display">\[
+\int_\Omega X\, d\mu = \sup\Big\{ \int_\Omega Y\, d\mu : 0 \le Y \le
+X,\; Y \text{ simple} \Big\}.
 \]</span></p>
 </div>
 <div id="remark-1" class="section level3">
@@ -523,1121 +533,840 @@ definition coincides with the earlier one.</p>
 <hr />
 </div>
 </div>
-<div id="example-showing-non-interchangeability-of-limits" class="section level1">
-<h1>7. Example Showing Non-Interchangeability of Limits</h1>
-<p>Let <span class="math display">\[
-X_n(\omega)=n \mathbf{1}_{(0,1/n]}(\omega)
-\quad\text{on }([0,1], \mathcal{B},\lambda).
-\]</span> Then: - <span class="math inline">\(X_n(\omega)\to 0\)</span>
-for every <span class="math inline">\(\omega\)</span> - but<br />
+<div id="example-showing-non-interchangeability-of-limits" class="section level2">
+<h2>7. Example Showing Non-Interchangeability of Limits</h2>
+<p>Let<br />
+<span class="math display">\[
+X_n(\omega)=n \mathbf{1}_{(0,1/n]}(\omega) \quad\text{on }([0,1],
+\mathcal{B},\lambda).
+\]</span><br />
+Then:<br />
+- <span class="math inline">\(X_n(\omega)\to 0\)</span> for every <span class="math inline">\(\omega\)</span><br />
+- but<br />
 <span class="math display">\[
 \int_0^1 X_n\, d\lambda = n \cdot \frac{1}{n} =1.
-\]</span> Thus: <span class="math display">\[
+\]</span><br />
+Thus:<br />
+<span class="math display">\[
 \lim_{n\to\infty}\int X_n d\mu \ne \int \lim_{n} X_n\, d\mu.
 \]</span></p>
 <hr />
 </div>
-<div id="monotone-convergence-theorem-beppo-levi" class="section level1">
-<h1>8. Monotone Convergence Theorem (Beppo Levi)</h1>
+<div id="monotone-convergence-theorem-beppo-levi" class="section level2">
+<h2>8. Monotone Convergence Theorem (Beppo Levi)</h2>
 <div id="theorem-mct" class="section level3">
 <h3>Theorem (MCT)</h3>
 <p>If <span class="math inline">\(X_n \uparrow X\)</span> pointwise and
-<span class="math inline">\(X_n \ge 0\)</span>, then <span class="math display">\[
-\lim_{n\to\infty} \int_\Omega X_n\, d\mu
-=
-\int_\Omega X\, d\mu.
+<span class="math inline">\(X_n \ge 0\)</span>, then<br />
+<span class="math display">\[
+\lim_{n\to\infty} \int_\Omega X_n\, d\mu = \int_\Omega X\, d\mu.
 \]</span></p>
 </div>
 <div id="detailed-proof-1" class="section level3">
 <h3>Detailed Proof</h3>
-<p>We always have <span class="math display">\[
-\int X_n d\mu \le \int X d\mu.
-\]</span> Take limits: <span class="math display">\[
-\lim_{n\to\infty}\int X_n d\mu \le \int X d\mu.
-\]</span></p>
-<p>To prove the <strong>reverse inequality</strong>, it suffices to
-show<br />
-for every simple <span class="math inline">\(Y\le X\)</span>: <span class="math display">\[
-\lim_{n}\int X_n d\mu \ge \int Y d\mu.
-\]</span></p>
-<p>Let <span class="math inline">\(Y=\sum_{i=1}^k y_i
-\mathbf{1}_{A_i}\)</span>.<br />
-Fix <span class="math inline">\(c\in(0,1)\)</span> and define <span class="math display">\[
-A_{i,n}=\{\omega: X_n(\omega)\ge c y_i\}.
-\]</span> Since <span class="math inline">\(X_n\uparrow
-X\)</span>,<br />
+<p>We always have<br />
 <span class="math display">\[
-A_{i,n}\uparrow A_i.
-\]</span></p>
-<p>Define <span class="math display">\[
+\int X_n d\mu \le \int X d\mu.
+\]</span><br />
+Take limits:<br />
+<span class="math display">\[
+\lim_{n\to\infty}\int X_n d\mu \le \int X d\mu.
+\]</span><br />
+To prove the <strong>reverse inequality</strong>, it suffices to show
+for every simple <span class="math inline">\(Y\le X\)</span>:<br />
+<span class="math display">\[
+\lim_{n}\int X_n d\mu \ge \int Y d\mu.
+\]</span><br />
+Let <span class="math inline">\(Y=\sum_{i=1}^k y_i
+\mathbf{1}_{A_i}\)</span>. Fix <span class="math inline">\(c\in(0,1)\)</span> and define<br />
+<span class="math display">\[
+A_{i,n}=\{\omega: X_n(\omega)\ge c y_i\}.
+\]</span><br />
+Since <span class="math inline">\(X_n\uparrow X\)</span>, <span class="math inline">\(A_{i,n}\uparrow A_i\)</span>. Define<br />
+<span class="math display">\[
 Y_n=\sum_{i} (c y_i)\mathbf{1}_{A_{i,n}}.
-\]</span> Then: - <span class="math inline">\(Y_n\le X_n\)</span>, -
-<span class="math inline">\(Y_n\uparrow Y\)</span>.</p>
-<p>Thus <span class="math display">\[
-\lim_n \int X_n d\mu
-\ge \lim_n \int Y_n d\mu
-= \int Y d\mu \cdot c.
-\]</span></p>
-<p>Send <span class="math inline">\(c\to1\)</span> to get <span class="math display">\[
+\]</span><br />
+Then:<br />
+- <span class="math inline">\(Y_n\le X_n\)</span>,<br />
+- <span class="math inline">\(Y_n\uparrow Y\)</span>.<br />
+Thus<br />
+<span class="math display">\[
+\lim_n \int X_n d\mu \ge \lim_n \int Y_n d\mu = \int Y d\mu \cdot c.
+\]</span><br />
+Send <span class="math inline">\(c\to1\)</span> to get<br />
+<span class="math display">\[
 \lim_{n} \int X_n d\mu \ge \int Y d\mu.
-\]</span></p>
-<p>Finally, take supremum over all simple <span class="math inline">\(Y\le X\)</span>: <span class="math display">\[
+\]</span><br />
+Finally, take supremum over all simple <span class="math inline">\(Y\le
+X\)</span>:<br />
+<span class="math display">\[
 \lim_{n} \int X_n d\mu \ge \int X d\mu.
-\]</span></p>
-<p>Combine inequalities → equality holds. □</p>
+\]</span><br />
+Combine inequalities → equality holds. □</p>
 <hr />
 </div>
 </div>
-<div id="fatous-lemma" class="section level1">
-<h1>9. Fatou’s Lemma</h1>
+<div id="fatous-lemma" class="section level2">
+<h2>9. Fatou’s Lemma</h2>
 <div id="statement" class="section level3">
 <h3>Statement</h3>
-<p>For non-negative measurable <span class="math inline">\(X_n\)</span>,
+<p>For non-negative measurable <span class="math inline">\(X_n\)</span>,<br />
 <span class="math display">\[
-\int_\Omega \liminf_{n\to\infty} X_n\, d\mu
-\le
-\liminf_{n\to\infty} \int_\Omega X_n\, d\mu.
+\int_\Omega \liminf_{n\to\infty} X_n\, d\mu \le \liminf_{n\to\infty}
+\int_\Omega X_n\, d\mu.
 \]</span></p>
 </div>
 <div id="detailed-proof-2" class="section level3">
 <h3>Detailed Proof</h3>
-<p>Let <span class="math display">\[
+<p>Let<br />
+<span class="math display">\[
 Y_n(\omega) = \inf_{m\ge n} X_m(\omega).
-\]</span> Then: - <span class="math inline">\(Y_n\uparrow \liminf
-X_n\)</span>, - <span class="math inline">\(Y_n\le X_n\)</span>.</p>
-<p>Apply MCT: <span class="math display">\[
-\int \liminf X_n\, d\mu
-= \lim_{n\to\infty} \int Y_n d\mu
-\le \liminf_{n\to\infty} \int X_n d\mu.
+\]</span><br />
+Then:<br />
+- <span class="math inline">\(Y_n\uparrow \liminf X_n\)</span>,<br />
+- <span class="math inline">\(Y_n\le X_n\)</span>.<br />
+Apply MCT:<br />
+<span class="math display">\[
+\int \liminf X_n\, d\mu = \lim_{n\to\infty} \int Y_n d\mu \le
+\liminf_{n\to\infty} \int X_n d\mu.
 \]</span></p>
 <hr />
 </div>
 </div>
-<div id="examples" class="section level1">
-<h1>10. Examples</h1>
+<div id="examples" class="section level2">
+<h2>10. Examples</h2>
 <div id="indicator-example" class="section level3">
 <h3>Indicator Example</h3>
-<p>If <span class="math inline">\(X_n = \mathbf{1}_{A_n}\)</span>,<br />
-Fatou becomes: <span class="math display">\[
+<p>If <span class="math inline">\(X_n = \mathbf{1}_{A_n}\)</span>, Fatou
+becomes:<br />
+<span class="math display">\[
 \mu(\liminf A_n) \le \liminf \mu(A_n).
 \]</span></p>
 </div>
 <div id="spike-example" class="section level3">
 <h3>Spike Example</h3>
 <p><span class="math display">\[
-X_n = n \mathbf{1}_{(0,1/n]} \Rightarrow
-\liminf X_n = 0
-\quad\text{but}\quad
-\liminf\int X_n d\mu = 1.
-\]</span></p>
-<p>This illustrates strict inequality in Fatou’s lemma.</p>
-</div>
-</div>
-<div id="part-2" class="section level1">
-<h1>Part 2:</h1>
-</div>
-<div id="ch5-integration-part-2" class="section level1">
-<h1>CH5 — Integration (Part 2)</h1>
+X_n = n \mathbf{1}_{(0,1/n]} \Rightarrow \liminf X_n = 0
+\quad\text{but}\quad \liminf\int X_n d\mu = 1.
+\]</span><br />
+This illustrates strict inequality in Fatou’s lemma.</p>
 <hr />
-<div id="lemma-approximation-of-a-measurable-function-by-simple-functions" class="section level2">
-<h2>Lemma: Approximation of a measurable function by simple
-functions</h2>
-<p>Let <span class="math inline">\(X\)</span> be an <span class="math inline">\(\mathcal F\)</span>-measurable function on <span class="math inline">\((\Omega,\mathcal F,\mu)\)</span>.<br />
-Then <strong>there exists a sequence of positive</strong> <span class="math inline">\(\mathcal F\)</span>-measurable simple
+</div>
+</div>
+<div id="approximation-of-a-measurable-function-by-simple-functions" class="section level2">
+<h2>11. Approximation of a Measurable Function by Simple Functions</h2>
+<div id="lemma-3" class="section level3">
+<h3>Lemma</h3>
+<p>Let <span class="math inline">\(X\)</span> be an <span class="math inline">\(\mathcal F\)</span>-measurable function on <span class="math inline">\((\Omega,\mathcal F,\mu)\)</span>. Then
+<strong>there exists a sequence of positive</strong> <span class="math inline">\(\mathcal F\)</span>-measurable simple
 functions<br />
 <span class="math display">\[
 X_n(\omega)\uparrow X(\omega), \qquad \forall \omega\in\Omega .
 \]</span></p>
+</div>
 <div id="proof" class="section level3">
 <h3>Proof</h3>
-<p>Define <span class="math display">\[
-X_n(\omega)
-= \sum_{i=1}^{n2^{n}} \frac{i}{2^{n}} \,
-1_{\left[\frac{i}{2^{n}},\frac{i+1}{2^{n}}\right)}(X(\omega))
-\;+\; n\,1_{[0,+\infty)}(X(\omega)).
-\]</span></p>
-<ol style="list-style-type: decimal">
-<li><strong>Each</strong> <span class="math inline">\(X_n\)</span> is
+<p>Define<br />
+<span class="math display">\[
+X_n(\omega) = \sum_{i=1}^{n2^{n}} \frac{i}{2^{n}} \,
+1_{\left[\frac{i}{2^{n}},\frac{i+1}{2^{n}}\right)}(X(\omega)) \;+\;
+n\,1_{[0,+\infty)}(X(\omega)).
+\]</span><br />
+1. <strong>Each</strong> <span class="math inline">\(X_n\)</span> is
 simple because it is a finite linear combination of indicators of
 measurable sets.<br />
-</li>
-<li><strong>Monotonicity:</strong><br />
-Since the partition becomes finer as <span class="math inline">\(n\)</span> increases,<br />
+2. <strong>Monotonicity:</strong> Since the partition becomes finer as
+<span class="math inline">\(n\)</span> increases,<br />
 <span class="math display">\[
-X_n(\omega) \le X_{n+1}(\omega).
-\]</span></li>
-<li><strong>Pointwise limit:</strong><br />
-Because the mesh size <span class="math inline">\(2^{-n}\to0\)</span>,
-the interval containing <span class="math inline">\(X(\omega)\)</span>
-shrinks around <span class="math inline">\(X(\omega)\)</span>,
-hence<br />
+   X_n(\omega) \le X_{n+1}(\omega).
+   \]</span><br />
+3. <strong>Pointwise limit:</strong> Because the mesh size <span class="math inline">\(2^{-n}\to0\)</span>, the interval containing <span class="math inline">\(X(\omega)\)</span> shrinks around <span class="math inline">\(X(\omega)\)</span>, hence<br />
 <span class="math display">\[
-X_n(\omega)\uparrow X(\omega).
-\]</span></li>
-</ol>
-<p>Thus the lemma holds.<br />
-<span class="math inline">\(\square\)</span></p>
+   X_n(\omega)\uparrow X(\omega).
+   \]</span><br />
+Thus the lemma holds. □</p>
 <hr />
 </div>
 </div>
-<div id="theorem" class="section level2">
-<h2>Theorem</h2>
+<div id="theorem-linearity-and-monotonicity-for-non-negative-measurable-functions" class="section level2">
+<h2>12. Theorem: Linearity and Monotonicity for Non-Negative Measurable
+Functions</h2>
 <p>Let <span class="math inline">\(X,Y\ge0\)</span> be <span class="math inline">\(\mathcal F\)</span>-measurable. Then for any
-constant <span class="math inline">\(c&gt;0\)</span>:</p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math display">\[
-\int_\Omega (X + cY)\, d\mu
-= \int_\Omega X\, d\mu + c\int_\Omega Y\, d\mu .
-\]</span></p></li>
-<li><p>If <span class="math inline">\(X\le Y\)</span>, then<br />
+constant <span class="math inline">\(c&gt;0\)</span>:<br />
+1.<br />
 <span class="math display">\[
-\int_\Omega X\, d\mu \le \int_\Omega Y\, d\mu .
-\]</span></p></li>
-</ol>
+   \int_\Omega (X + cY)\, d\mu = \int_\Omega X\, d\mu + c\int_\Omega Y\,
+d\mu .
+   \]</span><br />
+2. If <span class="math inline">\(X\le Y\)</span>, then<br />
+<span class="math display">\[
+   \int_\Omega X\, d\mu \le \int_\Omega Y\, d\mu .
+   \]</span></p>
 <div id="proof-1" class="section level3">
 <h3>Proof</h3>
 <p>Let <span class="math inline">\((X_n)\)</span>, <span class="math inline">\((Y_n)\)</span> be increasing sequences of simple
 functions such that<br />
 <span class="math display">\[
 X_n\uparrow X,\qquad Y_n\uparrow Y.
-\]</span></p>
-<p>Then<br />
+\]</span><br />
+Then<br />
 <span class="math display">\[
 X_n + cY_n \uparrow X + cY.
-\]</span></p>
-<p>Since each <span class="math inline">\(X_n,Y_n\)</span> is
-simple,<br />
+\]</span><br />
+Since each <span class="math inline">\(X_n,Y_n\)</span> is simple,<br />
 <span class="math display">\[
-\int (X_n + cY_n)\, d\mu
-= \int X_n\, d\mu + c \int Y_n\, d\mu .
-\]</span></p>
-<p>Now apply <strong>Monotone Convergence Theorem</strong> (MCT):</p>
-<p><span class="math display">\[
-\int (X+cY)\, d\mu
-= \lim_{n\to\infty} \int (X_n+cY_n)\, d\mu
-= \lim_{n\to\infty} \left[\int X_n\, d\mu + c\int Y_n\, d\mu \right]
-= \int X\, d\mu + c\int Y\, d\mu .
-\]</span></p>
-<p>For the second part, if <span class="math inline">\(X\le Y\)</span>,
-then <span class="math inline">\(X_n\le Y_n\)</span> for every <span class="math inline">\(n\)</span>.<br />
-Thus<br />
+\int (X_n + cY_n)\, d\mu = \int X_n\, d\mu + c \int Y_n\, d\mu .
+\]</span><br />
+Now apply <strong>Monotone Convergence Theorem</strong> (MCT):<br />
+<span class="math display">\[
+\int (X+cY)\, d\mu = \lim_{n\to\infty} \int (X_n+cY_n)\, d\mu =
+\lim_{n\to\infty} \left[\int X_n\, d\mu + c\int Y_n\, d\mu \right] =
+\int X\, d\mu + c\int Y\, d\mu .
+\]</span><br />
+For the second part, if <span class="math inline">\(X\le Y\)</span>,
+then <span class="math inline">\(X_n\le Y_n\)</span> for every <span class="math inline">\(n\)</span>. Thus<br />
 <span class="math display">\[
 \int X_n \, d\mu \le \int Y_n \, d\mu.
 \]</span><br />
 Sending <span class="math inline">\(n\to\infty\)</span> and using MCT
-again yields the result.<br />
-<span class="math inline">\(\square\)</span></p>
-<hr />
+again yields the result. □</p>
 </div>
-</div>
-</div>
-<div id="remark-2" class="section level1">
-<h1>Remark</h1>
+<div id="remark-2" class="section level3">
+<h3>Remark</h3>
 <p><strong>Any property true for simple functions extends to
-non-negative measurable functions</strong><br />
-via the monotone approximation <span class="math inline">\(X_n\uparrow
-X\)</span>.</p>
+non-negative measurable functions</strong> via the monotone
+approximation <span class="math inline">\(X_n\uparrow X\)</span>.</p>
 <hr />
 </div>
-<div id="positivenegative-parts" class="section level1">
-<h1>Positive/Negative Parts</h1>
-<p>For any function <span class="math inline">\(X\)</span>,</p>
-<p><span class="math display">\[
-X^+ = \max(X,0), \qquad X^- = \max(-X,0).
-\]</span></p>
-<p>So<br />
+</div>
+<div id="positivenegative-parts" class="section level2">
+<h2>13. Positive/Negative Parts</h2>
+<p>For any function <span class="math inline">\(X\)</span>,<br />
 <span class="math display">\[
-X = X^+ - X^- , \qquad |X| = X^+ + X^- .
-\]</span></p>
-<p>Both <span class="math inline">\(X^+ , X^-\)</span> are
-measurable.</p>
-<hr />
-<div id="definition-integrability" class="section level2">
-<h2>Definition (Integrability)</h2>
+X^+ = \max(X,0), \qquad X^- = \max(-X,0).
+\]</span><br />
+So<br />
+<span class="math display">\[
+X = X^+ - X^-, \qquad |X| = X^+ + X^- .
+\]</span><br />
+Both <span class="math inline">\(X^+ , X^-\)</span> are measurable.</p>
+<div id="definition-integrability" class="section level3">
+<h3>Definition (Integrability)</h3>
 <p>We say the integral of <span class="math inline">\(X\)</span> is
 <strong>well-defined</strong> if<br />
 <span class="math display">\[
-\int X^+\, d\mu &lt; \infty
-\quad\text{or}\quad
-\int X^-\, d\mu &lt; \infty .
-\]</span></p>
-<p>Then define<br />
+\int X^+\, d\mu &lt; \infty \quad\text{or}\quad \int X^-\, d\mu &lt;
+\infty .
+\]</span><br />
+Then define<br />
 <span class="math display">\[
-\int X\, d\mu
-= \int X^+\, d\mu - \int X^-\, d\mu .
-\]</span></p>
-<p>If <strong>both</strong> are finite, then <span class="math inline">\(X\)</span> is <strong>integrable</strong>, written
+\int X\, d\mu = \int X^+\, d\mu - \int X^-\, d\mu .
+\]</span><br />
+If <strong>both</strong> are finite, then <span class="math inline">\(X\)</span> is <strong>integrable</strong>, written
 <span class="math inline">\(X\in L^1(\mu)\)</span>.</p>
 <hr />
 </div>
-<div id="lemma-3" class="section level2">
-<h2>Lemma</h2>
+</div>
+<div id="lemma-integrability-via-absolute-value" class="section level2">
+<h2>14. Lemma: Integrability via Absolute Value</h2>
 <p>A function <span class="math inline">\(X\)</span> is integrable
 <strong>iff</strong><br />
 <span class="math display">\[
 \int_\Omega |X|\, d\mu &lt; \infty,
-\]</span> and in that case<br />
+\]</span><br />
+and in that case<br />
 <span class="math display">\[
-\left|\int_\Omega X\, d\mu\right|
-\le
-\int_\Omega |X|\, d\mu .
+\left|\int_\Omega X\, d\mu\right| \le \int_\Omega |X|\, d\mu .
 \]</span></p>
 <div id="proof-2" class="section level3">
 <h3>Proof</h3>
 <p>Note<br />
 <span class="math display">\[
-|X| = X^+ + X^- , \qquad
-X = X^+ - X^- .
-\]</span></p>
-<p><strong>(⇒ direction)</strong><br />
-If <span class="math inline">\(X\)</span> is integrable, then both
-integrals are finite:<br />
-<span class="math display">\[
-\int X^+ d\mu &lt; \infty,\qquad \int X^- d\mu &lt; \infty .
+|X| = X^+ + X^-, \qquad X = X^+ - X^- .
 \]</span><br />
-Thus<br />
+<strong>(⇒ direction)</strong> If <span class="math inline">\(X\)</span>
+is integrable then <span class="math inline">\(X^{+},X^{-}\)</span> are
+both integrable and<br />
 <span class="math display">\[
-\int |X| d\mu = \int X^+ d\mu + \int X^- d\mu &lt; \infty.
-\]</span></p>
-<p><strong>(⇐ direction)</strong><br />
-If <span class="math inline">\(\int |X| d\mu &lt;\infty\)</span>,
-then<br />
-<span class="math display">\[
-\int X^+ d\mu \le \int |X| d\mu &lt;\infty,
-\qquad
-\int X^- d\mu \le \int |X| d\mu &lt;\infty.
+\int_{\Omega} |x|\,d\mu = \int_{\Omega} x^{+}\,d\mu + \int_{\Omega}
+x^{-}\,d\mu &lt;\infty .
 \]</span><br />
-Hence both are finite → <span class="math inline">\(X\)</span> is
-integrable.</p>
-<p><strong>Inequality:</strong><br />
+<strong>(⇐ direction)</strong> Suppose <span class="math inline">\(\int
+|x|\,d\mu&lt;\infty\)</span>. Since <span class="math inline">\(0\le
+x^{+}\le |x|\)</span> and <span class="math inline">\(0\le x^{-}\le
+|x|\)</span>, by monotonicity of the integral for non-negative
+functions,<br />
 <span class="math display">\[
-\left|\int X d\mu\right|
-= \left|\int X^+\, d\mu - \int X^-\, d\mu\right|
-\le
-\int X^+\, d\mu + \int X^-\, d\mu
-= \int |X|\, d\mu .
-\]</span> <span class="math inline">\(\square\)</span></p>
-<hr />
-</div>
-</div>
-</div>
-<div id="part-3" class="section level1">
-<h1>Part 3:</h1>
-<div id="integrable-functions-and-dominated-convergence" class="section level3">
-<h3>5.3 Integrable functions and Dominated Convergence</h3>
-<div id="positive-and-negative-parts" class="section level4">
-<h4>Positive and negative parts</h4>
-<p>Let <span class="math inline">\(x:\Omega\to\mathbb{R}\)</span> be a
-measurable function.<br />
-Define its <strong>positive</strong> and <strong>negative</strong> parts
-by<br />
-<span class="math display">\[
-x^{+}(\omega) := \max\{x(\omega),0\} = x(\omega)\vee 0, \qquad
-x^{-}(\omega) := -\min\{x(\omega),0\} = (-x(\omega))\vee 0 .
-\]</span> Then <span class="math display">\[
-x = x^{+} - x^{-}, \qquad |x| = x^{+}+x^{-}, \qquad x^{+},x^{-}\ge 0.
-\]</span></p>
-</div>
-<div id="definition-integrable-function" class="section level4">
-<h4>Definition: integrable function</h4>
-<p>Assume <span class="math inline">\(x^{+},x^{-}\)</span> are
-measurable and <span class="math display">\[
-\int_{\Omega} x^{+}\,d\mu &lt; \infty \quad\text{and}\quad
-\int_{\Omega} x^{-}\,d\mu &lt; \infty .
-\]</span> Then we say that <span class="math inline">\(x\)</span> is
-integrable and define <span class="math display">\[
-\int_{\Omega} x\,d\mu
-  := \int_{\Omega} x^{+}\,d\mu - \int_{\Omega} x^{-}\,d\mu .
-\]</span> Note that the right-hand side is finite because it is a
-difference of two finite real numbers.</p>
-<p>More generally, the expression <span class="math inline">\(\displaystyle \int x\,d\mu := \int x^{+}\,d\mu -
-\int x^{-}\,d\mu\)</span> is <strong>well-defined</strong> as soon as
-<em>at least one</em> of <span class="math inline">\(\int
-x^{+}\,d\mu,\int x^{-}\,d\mu\)</span> is finite (the other may be <span class="math inline">\(+\infty\)</span>).</p>
-<hr />
-</div>
-<div id="lemma-5.3.1-integrability-via-x" class="section level4">
-<h4>Lemma 5.3.1 (Integrability via <span class="math inline">\(|x|\)</span>)</h4>
-<p>Let <span class="math inline">\(x\)</span> be a measurable function.
-Then</p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(x\)</span> is integrable<br />
-<span class="math inline">\(\Longleftrightarrow\)</span> <span class="math inline">\(\displaystyle \int_{\Omega} |x|\,d\mu &lt;
-\infty\)</span>.</p></li>
-<li><p>In this case <span class="math display">\[
-\left|\int_{\Omega} x\,d\mu\right|
-\le \int_{\Omega} |x|\,d\mu .
-\]</span></p></li>
-</ol>
-<p><strong>Proof.</strong></p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(\Rightarrow\)</span>.<br />
-If <span class="math inline">\(x\)</span> is integrable then <span class="math inline">\(x^{+},x^{-}\)</span> are both integrable and <span class="math display">\[
-\int_{\Omega} |x|\,d\mu
-  = \int_{\Omega} (x^{+}+x^{-})\,d\mu
-  = \int_{\Omega} x^{+}\,d\mu + \int_{\Omega} x^{-}\,d\mu &lt;\infty .
-\]</span></p>
-<p><span class="math inline">\(\Leftarrow\)</span>.<br />
-Suppose <span class="math inline">\(\displaystyle \int
-|x|\,d\mu&lt;\infty\)</span>.<br />
-Since <span class="math inline">\(0\le x^{+}\le |x|\)</span> and <span class="math inline">\(0\le x^{-}\le |x|\)</span>, we have by
-monotonicity of the integral for non-negative functions, <span class="math display">\[
 \int_{\Omega} x^{+}\,d\mu \le \int_{\Omega} |x|\,d\mu &lt;\infty, \qquad
 \int_{\Omega} x^{-}\,d\mu \le \int_{\Omega} |x|\,d\mu &lt;\infty.
-\]</span> Hence both integrals are finite, so <span class="math inline">\(x\)</span> is integrable by definition.</p></li>
-<li><p>Using <span class="math inline">\(x = x^{+}-x^{-}\)</span> and
-<span class="math inline">\(|x| = x^{+}+x^{-}\)</span>, <span class="math display">\[
-\int_{\Omega} x\,d\mu
-  = \int_{\Omega} x^{+}\,d\mu - \int_{\Omega} x^{-}\,d\mu.
-\]</span> Therefore <span class="math display">\[
-\left|\int_{\Omega} x\,d\mu\right|
-\le \left|\int_{\Omega} x^{+}\,d\mu\right|
-   +\left|\int_{\Omega} x^{-}\,d\mu\right|
-= \int_{\Omega} x^{+}\,d\mu + \int_{\Omega} x^{-}\,d\mu
-= \int_{\Omega} |x|\,d\mu .
-\]</span> (We used <span class="math inline">\(|a-b|\le |a|+|b|\)</span>
-with <span class="math inline">\(a=\int x^{+}\,d\mu\)</span>, <span class="math inline">\(b=\int x^{-}\,d\mu\)</span>.) <span class="math inline">\(\square\)</span></p></li>
-</ol>
+\]</span><br />
+Hence both are finite, so <span class="math inline">\(x\)</span> is
+integrable by definition.<br />
+<strong>Inequality:</strong><br />
+<span class="math display">\[
+\left|\int_{\Omega} x\,d\mu\right| \le \left|\int_{\Omega}
+x^{+}\,d\mu\right| +\left|\int_{\Omega} x^{-}\,d\mu\right| =
+\int_{\Omega} x^{+}\,d\mu + \int_{\Omega} x^{-}\,d\mu = \int_{\Omega}
+|x|\,d\mu .
+\]</span> □</p>
 <hr />
 </div>
-<div id="theorem-5.3.2-linearity-and-monotonicity-for-integrable-functions" class="section level4">
-<h4>Theorem 5.3.2 (Linearity and monotonicity for integrable
-functions)</h4>
-<p>Let <span class="math inline">\(X,Y\)</span> be integrable <span class="math inline">\(F\)</span>-measurable functions on <span class="math inline">\((\Omega,F,\mu)\)</span> and let <span class="math inline">\(c\in\mathbb{R}\)</span>.</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Linearity.</strong> <span class="math display">\[
-\int_{\Omega} (X + cY)\,d\mu
-  = \int_{\Omega} X\,d\mu + c\int_{\Omega} Y\,d\mu .
-\]</span></p></li>
-<li><p><strong>Monotonicity.</strong><br />
-If <span class="math inline">\(X\le Y\)</span> almost everywhere (a.e.),
-then <span class="math display">\[
-\int_{\Omega} X\,d\mu \le \int_{\Omega} Y\,d\mu .
-\]</span></p></li>
-</ol>
-<p><em>Proof.</em></p>
-<p>Write <span class="math display">\[
+</div>
+<div id="theorem-linearity-and-monotonicity-for-integrable-functions" class="section level2">
+<h2>15. Theorem: Linearity and Monotonicity for Integrable
+Functions</h2>
+<p>Let <span class="math inline">\(X,Y\)</span> be integrable <span class="math inline">\(\mathcal{F}\)</span>-measurable functions on <span class="math inline">\((\Omega,\mathcal{F},\mu)\)</span> and let <span class="math inline">\(c\in\mathbb{R}\)</span>.<br />
+1. <strong>Linearity</strong><br />
+<span class="math display">\[
+   \int_{\Omega} (X + cY)\,d\mu = \int_{\Omega} X\,d\mu + c\int_{\Omega}
+Y\,d\mu .
+   \]</span><br />
+2. <strong>Monotonicity</strong> If <span class="math inline">\(X\le
+Y\)</span> almost everywhere (a.e.), then<br />
+<span class="math display">\[
+   \int_{\Omega} X\,d\mu \le \int_{\Omega} Y\,d\mu .
+   \]</span></p>
+<div id="detailed-proof-3" class="section level3">
+<h3>Detailed Proof</h3>
+<p>Write<br />
+<span class="math display">\[
 X = X^{+}-X^{-},\qquad Y = Y^{+}-Y^{-},
-\]</span> with all four parts non-negative and integrable.</p>
-<hr />
-<p><strong>Step 1: linearity for</strong> <span class="math inline">\(c\ge 0\)</span>.</p>
-<p>For real numbers <span class="math inline">\(a,b\)</span> and <span class="math inline">\(c\ge 0\)</span>, <span class="math display">\[
-(a+cb)^{+}\le a^{+} + c b^{+}, \qquad
-(a+cb)^{-}\le a^{-} + c b^{-}.
-\]</span> (Proof: check separately on the regions <span class="math inline">\(\{a\ge 0\}\)</span>, <span class="math inline">\(\{a&lt;0\}\)</span>, and similarly for <span class="math inline">\(b\)</span>; in each region the inequality reduces
-to elementary inequalities like <span class="math inline">\(\max\{u+v,0\}\le
-\max\{u,0\}+\max\{v,0\}\)</span>.)</p>
-<p>Thus for <span class="math inline">\(c\ge0\)</span>, <span class="math display">\[
-(X+cY)^{+} \le X^{+}+cY^{+}, \qquad
-(X+cY)^{-} \le X^{-}+cY^{-}.
-\]</span> Since the right-hand sides are integrable, so are <span class="math inline">\((X+cY)^{+},(X+cY)^{-}\)</span>, and <span class="math inline">\(X+cY\)</span> is integrable.</p>
-<p>For non-negative integrable functions we already know linearity: if
+\]</span><br />
+with all four parts non-negative and integrable.</p>
+<p><strong>Step 1: Linearity for</strong> <span class="math inline">\(c\ge 0\)</span>.<br />
+For real numbers <span class="math inline">\(a,b\)</span> and <span class="math inline">\(c\ge 0\)</span>,<br />
+<span class="math display">\[
+(a+cb)^{+}\le a^{+} + c b^{+}, \qquad (a+cb)^{-}\le a^{-} + c b^{-}.
+\]</span><br />
+Thus for <span class="math inline">\(c\ge0\)</span>,<br />
+<span class="math display">\[
+(X+cY)^{+} \le X^{+}+cY^{+}, \qquad (X+cY)^{-} \le X^{-}+cY^{-}.
+\]</span><br />
+Since the right-hand sides are integrable, so are <span class="math inline">\((X+cY)^{+},(X+cY)^{-}\)</span>, and <span class="math inline">\(X+cY\)</span> is integrable.<br />
+For non-negative integrable functions we already know linearity: if
 <span class="math inline">\(U,V\ge0\)</span> are integrable and <span class="math inline">\(c\ge0\)</span> then <span class="math inline">\(\int (U + cV)\,d\mu = \int U\,d\mu + c\int
-V\,d\mu\)</span>. Apply this with <span class="math inline">\(U=X^{+}\)</span>, <span class="math inline">\(V=Y^{+}\)</span>, and again with <span class="math inline">\(U=X^{-}\)</span>, <span class="math inline">\(V=Y^{-}\)</span>, to obtain <span class="math display">\[
-\int (X+cY)^{+}\,d\mu
-= \int X^{+}\,d\mu + c\int Y^{+}\,d\mu,
-\]</span> <span class="math display">\[
-\int (X+cY)^{-}\,d\mu
-= \int X^{-}\,d\mu + c\int Y^{-}\,d\mu.
-\]</span> Therefore</p>
-<p><span class="math display">\[\begin{align*}
-\int (X+cY)\,d\mu
-&amp;= \int (X+cY)^{+}\,d\mu - \int (X+cY)^{-}\,d\mu \\
-&amp;= (\int X^{+}\,d\mu - \int X^{-}\,d\mu)
-    + c(\int Y^{+}\,d\mu - \int Y^{-}\,d\mu) \\
+V\,d\mu\)</span>. Apply this with <span class="math inline">\(U=X^{+}\)</span>, <span class="math inline">\(V=Y^{+}\)</span>, and again with <span class="math inline">\(U=X^{-}\)</span>, <span class="math inline">\(V=Y^{-}\)</span>, to obtain<br />
+<span class="math display">\[
+\int (X+cY)^{+}\,d\mu = \int X^{+}\,d\mu + c\int Y^{+}\,d\mu,
+\]</span><br />
+<span class="math display">\[
+\int (X+cY)^{-}\,d\mu = \int X^{-}\,d\mu + c\int Y^{-}\,d\mu.
+\]</span><br />
+Therefore<br />
+<span class="math display">\[\begin{align*}
+\int (X+cY)\,d\mu &amp;= \int (X+cY)^{+}\,d\mu - \int (X+cY)^{-}\,d\mu
+\\
+&amp;= (\int X^{+}\,d\mu - \int X^{-}\,d\mu) + c(\int Y^{+}\,d\mu - \int
+Y^{-}\,d\mu) \\
 &amp;= \int X\,d\mu + c\int Y\,d\mu .
 \end{align*}\]</span></p>
-<p><strong>Step 2: extension to arbitrary</strong> <span class="math inline">\(c\in\mathbb{R}\)</span>.</p>
-<p>If <span class="math inline">\(c&lt;0\)</span>, write <span class="math inline">\(X+cY = X - |c|Y\)</span> and apply Step 1 with
+<p><strong>Step 2: Extension to arbitrary</strong> <span class="math inline">\(c\in\mathbb{R}\)</span>.<br />
+If <span class="math inline">\(c&lt;0\)</span>, write <span class="math inline">\(X+cY = X - |c|Y\)</span> and apply Step 1 with
 <span class="math inline">\(|c|\ge0\)</span> to the integrable pair
 <span class="math inline">\((X,-Y)\)</span>. Since <span class="math inline">\(-Y\)</span> is integrable and <span class="math inline">\(\int -Y\,d\mu = -\int Y\,d\mu\)</span>, we obtain
 the same formula. Hence linearity holds for all <span class="math inline">\(c\in\mathbb{R}\)</span>.</p>
-<hr />
-<p><strong>Monotonicity.</strong></p>
-<p>Assume <span class="math inline">\(X\le Y\)</span> a.e. Then <span class="math inline">\(0\le Y-X\)</span> a.e. and <span class="math inline">\(Y-X\)</span> is integrable (difference of
+<p><strong>Monotonicity.</strong><br />
+Assume <span class="math inline">\(X\le Y\)</span> a.e. Then <span class="math inline">\(0\le Y-X\)</span> a.e. and <span class="math inline">\(Y-X\)</span> is integrable (difference of
 integrable functions). For non-negative integrable functions we know
-that their integral is non-negative; hence <span class="math display">\[
-0 \le \int_{\Omega} (Y-X)\,d\mu
-    = \int_{\Omega} Y\,d\mu - \int_{\Omega} X\,d\mu .
-\]</span> Rearranging gives <span class="math inline">\(\displaystyle
-\int X\,d\mu \le \int Y\,d\mu\)</span>. <span class="math inline">\(\square\)</span></p>
+that their integral is non-negative; hence<br />
+<span class="math display">\[
+0 \le \int_{\Omega} (Y-X)\,d\mu = \int_{\Omega} Y\,d\mu - \int_{\Omega}
+X\,d\mu .
+\]</span><br />
+Rearranging gives <span class="math inline">\(\int X\,d\mu \le \int
+Y\,d\mu\)</span>. □</p>
 <hr />
 </div>
 </div>
-<div id="lebesgue-dominated-convergence-theorem" class="section level3">
-<h3>5.4 Lebesgue Dominated Convergence Theorem</h3>
-<div id="theorem-5.4.1-dominated-convergence" class="section level4">
-<h4>Theorem 5.4.1 (Dominated Convergence)</h4>
+<div id="lebesgue-dominated-convergence-theorem" class="section level2">
+<h2>16. Lebesgue Dominated Convergence Theorem</h2>
+<div id="theorem-5.4.1-dominated-convergence" class="section level3">
+<h3>Theorem 5.4.1 (Dominated Convergence)</h3>
 <p>Let <span class="math inline">\((X_n)_{n\ge1}\)</span> be a sequence
-of <span class="math inline">\(F\)</span>-measurable functions on <span class="math inline">\((\Omega,F,\mu)\)</span> and suppose:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(X_n(\omega)\to X(\omega)\)</span> for
-almost every <span class="math inline">\(\omega\in\Omega\)</span>;</li>
-<li>There exists an integrable function <span class="math inline">\(Y\)</span> such that <span class="math inline">\(|X_n(\omega)|\le Y(\omega)\)</span> for all <span class="math inline">\(n\)</span> and a.e. <span class="math inline">\(\omega\)</span>.</li>
-</ol>
-<p>Then <span class="math inline">\(X\)</span> is integrable and <span class="math display">\[
+of <span class="math inline">\(\mathcal{F}\)</span>-measurable functions
+on <span class="math inline">\((\Omega,\mathcal{F},\mu)\)</span> and
+suppose:<br />
+1. <span class="math inline">\(X_n(\omega)\to X(\omega)\)</span> for
+almost every <span class="math inline">\(\omega\in\Omega\)</span>;<br />
+2. There exists an integrable function <span class="math inline">\(Y\)</span> such that <span class="math inline">\(|X_n(\omega)|\le Y(\omega)\)</span> for all <span class="math inline">\(n\)</span> and a.e. <span class="math inline">\(\omega\)</span>.<br />
+Then <span class="math inline">\(X\)</span> is integrable and<br />
+<span class="math display">\[
 \int_{\Omega} X_n\,d\mu \;\longrightarrow\; \int_{\Omega} X\,d\mu .
 \]</span></p>
-<p><strong>Proof.</strong></p>
+</div>
+<div id="detailed-proof-4" class="section level3">
+<h3>Detailed Proof</h3>
 <p>Since <span class="math inline">\(|X_n|\le Y\)</span> and <span class="math inline">\(Y\)</span> is integrable, Lemma 5.3.1 implies that
 each <span class="math inline">\(X_n\)</span> is integrable and <span class="math inline">\(|\int X_n\,d\mu|\le \int Y\,d\mu
 &lt;\infty\)</span>. Also, pointwise convergence and the inequality
 <span class="math inline">\(|X|\le Y\)</span> (obtained by taking the
 limit <span class="math inline">\(n\to\infty\)</span>) show that <span class="math inline">\(X\)</span> is integrable.</p>
-<hr />
-<p><strong>Step 1: lower bound via Fatou.</strong></p>
-<p>Consider the non-negative functions <span class="math inline">\(Y+X_n\)</span> and <span class="math inline">\(Y+X\)</span>. We have <span class="math inline">\(Y+X_n\to Y+X\)</span> a.e., and <span class="math inline">\(Y+X_n\ge0\)</span>. By Fatou’s lemma, <span class="math display">\[
-\int_{\Omega} (Y+X)\,d\mu
-= \int_{\Omega} \liminf_{n\to\infty} (Y+X_n)\,d\mu
-\le \liminf_{n\to\infty} \int_{\Omega} (Y+X_n)\,d\mu.
-\]</span> Using linearity, <span class="math display">\[
-\int_{\Omega} Y\,d\mu + \int_{\Omega} X\,d\mu
-\le \liminf_{n\to\infty}\left(
-      \int_{\Omega} Y\,d\mu + \int_{\Omega} X_n\,d\mu\right)
-= \int_{\Omega} Y\,d\mu + \liminf_{n\to\infty}\int_{\Omega} X_n\,d\mu .
-\]</span> Subtract <span class="math inline">\(\int Y\,d\mu\)</span>
-from both sides to obtain <span class="math display">\[
+<p><strong>Step 1: Lower bound via Fatou.</strong><br />
+Consider the non-negative functions <span class="math inline">\(Y+X_n\)</span> and <span class="math inline">\(Y+X\)</span>. We have <span class="math inline">\(Y+X_n\to Y+X\)</span> a.e., and <span class="math inline">\(Y+X_n\ge0\)</span>. By Fatou’s lemma,<br />
+<span class="math display">\[
+\int_{\Omega} (Y+X)\,d\mu = \int_{\Omega} \liminf_{n\to\infty}
+(Y+X_n)\,d\mu \le \liminf_{n\to\infty} \int_{\Omega} (Y+X_n)\,d\mu.
+\]</span><br />
+Using linearity,<br />
+<span class="math display">\[
+\int_{\Omega} Y\,d\mu + \int_{\Omega} X\,d\mu \le
+\liminf_{n\to\infty}\left( \int_{\Omega} Y\,d\mu + \int_{\Omega}
+X_n\,d\mu\right) = \int_{\Omega} Y\,d\mu +
+\liminf_{n\to\infty}\int_{\Omega} X_n\,d\mu .
+\]</span><br />
+Subtract <span class="math inline">\(\int Y\,d\mu\)</span> from both
+sides to obtain<br />
+<span class="math display">\[
 \int_{\Omega} X\,d\mu \le \liminf_{n\to\infty}\int_{\Omega} X_n\,d\mu .
 \tag{5.4.1}
 \]</span></p>
-<p><strong>Step 2: upper bound.</strong></p>
-<p>Apply Step 1 to the sequence <span class="math inline">\((-X_n)\)</span> and limiting function <span class="math inline">\(-X\)</span>. The domination <span class="math inline">\(|X_n|\le Y\)</span> implies <span class="math inline">\(|-X_n|\le Y\)</span>, so the hypotheses are still
-satisfied. We get <span class="math display">\[
-\int_{\Omega} (-X)\,d\mu
-\le \liminf_{n\to\infty} \int_{\Omega} (-X_n)\,d\mu .
-\]</span> Using linearity, <span class="math display">\[
--\int_{\Omega} X\,d\mu
-\le \liminf_{n\to\infty} \left(-\int_{\Omega} X_n\,d\mu\right)
-= -\limsup_{n\to\infty} \int_{\Omega} X_n\,d\mu .
-\]</span> Multiply by <span class="math inline">\(-1\)</span> to reverse
-the inequality: <span class="math display">\[
-\limsup_{n\to\infty} \int_{\Omega} X_n\,d\mu
-\le \int_{\Omega} X\,d\mu .
+<p><strong>Step 2: Upper bound.</strong><br />
+Apply Step 1 to the sequence <span class="math inline">\((-X_n)\)</span>
+and limiting function <span class="math inline">\(-X\)</span>. The
+domination <span class="math inline">\(|X_n|\le Y\)</span> implies <span class="math inline">\(|-X_n|\le Y\)</span>, so the hypotheses are still
+satisfied. We get<br />
+<span class="math display">\[
+\int_{\Omega} (-X)\,d\mu \le \liminf_{n\to\infty} \int_{\Omega}
+(-X_n)\,d\mu .
+\]</span><br />
+Using linearity,<br />
+<span class="math display">\[
+-\int_{\Omega} X\,d\mu \le \liminf_{n\to\infty} \left(-\int_{\Omega}
+X_n\,d\mu\right) = -\limsup_{n\to\infty} \int_{\Omega} X_n\,d\mu .
+\]</span><br />
+Multiply by <span class="math inline">\(-1\)</span> to reverse the
+inequality:<br />
+<span class="math display">\[
+\limsup_{n\to\infty} \int_{\Omega} X_n\,d\mu \le \int_{\Omega} X\,d\mu .
 \tag{5.4.2}
 \]</span></p>
-<hr />
-<p><strong>Step 3: combine (5.4.1) and (5.4.2).</strong></p>
-<p>We have <span class="math display">\[
-\int_{\Omega} X\,d\mu
-\le \liminf_{n\to\infty}\int_{\Omega} X_n\,d\mu
-\le \limsup_{n\to\infty}\int_{\Omega} X_n\,d\mu
-\le \int_{\Omega} X\,d\mu.
-\]</span> Hence all three quantities are equal, and in particular <span class="math display">\[
-\lim_{n\to\infty} \int_{\Omega} X_n\,d\mu
-   = \int_{\Omega} X\,d\mu.
-\]</span> <span class="math inline">\(\square\)</span></p>
+<p><strong>Step 3: Combine (5.4.1) and (5.4.2).</strong><br />
+We have<br />
+<span class="math display">\[
+\int_{\Omega} X\,d\mu \le \liminf_{n\to\infty}\int_{\Omega} X_n\,d\mu
+\le \limsup_{n\to\infty}\int_{\Omega} X_n\,d\mu \le \int_{\Omega}
+X\,d\mu.
+\]</span><br />
+Hence all three quantities are equal, and in particular<br />
+<span class="math display">\[
+\lim_{n\to\infty} \int_{\Omega} X_n\,d\mu = \int_{\Omega} X\,d\mu.
+\]</span> □</p>
 <hr />
 </div>
-<div id="corollary-5.4.2-bounded-convergence-theorem" class="section level4">
-<h4>Corollary 5.4.2 (Bounded Convergence Theorem)</h4>
+</div>
+<div id="corollary-bounded-convergence-theorem" class="section level2">
+<h2>17. Corollary: Bounded Convergence Theorem</h2>
 <p>Let <span class="math inline">\((X_n)\)</span> be a sequence of
-measurable functions on <span class="math inline">\((\Omega,F,\mu)\)</span> such that</p>
-<ul>
-<li><span class="math inline">\(X_n(\omega)\to X(\omega)\)</span>
-a.e.;</li>
-<li>there exists a constant <span class="math inline">\(C&gt;0\)</span>
+measurable functions on <span class="math inline">\((\Omega,\mathcal{F},\mu)\)</span> such that<br />
+- <span class="math inline">\(X_n(\omega)\to X(\omega)\)</span>
+a.e.;<br />
+- there exists a constant <span class="math inline">\(C&gt;0\)</span>
 with <span class="math inline">\(|X_n(\omega)|\le C\)</span> for all
-<span class="math inline">\(n\)</span> and a.e. <span class="math inline">\(\omega\)</span>;</li>
-<li><span class="math inline">\(\mu(\Omega)&lt;\infty\)</span>.</li>
-</ul>
-<p>Then <span class="math inline">\(X\)</span> is integrable and <span class="math display">\[
+<span class="math inline">\(n\)</span> and a.e. <span class="math inline">\(\omega\)</span>;<br />
+- <span class="math inline">\(\mu(\Omega)&lt;\infty\)</span>.<br />
+Then <span class="math inline">\(X\)</span> is integrable and<br />
+<span class="math display">\[
 \lim_{n\to\infty} \int_{\Omega} X_n\,d\mu = \int_{\Omega} X\,d\mu .
 \]</span></p>
-<p><em>Proof.</em></p>
+<div id="proof-3" class="section level3">
+<h3>Proof</h3>
 <p>Define <span class="math inline">\(Y(\omega)\equiv C\)</span>. Then
-<span class="math inline">\(Y\)</span> is integrable because <span class="math display">\[
+<span class="math inline">\(Y\)</span> is integrable because<br />
+<span class="math display">\[
 \int_{\Omega} Y\,d\mu = C\,\mu(\Omega) &lt; \infty,
-\]</span> and <span class="math inline">\(|X_n|\le Y\)</span> a.e. for
-all <span class="math inline">\(n\)</span>. Apply the Dominated
-Convergence Theorem with this dominating function <span class="math inline">\(Y\)</span>. <span class="math inline">\(\square\)</span></p>
-<hr />
-<p><strong>Remark.</strong><br />
-In both the Dominated Convergence Theorem and the Bounded Convergence
+\]</span><br />
+and <span class="math inline">\(|X_n|\le Y\)</span> a.e. for all <span class="math inline">\(n\)</span>. Apply the Dominated Convergence
+Theorem with this dominating function <span class="math inline">\(Y\)</span>. □</p>
+</div>
+<div id="remark-3" class="section level3">
+<h3>Remark</h3>
+<p>In both the Dominated Convergence Theorem and the Bounded Convergence
 Theorem, the condition “for all <span class="math inline">\(\omega\in\Omega\)</span>” can be weakened to “for
 almost every <span class="math inline">\(\omega\in\Omega\)</span>”; sets
 of measure zero do not affect the value of the Lebesgue integral.</p>
-</div>
-</div>
-</div>
-<div id="part-4" class="section level1">
-<h1>Part 4:</h1>
-<div id="absolute-continuity-radonnikodym-and-product-measures" class="section level2">
-<h2>5.4 Absolute continuity, Radon–Nikodym, and product measures</h2>
-<div id="absolute-continuity-of-measures" class="section level3">
-<h3>5.4.1 Absolute continuity of measures</h3>
-<p><strong>Definition (absolute continuity and
-equivalence).</strong><br />
-Let <span class="math inline">\((\Omega,\mathcal{F})\)</span> be a
-measurable space and let <span class="math inline">\(\mu,\nu\)</span> be
-measures on <span class="math inline">\((\Omega,\mathcal{F})\)</span>.</p>
-<ul>
-<li><p>We say that <span class="math inline">\(\nu\)</span> is
-<strong>absolutely continuous</strong> with respect to <span class="math inline">\(\mu\)</span> and write <span class="math display">\[
-\nu \ll \mu
-\]</span> if <span class="math display">\[
-\mu(A)=0 \ \Longrightarrow\ \nu(A)=0 \quad \forall A\in\mathcal{F}.
-\]</span></p></li>
-<li><p>We say that <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> are <strong>equivalent</strong> if
-<span class="math display">\[
-\mu\ll\nu \quad\text{and}\quad \nu\ll\mu.
-\]</span></p></li>
-</ul>
 <hr />
 </div>
-<div id="constructing-a-new-measure-from-a-density" class="section level3">
-<h3>5.4.2 Constructing a new measure from a density</h3>
-<p><strong>Lemma.</strong><br />
-Let <span class="math inline">\((\Omega,\mathcal{F},\mu)\)</span> be a
-measure space and let<br />
-<span class="math inline">\(X:\Omega\to[0,\infty)\)</span> be a
-non–negative integrable <span class="math inline">\(\mathcal{F}\)</span>-measurable function (<span class="math inline">\(\int_\Omega X\,d\mu &lt;\infty\)</span>).<br />
-Define a set function <span class="math inline">\(\nu:\mathcal{F}\to[0,\infty)\)</span> by <span class="math display">\[
-\nu(A) \coloneqq \int_A X\,d\mu
-     = \int_\Omega X 1_A\,d\mu, \qquad A\in\mathcal{F}.
-\]</span> Then:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\nu\)</span> is a <strong>finite
-measure</strong> on <span class="math inline">\((\Omega,\mathcal{F})\)</span>;</li>
-<li><span class="math inline">\(\nu \ll \mu\)</span>;</li>
-<li>If <span class="math inline">\(\displaystyle\int_\Omega X\,d\mu =
-1\)</span>, then <span class="math inline">\(\nu\)</span> is a
-probability measure.</li>
-</ol>
-<p><strong>Proof.</strong></p>
-<ol style="list-style-type: decimal">
-<li><p><em>Null set and total mass.</em></p>
-<ul>
-<li>For the empty set, <span class="math display">\[
-\nu(\varnothing)
-  = \int_\varnothing X\,d\mu
-  = 0,
-\]</span> since the integral over the empty set is <span class="math inline">\(0\)</span>.</li>
-<li>The total mass is <span class="math display">\[
-\nu(\Omega) = \int_\Omega X\,d\mu &lt;\infty
-\]</span> by the assumption that <span class="math inline">\(X\)</span>
-is integrable.</li>
-</ul></li>
-<li><p><em>Countable additivity.</em><br />
-Let <span class="math inline">\((A_n)_{n\ge1}\subset\mathcal{F}\)</span>
-be pairwise disjoint, and put <span class="math inline">\(A=\bigcup_{n=1}^\infty A_n\)</span>.<br />
-Define the simple functions <span class="math display">\[
-S_N(\omega) \coloneqq \sum_{n=1}^N 1_{A_n}(\omega),\qquad N\ge1.
-\]</span> Then <span class="math inline">\(S_N(\omega)\uparrow
-1_A(\omega)\)</span> as <span class="math inline">\(N\to\infty\)</span>
-for all <span class="math inline">\(\omega\)</span>.<br />
-Using the definition of <span class="math inline">\(\nu\)</span> and the
-monotone convergence theorem, <span class="math display">\[
-\begin{aligned}
-\nu(A)
-  &amp;= \int_\Omega X 1_A\,d\mu
-   = \int_\Omega X\Bigl(\lim_{N\to\infty} S_N\Bigr)\,d\mu \\
-  &amp;= \lim_{N\to\infty} \int_\Omega X S_N\,d\mu
-     \quad\text{(monotone convergence)} \\
-  &amp;= \lim_{N\to\infty} \int_\Omega X\Bigl(\sum_{n=1}^N
-1_{A_n}\Bigr)\,d\mu \\
-  &amp;= \lim_{N\to\infty} \sum_{n=1}^N \int_\Omega X 1_{A_n}\,d\mu
-     \quad\text{(finite linearity of the integral)} \\
-  &amp;= \sum_{n=1}^\infty \nu(A_n).
-\end{aligned}
-\]</span> Hence <span class="math inline">\(\nu\)</span> is countably
-additive and therefore a measure.<br />
-Since <span class="math inline">\(\nu(\Omega)&lt;\infty\)</span>, <span class="math inline">\(\nu\)</span> is finite.</p></li>
-<li><p><em>Absolute continuity.</em><br />
-If <span class="math inline">\(\mu(A)=0\)</span>, then <span class="math inline">\(1_A=0\)</span> <span class="math inline">\(\mu\)</span>-a.s., hence <span class="math display">\[
-\nu(A) = \int_\Omega X 1_A\,d\mu = 0,
-\]</span> so <span class="math inline">\(\nu\ll\mu\)</span>.</p></li>
-<li><p><em>Probability case.</em><br />
-If <span class="math inline">\(\int_\Omega X\,d\mu = 1\)</span>, then
-<span class="math inline">\(\nu(\Omega)=1\)</span>, so <span class="math inline">\(\nu\)</span> is a probability measure.<br />
-<span class="math inline">\(\square\)</span></p></li>
-</ol>
-<hr />
 </div>
-<div id="radonnikodym-theorem-and-densities" class="section level3">
-<h3>5.4.3 Radon–Nikodym theorem and densities</h3>
-<p><strong>Radon–Nikodym theorem.</strong><br />
-Let <span class="math inline">\((\Omega,\mathcal{F})\)</span> be a
+<div id="absolute-continuity-of-measures" class="section level2">
+<h2>18. Absolute Continuity of Measures</h2>
+<div id="definition-absolute-continuity-and-equivalence" class="section level3">
+<h3>Definition (Absolute Continuity and Equivalence)</h3>
+<p>Let <span class="math inline">\((\Omega, \mathcal{F})\)</span> be a
 measurable space and let <span class="math inline">\(\mu,\nu\)</span> be
 measures on <span class="math inline">\((\Omega,\mathcal{F})\)</span>.<br />
-Assume that <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\sigma\)</span>-finite and <span class="math inline">\(\nu\ll\mu\)</span>.<br />
-Then there exists an <span class="math inline">\(\mathcal{F}\)</span>-measurable function <span class="math inline">\(X:\Omega\to[0,\infty]\)</span> such that <span class="math display">\[
-\nu(A) = \int_A X\,d\mu \qquad\forall A\in\mathcal{F}.
-\]</span> The function <span class="math inline">\(X\)</span> is unique
-up to <span class="math inline">\(\mu\)</span>-a.s. equality and is
-denoted by <span class="math display">\[
-X = \frac{d\nu}{d\mu}
-\]</span> and is called the <strong>Radon–Nikodym derivative</strong>
-(or <strong>density</strong>) of <span class="math inline">\(\nu\)</span> with respect to <span class="math inline">\(\mu\)</span>.</p>
-<hr />
-</div>
-<div id="example-distribution-and-density-of-a-random-variable" class="section level3">
-<h3>5.4.4 Example: distribution and density of a random variable</h3>
-<p>Let <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> be a
-probability space and <span class="math display">\[
-X : (\Omega,\mathcal{F}) \longrightarrow
-(\mathbb{R},\mathcal{B}(\mathbb{R}))
-\]</span> a random variable.<br />
-The <strong>distribution</strong> (or <strong>law</strong>) of <span class="math inline">\(X\)</span> is the measure <span class="math display">\[
-\mu_X(B) \coloneqq P\bigl(X\in B\bigr)
-               = P\bigl(X^{-1}(B)\bigr),
-   \qquad B\in\mathcal{B}(\mathbb{R}).
-\]</span></p>
-<p>We say that the random variable <span class="math inline">\(X\)</span> is <strong>continuous with
-density</strong> <span class="math inline">\(p\)</span> if <span class="math display">\[
-\mu_X \ll \lambda
-\]</span> (where <span class="math inline">\(\lambda\)</span> is
-Lebesgue measure on <span class="math inline">\(\mathbb{R}\)</span>) and
-there exists a measurable <span class="math inline">\(p:\mathbb{R}\to[0,\infty)\)</span> such that <span class="math display">\[
-\mu_X(A) = \int_A p(x)\,dx
-         = \int_{\Omega} 1_A(X(\omega)) p(X(\omega))\,dP(\omega),
-   \qquad \forall A\in\mathcal{B}(\mathbb{R}).
-\]</span> Equivalently, for every <span class="math inline">\(a\in\mathbb{R}\)</span>, <span class="math display">\[
-P(X\le a) = \mu_X((-\infty,a]) = \int_{-\infty}^{a} p(x)\,dx.
-\]</span></p>
-<hr />
-</div>
-</div>
-<div id="product-spaces-and-measurability-of-sections" class="section level2">
-<h2>5.5 Product spaces and measurability of sections</h2>
-<div id="product-measurable-space-and-product-sigma-field" class="section level3">
-<h3>5.5.1 Product measurable space and product <span class="math inline">\(\sigma\)</span>-field</h3>
-<p>Let <span class="math inline">\((\Omega_1,\mathcal{F}_1)\)</span> and
-<span class="math inline">\((\Omega_2,\mathcal{F}_2)\)</span> be
-measurable spaces.<br />
-Define the <strong>product set</strong> <span class="math display">\[
-\Omega_1\times\Omega_2
-    \coloneqq \{(\omega_1,\omega_2): \omega_1\in\Omega_1,\
-\omega_2\in\Omega_2\},
-\]</span> and the collection of <strong>measurable rectangles</strong>
+- We say that <span class="math inline">\(\nu\)</span> is
+<strong>absolutely continuous</strong> with respect to <span class="math inline">\(\mu\)</span> and write<br />
 <span class="math display">\[
-\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)
-   \coloneqq \{A_1\times A_2 : A_1\in\mathcal{F}_1,\
-A_2\in\mathcal{F}_2\}.
-\]</span></p>
-<p>The <strong>product</strong> <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega_1\times\Omega_2\)</span> is <span class="math display">\[
-\mathcal{F}_1\otimes\mathcal{F}_2
-   \coloneqq \sigma\bigl(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\bigr),
-\]</span> the smallest <span class="math inline">\(\sigma\)</span>-field
-containing all rectangles.</p>
-<p>For <span class="math inline">\(E\subset\Omega_1\times\Omega_2\)</span> and <span class="math inline">\(x\in\Omega_1\)</span>, we define the
-<strong>section</strong> <span class="math display">\[
-E_x \coloneqq \{y\in\Omega_2 : (x,y)\in E\}.
-\]</span></p>
-<hr />
-</div>
-<div id="measurability-of-sections" class="section level3">
-<h3>5.5.2 Measurability of sections</h3>
-<p><strong>Lemma 5.5.1.</strong><br />
-Let <span class="math inline">\((\Omega_1,\mathcal{F}_1)\)</span> and
-<span class="math inline">\((\Omega_2,\mathcal{F}_2)\)</span> be
-measurable spaces.</p>
-<ol style="list-style-type: decimal">
-<li>If <span class="math inline">\(E\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span> and
-<span class="math inline">\(x\in\Omega_1\)</span>, then <span class="math display">\[
-E_x \in \mathcal{F}_2 .
-\]</span></li>
-<li>Let <span class="math inline">\(X:\Omega_1\times\Omega_2\to\mathbb{R}\)</span> be
-<span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2 /
-\mathcal{B}(\mathbb{R})\)</span>-measurable. For fixed <span class="math inline">\(x\in\Omega_1\)</span>, define <span class="math display">\[
-Y_x : \Omega_2\to\mathbb{R},\qquad Y_x(y)\coloneqq X(x,y).
-\]</span> Then <span class="math inline">\(Y_x\)</span> is <span class="math inline">\(\mathcal{F}_2/\mathcal{B}(\mathbb{R})\)</span>-measurable.</li>
-</ol>
-<p><strong>Proof.</strong></p>
-<ol style="list-style-type: decimal">
-<li><p>Define <span class="math display">\[
-\mathcal{G}\coloneqq\{E\subset\Omega_1\times\Omega_2 :
-E_x\in\mathcal{F}_2
-\ \text{for all }x\in\Omega_1\}.
-\]</span> We first show that <span class="math inline">\(\mathcal{G}\)</span> is a <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega_1\times\Omega_2\)</span>.</p>
-<ul>
-<li><p><em>Empty set and whole space.</em><br />
-For any <span class="math inline">\(x\)</span>, <span class="math display">\[
-(\varnothing)_x = \varnothing \in\mathcal{F}_2,
-\quad
-(\Omega_1\times\Omega_2)_x = \Omega_2\in\mathcal{F}_2.
-\]</span> So <span class="math inline">\(\varnothing,\Omega_1\times\Omega_2\in\mathcal{G}\)</span>.</p></li>
-<li><p><em>Complements.</em><br />
-If <span class="math inline">\(E\in\mathcal{G}\)</span>, then for each
-<span class="math inline">\(x\)</span>, <span class="math display">\[
-(E^c)_x = \{y:(x,y)\notin E\}
-        = \Omega_2\setminus E_x = (E_x)^c\in\mathcal{F}_2.
-\]</span> Thus <span class="math inline">\(E^c\in\mathcal{G}\)</span>.</p></li>
-<li><p><em>Countable unions.</em><br />
-If <span class="math inline">\(E_n\in\mathcal{G}\)</span> for all <span class="math inline">\(n\)</span>, then for each <span class="math inline">\(x\)</span>, <span class="math display">\[
-\Bigl(\bigcup_{n=1}^{\infty} E_n\Bigr)_x
-   = \bigcup_{n=1}^{\infty} (E_n)_x.
-\]</span> Each <span class="math inline">\((E_n)_x\in\mathcal{F}_2\)</span>, and <span class="math inline">\(\mathcal{F}_2\)</span> is a <span class="math inline">\(\sigma\)</span>-field, so the union is in <span class="math inline">\(\mathcal{F}_2\)</span>. Hence <span class="math inline">\(\bigcup_n E_n\in\mathcal{G}\)</span>.</p></li>
-</ul>
-<p>Therefore <span class="math inline">\(\mathcal{G}\)</span> is a <span class="math inline">\(\sigma\)</span>-field.</p>
-<p>Next, we note that every rectangle <span class="math inline">\(A_1\times
-A_2\in\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\)</span> belongs to <span class="math inline">\(\mathcal{G}\)</span>.<br />
-Indeed, for each <span class="math inline">\(x\)</span>, <span class="math display">\[
-(A_1\times A_2)_x =
-\begin{cases}
-  A_2, &amp; x\in A_1,\\[2mm]
-  \varnothing, &amp; x\notin A_1,
-\end{cases}
-\]</span> which is in <span class="math inline">\(\mathcal{F}_2\)</span>.<br />
-Thus <span class="math inline">\(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\subset\mathcal{G}\)</span>.</p>
-<p>Since <span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2
-       =\sigma(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2))\)</span> is the
-smallest <span class="math inline">\(\sigma\)</span>-field containing
-all rectangles and <span class="math inline">\(\mathcal{G}\)</span> is a
-<span class="math inline">\(\sigma\)</span>-field containing all
-rectangles, we have <span class="math display">\[
-\mathcal{F}_1\otimes\mathcal{F}_2 \subset \mathcal{G}.
-\]</span> Therefore, if <span class="math inline">\(E\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>,
-then <span class="math inline">\(E\in\mathcal{G}\)</span>, hence <span class="math inline">\(E_x\in\mathcal{F}_2\)</span> for all <span class="math inline">\(x\)</span>.</p></li>
-<li><p>For <span class="math inline">\(A\in\mathcal{B}(\mathbb{R})\)</span>, we want to
-show <span class="math display">\[
-(Y_x)^{-1}(A) \in \mathcal{F}_2.
-\]</span> But <span class="math display">\[
-(Y_x)^{-1}(A)
-  = \{y\in\Omega_2 : Y_x(y)\in A\}
-  = \{y\in\Omega_2 : X(x,y)\in A\}
-  = E_x,
-\]</span> where <span class="math inline">\(E =
-X^{-1}(A)\subset\Omega_1\times\Omega_2\)</span>.<br />
-Since <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2\)</span>-measurable,
-we have <span class="math inline">\(E\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>,
-and by part (1), <span class="math inline">\(E_x\in\mathcal{F}_2\)</span>.<br />
-Hence <span class="math inline">\((Y_x)^{-1}(A)\in\mathcal{F}_2\)</span>, so <span class="math inline">\(Y_x\)</span> is measurable.<br />
-<span class="math inline">\(\square\)</span></p></li>
-</ol>
-<hr />
-</div>
-<div id="measurability-of-integrals-of-nonnegative-functions" class="section level3">
-<h3>5.5.3 Measurability of integrals of nonnegative functions</h3>
-<p>Let <span class="math inline">\((\Omega_1,\mathcal{F}_1,\mu_1)\)</span> and <span class="math inline">\((\Omega_2,\mathcal{F}_2,\mu_2)\)</span> be <span class="math inline">\(\sigma\)</span>-finite measure spaces.</p>
-<p><strong>Lemma 5.5.2 (measurability of the integral).</strong><br />
-Let <span class="math display">\[
-X:\Omega_1\times\Omega_2\to[0,\infty]
-\]</span> be <span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2 /
-\mathcal{B}([0,\infty])\)</span>-measurable.<br />
-For each <span class="math inline">\(x\in\Omega_1\)</span>, define <span class="math display">\[
-Z(x)\coloneqq\int_{\Omega_2} X(x,y)\,\mu_2(dy)\in[0,\infty].
-\]</span> Then <span class="math inline">\(Z:\Omega_1\to[0,\infty]\)</span> is <span class="math inline">\(\mathcal{F}_1 /
-\mathcal{B}([0,\infty])\)</span>-measurable.</p>
-<p><strong>Proof.</strong></p>
-<p><em>Step 1: indicator functions.</em><br />
-Suppose first that <span class="math inline">\(X=1_A\)</span> for some
-<span class="math inline">\(A\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>.<br />
-For <span class="math inline">\(x\in\Omega_1\)</span>, by definition,
+  \nu \ll \mu
+  \]</span><br />
+if<br />
 <span class="math display">\[
-Z(x) = \int_{\Omega_2} 1_A(x,y)\,\mu_2(dy)
-     = \int_{\Omega_2} 1_{A_x}(y)\,\mu_2(dy)
-     = \mu_2(A_x).
-\]</span> By Lemma 5.5.1, <span class="math inline">\(A_x\in\mathcal{F}_2\)</span> for all <span class="math inline">\(x\)</span>, so the integral is well defined.<br />
-Define <span class="math display">\[
-\mathcal{L} \coloneqq \{A\in\mathcal{F}_1\otimes\mathcal{F}_2 : x\mapsto
-\mu_2(A_x)
-   \text{ is }\mathcal{F}_1\text{-measurable}\}.
-\]</span> We just showed that for any rectangle <span class="math inline">\(A_1\times A_2\)</span>, <span class="math display">\[
-Z(x)=\mu_2\bigl((A_1\times A_2)_x\bigr)
-     = 1_{A_1}(x)\,\mu_2(A_2),
-\]</span> which is clearly <span class="math inline">\(\mathcal{F}_1\)</span>-measurable.<br />
-So <span class="math inline">\(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\subset\mathcal{L}\)</span>.</p>
-<p>Next we show that <span class="math inline">\(\mathcal{L}\)</span> is
-a <span class="math inline">\(\lambda\)</span>-system:</p>
-<ul>
-<li><span class="math inline">\(\Omega_1\times\Omega_2\in\mathcal{L}\)</span>
-since <span class="math inline">\(Z(x)=\mu_2(\Omega_2)\)</span> is
-constant in <span class="math inline">\(x\)</span>;</li>
-<li>If <span class="math inline">\(A,B\in\mathcal{L}\)</span> and <span class="math inline">\(A\subset B\)</span>, then <span class="math inline">\((B\setminus A)_x = B_x\setminus A_x\)</span>,
-hence <span class="math display">\[
-\mu_2((B\setminus A)_x) = \mu_2(B_x) - \mu_2(A_x),
-\]</span> a difference of measurable functions, so <span class="math inline">\(B\setminus A\in\mathcal{L}\)</span>;</li>
-<li>If <span class="math inline">\((A_n)\subset\mathcal{L}\)</span> are
-pairwise disjoint, then for each <span class="math inline">\(x\)</span>,
+  \mu(A)=0 \quad\Rightarrow\quad \nu(A)=0 \quad \forall A\in\mathcal{F}.
+  \]</span><br />
+- We say that <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> are <strong>equivalent</strong>
+if<br />
 <span class="math display">\[
-\Bigl(\bigcup_{n=1}^\infty A_n\Bigr)_x
-   = \bigcup_{n=1}^\infty (A_n)_x
-\]</span> and the sets <span class="math inline">\((A_n)_x\)</span> are
-pairwise disjoint. By countable additivity of <span class="math inline">\(\mu_2\)</span>, <span class="math display">\[
-\mu_2\Bigl(\bigcup_{n} (A_n)_x\Bigr)
-    = \sum_n \mu_2((A_n)_x),
-\]</span> which is a pointwise countable sum of measurable functions,
-hence measurable.<br />
-Thus <span class="math inline">\(\bigcup_n
-A_n\in\mathcal{L}\)</span>.</li>
-</ul>
-<p>Therefore <span class="math inline">\(\mathcal{L}\)</span> is a <span class="math inline">\(\lambda\)</span>-system containing the rectangle
-class <span class="math inline">\(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\)</span>,
-which is a <span class="math inline">\(\pi\)</span>-system.<br />
-By the <span class="math inline">\(\pi\)</span>-<span class="math inline">\(\lambda\)</span> theorem, <span class="math display">\[
-\mathcal{F}_1\otimes\mathcal{F}_2 =
-\sigma(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2))
-\subset \mathcal{L}.
-\]</span> Hence for every indicator <span class="math inline">\(X=1_A\)</span> with <span class="math inline">\(A\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>,
-the function <span class="math inline">\(Z(x)=\mu_2(A_x)\)</span> is
-<span class="math inline">\(\mathcal{F}_1\)</span>-measurable.</p>
-<p><em>Step 2: simple functions.</em><br />
-If <span class="math inline">\(X\)</span> is a non–negative simple
-function, <span class="math display">\[
-X = \sum_{k=1}^n c_k 1_{A_k},
-\quad c_k\ge0,\ A_k\in\mathcal{F}_1\otimes\mathcal{F}_2,
-\]</span> then <span class="math display">\[
-\begin{aligned}
-Z(x)
-   &amp;= \int_{\Omega_2} X(x,y)\,\mu_2(dy)
-    = \sum_{k=1}^n c_k \int_{\Omega_2} 1_{A_k}(x,y)\,\mu_2(dy)\\
-   &amp;= \sum_{k=1}^n c_k\,\mu_2((A_k)_x),
-\end{aligned}
-\]</span> which is a finite linear combination of measurable functions
-of <span class="math inline">\(x\)</span>, hence <span class="math inline">\(\mathcal{F}_1\)</span>-measurable.</p>
-<p><em>Step 3: general non–negative measurable functions.</em><br />
-For a general non–negative measurable <span class="math inline">\(X\)</span>, there exists a sequence of
-non–negative simple functions <span class="math inline">\((X_n)\)</span>
-such that <span class="math display">\[
-X_n(x,y)\uparrow X(x,y)\quad\text{for all
-}(x,y)\in\Omega_1\times\Omega_2.
-\]</span> Define <span class="math display">\[
-Z_n(x)\coloneqq\int_{\Omega_2} X_n(x,y)\,\mu_2(dy).
-\]</span> By Step 2, each <span class="math inline">\(Z_n\)</span> is
-<span class="math inline">\(\mathcal{F}_1\)</span>-measurable.<br />
-By monotone convergence (applied for each fixed <span class="math inline">\(x\)</span>) we have <span class="math display">\[
-Z_n(x) \uparrow \int_{\Omega_2} X(x,y)\,\mu_2(dy) = Z(x).
-\]</span> A pointwise limit of measurable functions is measurable, so
-<span class="math inline">\(Z\)</span> is <span class="math inline">\(\mathcal{F}_1\)</span>-measurable.<br />
-<span class="math inline">\(\square\)</span></p>
-</div>
-</div>
-</div>
-<div id="part-5" class="section level1">
-<h1>Part 5:</h1>
-</div>
-<div id="pstat-210-measure-theory" class="section level1">
-<h1>PSTAT 210 — Measure Theory</h1>
-<div id="product-measures-radonnikodym-tonelli-part-5" class="section level2">
-<h2>Product Measures, Radon–Nikodym, Tonelli (Part 5)</h2>
-<hr />
-</div>
-<div id="absolute-continuity-of-measures-1" class="section level2">
-<h2>1. Absolute Continuity of Measures</h2>
-<div id="definition-2" class="section level3">
-<h3>Definition</h3>
-<p>Let <span class="math inline">\((\Omega, \mathcal{F})\)</span> be a
-measurable space, and let <span class="math inline">\(\mu,\nu\)</span>
-be measures on it.<br />
-We say <span class="math inline">\(\nu\)</span> is absolutely continuous
-with respect to <span class="math inline">\(\mu\)</span> and write <span class="math display">\[
-\nu \ll \mu
-\]</span> if <span class="math display">\[
-\mu(A) = 0 \quad \Rightarrow \quad \nu(A) = 0
-\]</span> for all <span class="math inline">\(A \in
-\mathcal{F}\)</span>.</p>
-<p>If both <span class="math inline">\(\nu \ll \mu\)</span> and <span class="math inline">\(\mu \ll \nu\)</span>, then <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> are called
-<strong>equivalent</strong>.</p>
-<hr />
-</div>
-</div>
-<div id="constructing-a-new-measure-via-integration" class="section level2">
-<h2>2. Constructing a New Measure via Integration</h2>
-<div id="lemma-4" class="section level3">
-<h3>Lemma</h3>
-<p>Let <span class="math inline">\(X \ge 0\)</span> be an <span class="math inline">\(\mathcal{F}\)</span>-measurable integrable
-function on <span class="math inline">\((\Omega,
-\mathcal{F},\mu)\)</span>.<br />
-Define a set function <span class="math display">\[
-\nu(A) := \int_A X \, d\mu = \int_\Omega X\, 1_A \, d\mu.
-\]</span></p>
-<p>Then:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\nu\)</span> is a <strong>finite
-measure</strong> on <span class="math inline">\((\Omega,
-\mathcal{F})\)</span>.</li>
-<li>If <span class="math inline">\(\int_\Omega X \, d\mu = 1\)</span>,
-then <span class="math inline">\(\nu\)</span> is a <strong>probability
-measure</strong>.</li>
-<li><span class="math inline">\(\nu \ll \mu\)</span> (absolute
-continuity).</li>
-</ol>
-</div>
-<div id="proof-detailed-2" class="section level3">
-<h3>Proof (detailed)</h3>
-<ol style="list-style-type: decimal">
-<li><p><strong>Finite:</strong> <span class="math display">\[
-\nu(\Omega) = \int_\Omega X\, d\mu &lt; \infty,
-\]</span> since <span class="math inline">\(X\)</span> is
-integrable.</p></li>
-<li><p><strong>Null set:</strong> <span class="math display">\[
-\nu(\varnothing) = \int_\varnothing X\, d\mu = 0.
-\]</span></p></li>
-<li><p><strong>Countable additivity:</strong><br />
-Let <span class="math inline">\((A_n)\)</span> be disjoint sets in <span class="math inline">\(\mathcal{F}\)</span>. Then <span class="math display">\[
-\nu\Big( \bigcup_{n=1}^\infty A_n \Big)
-= \int_\Omega X \cdot 1_{\cup A_n} \, d\mu
-= \int_\Omega X \sum_{n=1}^\infty 1_{A_n} \, d\mu.
-\]</span> By monotone convergence, <span class="math display">\[
-= \sum_{n=1}^\infty \int_\Omega X 1_{A_n} \, d\mu
-= \sum_{n=1}^\infty \nu(A_n).
-\]</span></p></li>
-<li><p><strong>Absolute continuity:</strong><br />
-If <span class="math inline">\(\mu(A)=0\)</span>, then <span class="math inline">\(1_A=0\)</span> <span class="math inline">\(\mu\)</span>-a.s., so <span class="math display">\[
-\nu(A)=\int_A X\, d\mu = 0.
-\]</span></p></li>
-</ol>
-<p>Thus <span class="math inline">\(\nu\)</span> is a measure and <span class="math inline">\(\nu \ll \mu\)</span>.</p>
+  \mu\ll\nu \quad\text{and}\quad \nu\ll\mu.
+  \]</span></p>
 <hr />
 </div>
 </div>
 <div id="radonnikodym-theorem" class="section level2">
-<h2>3. Radon–Nikodym Theorem</h2>
+<h2>19. Radon–Nikodym Theorem</h2>
 <div id="theorem-radonnikodym" class="section level3">
 <h3>Theorem (Radon–Nikodym)</h3>
-<p>Let <span class="math inline">\(\mu,\nu\)</span> be measures on <span class="math inline">\((\Omega,\mathcal{F})\)</span>.<br />
-Assume:</p>
-<ul>
-<li><span class="math inline">\(\mu\)</span> is
-<strong>σ-finite</strong><br />
-</li>
-<li><span class="math inline">\(\nu \ll \mu\)</span> (absolutely
-continuous)</li>
-</ul>
-<p>Then <strong>there exists an</strong> <span class="math inline">\(\mathcal{F}\)</span>-measurable function <span class="math inline">\(X \ge 0\)</span> such that <span class="math display">\[
+<p>Let <span class="math inline">\(\mu,\nu\)</span> be measures on <span class="math inline">\((\Omega,\mathcal{F})\)</span>. Assume that <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\sigma\)</span>-finite and <span class="math inline">\(\nu \ll \mu\)</span>. Then there exists an <span class="math inline">\(\mathcal{F}\)</span>-measurable function <span class="math inline">\(X \ge 0\)</span> such that<br />
+<span class="math display">\[
 \nu(A) = \int_A X \, d\mu \qquad \forall A \in \mathcal{F}.
-\]</span> The function <span class="math inline">\(X\)</span> is called
-the <strong>Radon–Nikodym derivative</strong>, written <span class="math display">\[
+\]</span><br />
+The function <span class="math inline">\(X\)</span> is called the
+<strong>Radon–Nikodym derivative</strong>, written<br />
+<span class="math display">\[
 X = \frac{d\nu}{d\mu}.
-\]</span></p>
+\]</span><br />
+It is unique up to <span class="math inline">\(\mu\)</span>-a.s.
+equality.</p>
+</div>
+<div id="proof-sketch-existence-and-uniqueness" class="section level3">
+<h3>Proof Sketch (Existence and Uniqueness)</h3>
+<p><strong>Existence:</strong><br />
+Assume <span class="math inline">\(\mu\)</span> is finite for simplicity
+(extend to σ-finite by partitioning). Define the signed measure <span class="math inline">\(\rho = \nu - c\mu\)</span> for suitable <span class="math inline">\(c\)</span> to apply Hahn decomposition, leading to
+a density. Iterate to construct <span class="math inline">\(X\)</span>.</p>
+<p><strong>Uniqueness:</strong><br />
+Suppose <span class="math inline">\(X_1, X_2\)</span> both satisfy the
+condition. Then <span class="math inline">\(\int_A (X_1 - X_2) d\mu =
+0\)</span> for all <span class="math inline">\(A\)</span>. The set <span class="math inline">\(\{X_1 &gt; X_2\}\)</span> would have positive
+measure implying contradiction unless measure zero. Thus <span class="math inline">\(X_1 = X_2\)</span> <span class="math inline">\(\mu\)</span>-a.s.</p>
 <hr />
 </div>
-</div>
-<div id="example-density-of-a-random-variable" class="section level2">
-<h2>4. Example — Density of a Random Variable</h2>
-<p>Let <span class="math inline">\(X : (\Omega, \mathcal{F},\mathbb{P})
-\to \mathbb{R}\)</span> be a random variable.<br />
-Define the <strong>distribution measure</strong> of <span class="math inline">\(X\)</span>: <span class="math display">\[
-\mu_X(A) = \mathbb{P}(X \in A), \qquad A \in \mathcal{B}(\mathbb{R}).
-\]</span></p>
-<p>We call <span class="math inline">\(X\)</span>
-<strong>continuous</strong> if there exists a function <span class="math inline">\(p:\mathbb{R}\to [0,\infty)\)</span> such that
-<span class="math display">\[
-\mu_X(A)
-= \int_A p(x)\, dx
-\qquad \forall A \in \mathcal{B}(\mathbb{R}).
-\]</span></p>
-<p>Thus the distribution of <span class="math inline">\(X\)</span> is
-<strong>absolutely continuous w.r.t. Lebesgue measure</strong>, and
-<span class="math display">\[
-p(x) = \frac{d\mu_X}{dx}
-\]</span> is the <strong>probability density function</strong>.</p>
-<hr />
 </div>
 <div id="product-measure-spaces" class="section level2">
-<h2>5. Product Measure Spaces</h2>
-<p>Let <span class="math display">\[
-(\Omega_1,\mathcal{F}_1,\mu_1),\qquad
-(\Omega_2,\mathcal{F}_2,\mu_2)
-\]</span> be measure spaces.</p>
-<p>The set of <strong>measurable rectangles</strong>: <span class="math display">\[
-\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)
-=\{A_1 \times A_2 : A_1 \in \mathcal{F}_1,\ A_2 \in \mathcal{F}_2\}
-\]</span> is a <strong>π-system</strong>.</p>
-<p>The <strong>product σ-field</strong> is <span class="math display">\[
-\mathcal{F}_1 \otimes \mathcal{F}_2
-= \sigma(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)).
+<h2>20. Product Measure Spaces</h2>
+<p>Let<br />
+<span class="math display">\[
+(\Omega_1,\mathcal{F}_1,\mu_1),\qquad (\Omega_2,\mathcal{F}_2,\mu_2)
+\]</span><br />
+be measure spaces. The set of <strong>measurable
+rectangles</strong>:<br />
+<span class="math display">\[
+\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2) =\{A_1 \times A_2 : A_1 \in
+\mathcal{F}_1,\ A_2 \in \mathcal{F}_2\}
+\]</span><br />
+is a <strong>π-system</strong>. The <strong>product</strong> σ-field on
+<span class="math inline">\(\Omega_1\times\Omega_2\)</span> is<br />
+<span class="math display">\[
+\mathcal{F}_1 \otimes \mathcal{F}_2 =
+\sigma\bigl(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\bigr),
+\]</span><br />
+the smallest σ-field containing all open sets in <span class="math inline">\(T\)</span>.</p>
+<p>For <span class="math inline">\(E\subset\Omega_1\times\Omega_2\)</span> and <span class="math inline">\(x\in\Omega_1\)</span>, we define the
+<strong>section</strong><br />
+<span class="math display">\[
+E_x \coloneqq \{y \in \Omega_2 : (x,y)\in E\}.
 \]</span></p>
-<hr />
+<div id="lemma-measurability-of-sections" class="section level3">
+<h3>Lemma: Measurability of Sections</h3>
+<p>Let <span class="math inline">\((\Omega_1,\mathcal{F}_1)\)</span> and
+<span class="math inline">\((\Omega_2,\mathcal{F}_2)\)</span> be
+measurable spaces.<br />
+1. If <span class="math inline">\(E\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span> and
+<span class="math inline">\(x\in\Omega_1\)</span>, then <span class="math inline">\(E_x \in \mathcal{F}_2\)</span>.<br />
+2. Let <span class="math inline">\(X:\Omega_1\times\Omega_2\to\mathbb{R}\)</span> be
+<span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2 /
+\mathcal{B}(\mathbb{R})\)</span>-measurable. For fixed <span class="math inline">\(x\in\Omega_1\)</span>, define <span class="math inline">\(Y_x : \Omega_2\to\mathbb{R}\)</span>, <span class="math inline">\(Y_x(y)\coloneqq X(x,y)\)</span>. Then <span class="math inline">\(Y_x\)</span> is <span class="math inline">\(\mathcal{F}_2/\mathcal{B}(\mathbb{R})\)</span>-measurable.</p>
 </div>
-<div id="fubinitonelli-framework" class="section level2">
-<h2>6. Fubini–Tonelli Framework</h2>
-<div id="lemma-1-1" class="section level3">
-<h3>Lemma 1</h3>
-<p>For fixed <span class="math inline">\(x\)</span>, the section <span class="math display">\[
-A_x = \{y : (x,y) \in A\}
-\]</span> satisfies <span class="math inline">\(A_x \in
-\mathcal{F}_2\)</span> when <span class="math inline">\(A \in
-\mathcal{F}_1 \otimes \mathcal{F}_2\)</span>.</p>
-</div>
-<div id="lemma-2-measurability-of-section-map" class="section level3">
-<h3>Lemma 2 (Measurability of section map)</h3>
-<p>If <span class="math inline">\(X:\Omega_1 \times \Omega_2 \to
-\mathbb{R}\)</span> is<br />
+<div id="detailed-proof-5" class="section level3">
+<h3>Detailed Proof</h3>
+<ol style="list-style-type: decimal">
+<li>Define<br />
 <span class="math display">\[
-\mathcal{F}_1 \otimes \mathcal{F}_2 /
-\mathcal{B}(\mathbb{R})\text{-measurable},
-\]</span> then for each fixed <span class="math inline">\(x\)</span>,
-<span class="math display">\[
-Y_x(y)=X(x,y)
-\]</span> is <span class="math inline">\(\mathcal{F}_2 /
-\mathcal{B}(\mathbb{R})\)</span>-measurable.</p>
-</div>
-<div id="lemma-3-integrability-of-sections" class="section level3">
-<h3>Lemma 3 (Integrability of sections)</h3>
-<p>If <span class="math inline">\(X \ge 0\)</span> is measurable on the
-product space and μ₂ is σ-finite, define <span class="math display">\[
-Z(x) := \int_{\Omega_2} X(x,y) \, \mu_2(dy).
-\]</span> Then:</p>
+\mathcal{G}\coloneqq\{E\subset\Omega_1\times\Omega_2 :
+E_x\in\mathcal{F}_2 \ \text{for all }x\in\Omega_1\}.
+\]</span><br />
+We first show that <span class="math inline">\(\mathcal{G}\)</span> is a
+σ-field on <span class="math inline">\(\Omega_1\times\Omega_2\)</span>.
 <ul>
-<li><span class="math inline">\(Z(x)\)</span> is well-defined in <span class="math inline">\([0,\infty]\)</span>,</li>
-<li><span class="math inline">\(Z\)</span> is <span class="math inline">\(\mathcal{F}_1/\mathcal{B}([0,\infty])\)</span>-measurable.</li>
-</ul>
+<li><em>Empty set and whole space.</em> For any <span class="math inline">\(x\)</span>, <span class="math inline">\((\varnothing)_x = \varnothing
+\in\mathcal{F}_2\)</span>, <span class="math inline">\((\Omega_1\times\Omega_2)_x =
+\Omega_2\in\mathcal{F}_2\)</span>. So <span class="math inline">\(\varnothing,\Omega_1\times\Omega_2\in\mathcal{G}\)</span>.<br />
+</li>
+<li><em>Complements.</em> If <span class="math inline">\(E\in\mathcal{G}\)</span>, then for each <span class="math inline">\(x\)</span>, <span class="math inline">\((E^c)_x =
+\Omega_2\setminus E_x = (E_x)^c\in\mathcal{F}_2\)</span>. Thus <span class="math inline">\(E^c\in\mathcal{G}\)</span>.<br />
+</li>
+<li><em>Countable unions.</em> If <span class="math inline">\(E_n\in\mathcal{G}\)</span> for all <span class="math inline">\(n\)</span>, then for each <span class="math inline">\(x\)</span>, <span class="math inline">\(\Bigl(\bigcup_{n=1}^{\infty} E_n\Bigr)_x =
+\bigcup_{n=1}^{\infty} (E_n)_x\)</span>. Each <span class="math inline">\((E_n)_x\in\mathcal{F}_2\)</span>, and <span class="math inline">\(\mathcal{F}_2\)</span> is a <span class="math inline">\(\sigma\)</span>-field, so the union is in <span class="math inline">\(\mathcal{F}_2\)</span>. Hence <span class="math inline">\(\bigcup_n E_n\in\mathcal{G}\)</span>.<br />
+Therefore <span class="math inline">\(\mathcal{G}\)</span> is a
+σ-field.<br />
+Next, we note that every rectangle <span class="math inline">\(A_1\times
+A_2\in\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\)</span> belongs to <span class="math inline">\(\mathcal{G}\)</span>. Indeed, for each <span class="math inline">\(x\)</span>,<br />
+<span class="math display">\[
+(A_1\times A_2)_x = \begin{cases} A_2, &amp; x\in A_1,\\ \varnothing,
+&amp; x\notin A_1, \end{cases}
+\]</span><br />
+which is in <span class="math inline">\(\mathcal{F}_2\)</span>. Thus
+<span class="math inline">\(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\subset\mathcal{G}\)</span>.<br />
+Since <span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2
+=\sigma(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2))\)</span> is the
+smallest <span class="math inline">\(\sigma\)</span>-field containing
+all rectangles and <span class="math inline">\(\mathcal{G}\)</span> is a
+<span class="math inline">\(\sigma\)</span>-field containing all
+rectangles, we have<br />
+<span class="math display">\[
+\mathcal{F}_1\otimes\mathcal{F}_2 \subset \mathcal{G}.
+\]</span><br />
+Therefore, if <span class="math inline">\(E\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>,
+then <span class="math inline">\(E\in\mathcal{G}\)</span>, hence <span class="math inline">\(E_x\in\mathcal{F}_2\)</span> for all <span class="math inline">\(x\)</span>.<br />
+</li>
+</ul></li>
+<li>For <span class="math inline">\(A\in\mathcal{B}(\mathbb{R})\)</span>, we want to
+show <span class="math inline">\((Y_x)^{-1}(A) \in
+\mathcal{F}_2\)</span>. But<br />
+<span class="math display">\[
+(Y_x)^{-1}(A) = \{y\in\Omega_2 : Y_x(y)\in A\} = \{y\in\Omega_2 :
+X(x,y)\in A\} = E_x,
+\]</span><br />
+where <span class="math inline">\(E =
+X^{-1}(A)\subset\Omega_1\times\Omega_2\)</span>. Since <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2\)</span>-measurable,
+we have <span class="math inline">\(E\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>,
+and by part (1), <span class="math inline">\(E_x\in\mathcal{F}_2\)</span>. Hence <span class="math inline">\((Y_x)^{-1}(A)\in\mathcal{F}_2\)</span>, so <span class="math inline">\(Y_x\)</span> is measurable. □</li>
+</ol>
 <hr />
 </div>
 </div>
-<div id="product-measure-construction" class="section level2">
-<h2>7. Product Measure Construction</h2>
-<div id="theorem-existence-and-uniqueness-of-product-measure" class="section level3">
-<h3>Theorem (Existence and Uniqueness of Product Measure)</h3>
+<div id="lemma-measurability-of-the-integral" class="section level2">
+<h2>21. Lemma: Measurability of the Integral</h2>
+<p>Let <span class="math inline">\((\Omega_1,\mathcal{F}_1,\mu_1)\)</span> and <span class="math inline">\((\Omega_2,\mathcal{F}_2,\mu_2)\)</span> be <span class="math inline">\(\sigma\)</span>-finite measure spaces.<br />
+Let <span class="math inline">\(X:\Omega_1\times\Omega_2\to[0,\infty]\)</span> be
+<span class="math inline">\(\mathcal{F}_1\otimes\mathcal{F}_2 /
+\mathcal{B}([0,\infty])\)</span>-measurable. For each <span class="math inline">\(x\in\Omega_1\)</span>, define<br />
+<span class="math display">\[
+Z(x)\coloneqq\int_{\Omega_2} X(x,y)\,\mu_2(dy)\in[0,\infty].
+\]</span><br />
+Then <span class="math inline">\(Z:\Omega_1\to[0,\infty]\)</span> is
+<span class="math inline">\(\mathcal{F}_1 /
+\mathcal{B}([0,\infty])\)</span>-measurable.</p>
+<div id="detailed-proof-6" class="section level3">
+<h3>Detailed Proof</h3>
+<p><em>Step 1: Indicator functions.</em> Suppose first that <span class="math inline">\(X=1_A\)</span> for some <span class="math inline">\(A\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>.
+For <span class="math inline">\(x\in\Omega_1\)</span>, by
+definition,<br />
+<span class="math display">\[
+Z(x) = \int_{\Omega_2} 1_A(x,y)\,\mu_2(dy) = \int_{\Omega_2}
+1_{A_x}(y)\,\mu_2(dy) = \mu_2(A_x).
+\]</span><br />
+By Lemma 5.5.1, <span class="math inline">\(A_x\in\mathcal{F}_2\)</span>
+for all <span class="math inline">\(x\)</span>, so the integral is well
+defined. Define<br />
+<span class="math display">\[
+\mathcal{L} \coloneqq \{A\in\mathcal{F}_1\otimes\mathcal{F}_2 : x\mapsto
+\mu_2(A_x) \text{ is }\mathcal{F}_1\text{-measurable}\}.
+\]</span><br />
+We first show that for any rectangle <span class="math inline">\(A_1\times A_2\)</span>,<br />
+<span class="math display">\[
+Z(x)=\mu_2\bigl((A_1\times A_2)_x\bigr) = 1_{A_1}(x)\,\mu_2(A_2),
+\]</span><br />
+which is clearly <span class="math inline">\(\mathcal{F}_1\)</span>-measurable. So <span class="math inline">\(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\subset\mathcal{L}\)</span>.</p>
+<p>Next we show that <span class="math inline">\(\mathcal{L}\)</span> is
+a <span class="math inline">\(\lambda\)</span>-system:<br />
+- <span class="math inline">\(\Omega_1\times\Omega_2\in\mathcal{L}\)</span>
+since <span class="math inline">\(Z(x)=\mu_2(\Omega_2)\)</span> is
+constant in <span class="math inline">\(x\)</span>;<br />
+- If <span class="math inline">\(A,B\in\mathcal{L}\)</span> and <span class="math inline">\(A\subset B\)</span>, then <span class="math inline">\((B\setminus A)_x = B_x\setminus A_x\)</span>,
+hence <span class="math inline">\(\mu_2((B\setminus A)_x) = \mu_2(B_x) -
+\mu_2(A_x)\)</span>, a difference of measurable functions, so <span class="math inline">\(B\setminus A\in\mathcal{L}\)</span>;<br />
+- If <span class="math inline">\((A_n)\subset\mathcal{L}\)</span> are
+pairwise disjoint, then for each <span class="math inline">\(x\)</span>,
+<span class="math inline">\(\Bigl(\bigcup_{n=1}^{\infty} A_n\Bigr)_x =
+\bigcup_{n=1}^{\infty} (A_n)_x\)</span> and the sets <span class="math inline">\((A_n)_x\)</span> are pairwise disjoint. By
+countable additivity of <span class="math inline">\(\mu_2\)</span>,
+<span class="math inline">\(\mu_2\Bigl(\bigcup_{n} (A_n)_x\Bigr) =
+\sum_n \mu_2((A_n)_x)\)</span>, which is a pointwise countable sum of
+measurable functions, hence measurable. Thus <span class="math inline">\(\bigcup_n A_n\in\mathcal{L}\)</span>.</p>
+<p>Therefore <span class="math inline">\(\mathcal{L}\)</span> is a <span class="math inline">\(\lambda\)</span>-system containing the rectangle
+class <span class="math inline">\(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)\)</span>,
+which is a <span class="math inline">\(\pi\)</span>-system. By the <span class="math inline">\(\pi\)</span>-<span class="math inline">\(\lambda\)</span> theorem,<br />
+<span class="math display">\[
+\mathcal{F}_1\otimes\mathcal{F}_2 =
+\sigma(\mathcal{R}(\mathcal{F}_1,\mathcal{F}_2)) \subset \mathcal{L}.
+\]</span><br />
+Hence for every indicator <span class="math inline">\(X=1_A\)</span>
+with <span class="math inline">\(A\in\mathcal{F}_1\otimes\mathcal{F}_2\)</span>,
+the function <span class="math inline">\(Z(x)=\mu_2(A_x)\)</span> is
+<span class="math inline">\(\mathcal{F}_1\)</span>-measurable.</p>
+<p><em>Step 2: Simple functions.</em> If <span class="math inline">\(X\)</span> is a non–negative simple
+function,<br />
+<span class="math display">\[
+X = \sum_{k=1}^n c_k 1_{A_k}, \quad c_k\ge0,\
+A_k\in\mathcal{F}_1\otimes\mathcal{F}_2,
+\]</span><br />
+then<br />
+<span class="math display">\[
+Z(x) = \int_{\Omega_2} X(x,y)\,\mu_2(dy) = \sum_{k=1}^n c_k
+\int_{\Omega_2} 1_{A_k}(x,y)\,\mu_2(dy) = \sum_{k=1}^n
+c_k\,\mu_2((A_k)_x),
+\]</span><br />
+which is a finite linear combination of measurable functions of <span class="math inline">\(x\)</span>, hence <span class="math inline">\(\mathcal{F}_1\)</span>-measurable.</p>
+<p><em>Step 3: General non–negative measurable functions.</em> For a
+general non–negative measurable <span class="math inline">\(X\)</span>,
+there exists a sequence of non–negative simple functions <span class="math inline">\((X_n)\)</span> such that<br />
+<span class="math display">\[
+X_n(x,y)\uparrow X(x,y)\quad\text{for all
+}(x,y)\in\Omega_1\times\Omega_2.
+\]</span><br />
+Define<br />
+<span class="math display">\[
+Z_n(x)\coloneqq\int_{\Omega_2} X_n(x,y)\,\mu_2(dy).
+\]</span><br />
+By Step 2, each <span class="math inline">\(Z_n\)</span> is <span class="math inline">\(\mathcal{F}_1\)</span>-measurable. By monotone
+convergence (applied for each fixed <span class="math inline">\(x\)</span>) we have<br />
+<span class="math display">\[
+Z_n(x) \uparrow \int_{\Omega_2} X(x,y)\,\mu_2(dy) = Z(x).
+\]</span><br />
+A pointwise limit of measurable functions is measurable, so <span class="math inline">\(Z\)</span> is <span class="math inline">\(\mathcal{F}_1\)</span>-measurable. □</p>
+<hr />
+</div>
+</div>
+<div id="theorem-existence-and-uniqueness-of-product-measure" class="section level2">
+<h2>22. Theorem: Existence and Uniqueness of Product Measure</h2>
 <p>If <span class="math inline">\((\Omega_1,\mathcal{F}_1,\mu_1)\)</span> and <span class="math inline">\((\Omega_2,\mathcal{F}_2,\mu_2)\)</span> are
-σ-finite,<br />
-then there exists a <strong>unique σ-finite measure</strong> <span class="math inline">\(\mu_1 \times \mu_2\)</span> on<br />
-<span class="math inline">\((\Omega_1 \times \Omega_2, \mathcal{F}_1
-\otimes \mathcal{F}_2)\)</span> such that <span class="math display">\[
-(\mu_1 \times \mu_2)(A_1 \times A_2)
-= \mu_1(A_1)\,\mu_2(A_2).
+σ-finite, then there exists a <strong>unique σ-finite measure</strong>
+<span class="math inline">\(\mu_1 \times \mu_2\)</span> on <span class="math inline">\((\Omega_1 \times \Omega_2, \mathcal{F}_1 \otimes
+\mathcal{F}_2)\)</span> such that<br />
+<span class="math display">\[
+(\mu_1 \times \mu_2)(A_1 \times A_2) = \mu_1(A_1)\,\mu_2(A_2).
 \]</span></p>
-</div>
-<div id="proof-sketch-fully-detailed-in-notebook" class="section level3">
-<h3>Proof sketch (fully detailed in notebook)</h3>
-<ul>
-<li>Define a premeasure on the rectangle semi-algebra.</li>
-<li>Show countable additivity.</li>
-<li>Extend via Carathéodory.</li>
-<li>Use π-system/λ-system arguments for uniqueness.</li>
-</ul>
+<div id="detailed-proof-existence-and-uniqueness" class="section level3">
+<h3>Detailed Proof (Existence and Uniqueness)</h3>
+<p><strong>Existence:</strong><br />
+The rectangles <span class="math inline">\(\mathcal{R} = \{A_1 \times
+A_2\}\)</span> form a semi-algebra (closed under intersections,
+complements via finite disjoint unions). Define premeasure <span class="math inline">\(\rho(A_1 \times A_2) = \mu_1(A_1)
+\mu_2(A_2)\)</span>. Extend to field generated by <span class="math inline">\(\mathcal{R}\)</span> (finite disjoint unions),
+then to outer measure, and restrict to Carathéodory measurable sets
+containing <span class="math inline">\(\sigma(\mathcal{R}) =
+\mathcal{F}_1 \otimes \mathcal{F}_2\)</span>. σ-finiteness ensures
+finiteness.</p>
+<p><strong>Uniqueness:</strong><br />
+<span class="math inline">\(\mathcal{R}\)</span> is a π-system
+generating <span class="math inline">\(\mathcal{F}_1 \otimes
+\mathcal{F}_2\)</span>. Suppose another measure <span class="math inline">\(\nu\)</span> agrees on <span class="math inline">\(\mathcal{R}\)</span> and is σ-finite. Cover <span class="math inline">\(\Omega_1 \times \Omega_2\)</span> with rectangles
+of finite measure. Show the collection where <span class="math inline">\(\mu_1 \times \mu_2 = \nu\)</span> is a λ-system
+containing <span class="math inline">\(\mathcal{R}\)</span>. By π-λ
+theorem, they agree on <span class="math inline">\(\sigma(\mathcal{R})\)</span>. □</p>
 <hr />
 </div>
 </div>
 <div id="tonellis-theorem" class="section level2">
-<h2>8. Tonelli’s Theorem</h2>
+<h2>23. Tonelli’s Theorem</h2>
 <div id="theorem-tonelli" class="section level3">
 <h3>Theorem (Tonelli)</h3>
-<p>Let - <span class="math inline">\((\Omega_1,\mathcal{F}_1,\mu_1)\)</span> and <span class="math inline">\((\Omega_2,\mathcal{F}_2,\mu_2)\)</span> be
-σ-finite, - <span class="math inline">\(X:\Omega_1 \times \Omega_2 \to
-[0,\infty]\)</span> be measurable.</p>
-<p>Then <span class="math display">\[
-\int_{\Omega_1 \times \Omega_2} X \, d(\mu_1 \times \mu_2)
-=
+<p>Let<br />
+- <span class="math inline">\((\Omega_1,\mathcal{F}_1,\mu_1)\)</span>
+and <span class="math inline">\((\Omega_2,\mathcal{F}_2,\mu_2)\)</span>
+be σ-finite,<br />
+- <span class="math inline">\(X:\Omega_1 \times \Omega_2 \to
+[0,\infty]\)</span> be measurable.<br />
+Then<br />
+<span class="math display">\[
+\int_{\Omega_1 \times \Omega_2} X \, d(\mu_1 \times \mu_2) =
 \int_{\Omega_1} \left( \int_{\Omega_2} X(x,y) \, \mu_2(dy) \right)
-\mu_1(dx)
-\]</span> and both iterated integrals are well-defined (possibly
-infinite).</p>
-<p>Define <span class="math display">\[
-Z(x) = \int_{\Omega_2} X(x,y)\, \mu_2(dy).
-\]</span> Tonelli ensures:</p>
-<ul>
-<li><span class="math inline">\(Z\)</span> is measurable,</li>
-<li>The outer integral is well-defined,</li>
-<li>The double integral equals the iterated integral.</li>
-</ul>
+\mu_1(dx) = \int_{\Omega_2} \left( \int_{\Omega_1} X(x,y) \, \mu_1(dx)
+\right) \mu_2(dy),
+\]</span><br />
+and both iterated integrals are well-defined (possibly infinite).</p>
+</div>
+<div id="detailed-proof-7" class="section level3">
+<h3>Detailed Proof</h3>
+<p><strong>Step 1: Indicators.</strong> For <span class="math inline">\(X = 1_E\)</span>, <span class="math inline">\(E
+\in \mathcal{F}_1 \otimes \mathcal{F}_2\)</span>,<br />
+<span class="math display">\[
+\int_{\Omega_1 \times \Omega_2} 1_E d(\mu_1 \times \mu_2) = (\mu_1
+\times \mu_2)(E).
+\]</span><br />
+The iterated:<br />
+<span class="math display">\[
+\int_{\Omega_1} \left( \int_{\Omega_2} 1_E(x,y) \mu_2(dy) \right)
+\mu_1(dx) = \int_{\Omega_1} \mu_2(E_x) \mu_1(dx).
+\]</span><br />
+Define <span class="math inline">\(\mathcal{L} = \{E : \int \mu_2(E_x)
+d\mu_1 = (\mu_1 \times \mu_2)(E)\}\)</span>. <span class="math inline">\(\mathcal{L}\)</span> is a λ-system (contains <span class="math inline">\(\Omega\)</span>, closed under differences and
+monotone unions). Rectangles in <span class="math inline">\(\mathcal{L}\)</span> (direct computation). By π-λ,
+<span class="math inline">\(\mathcal{F}_1 \otimes \mathcal{F}_2
+\subseteq \mathcal{L}\)</span>.</p>
+<p><strong>Step 2: Simple Functions.</strong> Linear combinations
+follow.</p>
+<p><strong>Step 3: Non-Negative Measurable.</strong> Approximate by
+simple <span class="math inline">\(X_n \uparrow X\)</span>, apply MCT to
+iterated integrals.</p>
+<p><strong>Step 4: Symmetry.</strong> Swap indices for other order.
+□</p>
 <hr />
 </div>
 </div>
-<div id="fubinis-theorem-for-integrable-functions" class="section level2">
-<h2>9. Fubini’s Theorem (for integrable functions)</h2>
-<p>If <span class="math inline">\(X\)</span> is integrable (not
-necessarily nonnegative), then <span class="math display">\[
-\int_{\Omega_1\times\Omega_2} X\, d(\mu_1\times\mu_2)
-= \int_{\Omega_1} \left( \int_{\Omega_2} X(x,y)\, d\mu_2 \right) d\mu_1
-= \int_{\Omega_2} \left( \int_{\Omega_1} X(x,y)\, d\mu_1 \right) d\mu_2.
+<div id="fubinis-theorem" class="section level2">
+<h2>24. Fubini’s Theorem</h2>
+<div id="theorem-fubini" class="section level3">
+<h3>Theorem (Fubini)</h3>
+<p>Let<br />
+- <span class="math inline">\((\Omega_1,\mathcal{F}_1,\mu_1)\)</span>
+and <span class="math inline">\((\Omega_2,\mathcal{F}_2,\mu_2)\)</span>
+be σ-finite,<br />
+- <span class="math inline">\(X:\Omega_1 \times \Omega_2 \to
+\mathbb{R}\)</span> be measurable and integrable w.r.t. <span class="math inline">\(\mu_1 \times \mu_2\)</span> (i.e., <span class="math inline">\(\int |X| d(\mu_1 \times \mu_2) &lt;
+\infty\)</span>).<br />
+Then<br />
+<span class="math display">\[
+\int_{\Omega_1 \times \Omega_2} X\, d(\mu_1\times\mu_2) =
+\int_{\Omega_1} \left( \int_{\Omega_2} X(x,y)\, d\mu_2 \right) d\mu_1 =
+\int_{\Omega_2} \left( \int_{\Omega_1} X(x,y)\, d\mu_1 \right) d\mu_2.
 \]</span></p>
+</div>
+<div id="detailed-proof-8" class="section level3">
+<h3>Detailed Proof</h3>
+<p>Write <span class="math inline">\(X = X^+ - X^-\)</span>. By Tonelli,
+both positive and negative parts satisfy the iterated equality (finite
+since integrable). Subtract to get the result. □</p>
 <hr />
 </div>
 </div>
-<div id="end-of-part-5" class="section level1">
-<h1>End of Part 5</h1>
+<div id="borel-cantelli-lemmas" class="section level2">
+<h2>25. Borel-Cantelli Lemmas</h2>
+<div id="first-borel-cantelli-lemma" class="section level3">
+<h3>First Borel-Cantelli Lemma</h3>
+<p>Let <span class="math inline">\((A_n)\)</span> be events in <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>. If <span class="math inline">\(\sum P(A_n) &lt; \infty\)</span>, then<br />
+<span class="math display">\[
+P(\limsup A_n) = 0.
+\]</span><br />
+(i.e., <span class="math inline">\(P(A_n\)</span> i.o.<span class="math inline">\() = 0\)</span>, where i.o. means infinitely
+often).</p>
+</div>
+<div id="proof-4" class="section level3">
+<h3>Proof</h3>
+<p><span class="math inline">\(\limsup A_n = \bigcap_m \bigcup_{n \geq
+m} A_n\)</span>. Then<br />
+<span class="math display">\[
+P(\limsup A_n) \leq P(\bigcup_{n \geq m} A_n) \leq \sum_{n \geq m}
+P(A_n) \to 0 \quad (m \to \infty).
+\]</span><br />
+Take <span class="math inline">\(m \to \infty\)</span>. □</p>
+</div>
+<div id="second-borel-cantelli-lemma" class="section level3">
+<h3>Second Borel-Cantelli Lemma</h3>
+<p>If <span class="math inline">\((A_n)\)</span> are independent and
+<span class="math inline">\(\sum P(A_n) = \infty\)</span>, then<br />
+<span class="math display">\[
+P(\limsup A_n) = 1.
+\]</span></p>
+</div>
+<div id="proof-5" class="section level3">
+<h3>Proof</h3>
+<p><span class="math inline">\(P(\limsup A_n^c) = P(\bigcup_m \bigcap_{n
+\geq m} A_n^c) \leq \sum_m P(\bigcap_{n \geq m} A_n^c) = \sum_m \prod_{n
+\geq m} (1 - P(A_n)) = 0\)</span> (product zero since sum diverges).
+Thus <span class="math inline">\(P(\limsup A_n) = 1\)</span>. □</p>
+</div>
+</div>
 </div>
 
 

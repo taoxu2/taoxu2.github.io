@@ -355,707 +355,246 @@ display: none;
 </div>
 
 
-<div id="part-1" class="section level1">
-<h1>Part 1</h1>
-</div>
-<div id="construction-of-measures-semi-algebras-premeasures-outer-measures" class="section level1">
-<h1>Construction of Measures: Semi-Algebras, Premeasures, Outer
-Measures</h1>
-<div id="preliminaries-fields-and-measures" class="section level2">
-<h2>1. Preliminaries: Fields and Measures</h2>
+<div id="chapter-3-construction-of-measures" class="section level1">
+<h1>Chapter 3: Construction of Measures</h1>
+<div id="preliminaries-fields-sigma-fields-and-measures" class="section level2">
+<h2>1. Preliminaries: Fields, Sigma-Fields, and Measures</h2>
+<div id="definition-of-field-algebra" class="section level3">
+<h3>Definition of Field (Algebra)</h3>
 <p>A collection <span class="math inline">\(\mathcal{F}\)</span> of
-subsets of <span class="math inline">\(\Omega\)</span> is called a
-<strong>field</strong> (or algebra) if</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\varnothing, \Omega \in
-\mathcal{F}\)</span><br />
-</li>
-<li><span class="math inline">\(A \in \mathcal{F} \implies A^c \in
-\mathcal{F}\)</span><br />
-</li>
-<li><span class="math inline">\(A,B \in \mathcal{F} \implies A \cup B
-\in \mathcal{F}\)</span></li>
-</ol>
-<p>A field is a <strong><span class="math inline">\(\sigma\)</span>-field</strong> if it is also
-closed under <em>countable unions</em>.</p>
-<p>A function <span class="math inline">\(\mu : \mathcal{F} \to
-[0,\infty]\)</span> is a <strong>measure</strong> if</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mu(\varnothing)=0\)</span>,<br />
-</li>
-<li>(<strong>countable additivity</strong>) If <span class="math inline">\(\{F_n\}\)</span> are pairwise disjoint in <span class="math inline">\(\mathcal{F}\)</span>, then<br />
+subsets of <span class="math inline">\(\Omega\)</span> is a
+<strong>field</strong> (or algebra) if:<br />
+1. <span class="math inline">\(\varnothing, \Omega \in
+\mathcal{F}\)</span>.<br />
+2. Closed under complements: <span class="math inline">\(A \in
+\mathcal{F} \implies A^c \in \mathcal{F}\)</span>.<br />
+3. Closed under finite unions: <span class="math inline">\(A, B \in
+\mathcal{F} \implies A \cup B \in \mathcal{F}\)</span>.</p>
+<p><strong>Consequences</strong>: Closed under finite intersections (by
+De Morgan’s laws) and differences.</p>
+<p>A <strong>σ-field</strong> (σ-algebra) is a field closed under
+countable unions (and thus countable intersections).</p>
+</div>
+<div id="measure-on-a-field" class="section level3">
+<h3>Measure on a Field</h3>
+<p>A function <span class="math inline">\(\mu: \mathcal{F} \to [0,
+\infty]\)</span> is a <strong>measure</strong> if:<br />
+1. <span class="math inline">\(\mu(\varnothing) = 0\)</span>.<br />
+2. <strong>Countable additivity (σ-additivity)</strong>: For pairwise
+disjoint <span class="math inline">\(\{F_n\} \subset
+\mathcal{F}\)</span>,<br />
 <span class="math display">\[
-\mu\Big(\bigcup_{n=1}^\infty F_n\Big)=\sum_{n=1}^\infty\mu(F_n).
-\]</span></li>
-</ol>
+   \mu\left( \bigcup_{n=1}^\infty F_n \right) = \sum_{n=1}^\infty
+\mu(F_n).
+   \]</span></p>
+<p>If restricted to finite additivity, it’s a
+<strong>premeasure</strong> (detailed below).</p>
+<p><strong>Additional Notes</strong>: Fields are easier to work with
+initially than σ-fields, as they require only finite operations. The
+goal is to start with a premeasure on a simple class and extend to a
+measure on a σ-field.</p>
 <hr />
 </div>
 </div>
-<div id="semi-algebras" class="section level1">
-<h1>2. Semi-Algebras</h1>
-<div id="definition" class="section level2">
-<h2>2.1 Definition</h2>
+<div id="semi-algebras" class="section level2">
+<h2>2. Semi-Algebras</h2>
+<div id="definition" class="section level3">
+<h3>Definition</h3>
 <p>A collection <span class="math inline">\(\mathcal{G}\)</span> of
 subsets of <span class="math inline">\(\Omega\)</span> is a
-<strong>semi-algebra</strong> if:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\varnothing, \Omega \in
-\mathcal{G}\)</span><br />
-</li>
-<li><span class="math inline">\(\mathcal{G}\)</span> is a <span class="math inline">\(\pi\)</span>-system (closed under finite
-intersections)<br />
-</li>
-<li>For every <span class="math inline">\(C \in \mathcal{G}\)</span>,
-its complement <strong>can be written as a finite disjoint
-union</strong> of sets in <span class="math inline">\(\mathcal{G}\)</span>:<br />
-<span class="math display">\[
-C^c = D_1 \cup \dots \cup D_n, \qquad D_i \in \mathcal{G}.
-\]</span></li>
-</ol>
-<hr />
+<strong>semi-algebra</strong> (or semi-ring) if:<br />
+1. <span class="math inline">\(\varnothing, \Omega \in
+\mathcal{G}\)</span>.<br />
+2. <strong>π-System</strong>: Closed under finite intersections (<span class="math inline">\(A, B \in \mathcal{G} \implies A \cap B \in
+\mathcal{G}\)</span>).<br />
+3. Closed under complements via finite disjoint unions: For <span class="math inline">\(C \in \mathcal{G}\)</span>, <span class="math inline">\(C^c = \bigcup_{i=1}^n D_i\)</span> with disjoint
+<span class="math inline">\(D_i \in \mathcal{G}\)</span>.</p>
+<p><strong>Key Idea</strong>: Semi-algebras are “almost” fields but
+allow complements to decompose finitely, enabling simple
+constructions.</p>
 </div>
-<div id="example-semi-algebra-of-intervals-on-mathbbr" class="section level2">
-<h2>2.2 Example: Semi-Algebra of Intervals on <span class="math inline">\(\mathbb{R}\)</span></h2>
+<div id="example-semi-algebra-of-intervals-on-mathbbr" class="section level3">
+<h3>Example: Semi-Algebra of Intervals on <span class="math inline">\(\mathbb{R}\)</span></h3>
 <p>Let<br />
 <span class="math display">\[
-\mathcal{I}
-=
-\{\varnothing\}
-\cup
-\{(a,b] : -\infty \le a &lt; b \le \infty \}
-\cup
-\{(a,\infty),\, (-\infty,b]\}.
-\]</span></p>
-<p>Then:</p>
-<ul>
-<li><span class="math inline">\((a,b]^c = (-\infty,a] \cup (b,\infty)
-\in \mathcal{I}\)</span><br />
-</li>
-<li><span class="math inline">\((a,\infty)^c = (-\infty,a] \in
-\mathcal{I}\)</span><br />
-</li>
-<li><span class="math inline">\((-\infty,b]^c = (b,\infty) \in
-\mathcal{I}\)</span></li>
-</ul>
-<p>Thus <span class="math inline">\(\mathcal{I}\)</span> is a
+\mathcal{I} = \{\varnothing\} \cup \{(a,b] : -\infty \leq a &lt; b \leq
+\infty\} \cup \{(a,\infty), (-\infty,b]\}.
+\]</span><br />
+- Intersections: Finite intersections of half-open intervals remain in
+<span class="math inline">\(\mathcal{I}\)</span>.<br />
+- Complements: <span class="math inline">\((a,b]^c = (-\infty,a] \cup
+(b,\infty)\)</span>; similarly for others.<br />
+Thus, <span class="math inline">\(\mathcal{I}\)</span> is a
 semi-algebra.</p>
+<p><strong>Additional Example</strong>: Rectangles in <span class="math inline">\(\mathbb{R}^d\)</span> like <span class="math inline">\(\{ (x_1, \dots, x_d) : a_i &lt; x_i \leq b_i
+\}\)</span> form a semi-algebra for higher dimensions.</p>
 <hr />
 </div>
 </div>
-<div id="premeasures-on-a-semi-algebra" class="section level1">
-<h1>3. Premeasures on a Semi-Algebra</h1>
-<div id="definition-1" class="section level2">
-<h2>3.1 Definition</h2>
+<div id="premeasures-on-semi-algebras" class="section level2">
+<h2>3. Premeasures on Semi-Algebras</h2>
+<div id="definition-1" class="section level3">
+<h3>Definition</h3>
 <p>Let <span class="math inline">\(\mathcal{G}\)</span> be a
-semi-algebra.<br />
-A function <span class="math inline">\(\mu^{00}:\mathcal{G} \to
-[0,\infty]\)</span> is a <strong>premeasure on <span class="math inline">\(\mathcal{G}\)</span></strong> if:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mu^{00}(\varnothing) = 0\)</span><br />
-</li>
-<li>(<strong>finite additivity</strong>) if <span class="math inline">\(C_n \in \mathcal{G}\)</span> are disjoint
-<em>and</em><br />
+semi-algebra. A function <span class="math inline">\(\mu^{00}:
+\mathcal{G} \to [0, \infty]\)</span> is a <strong>premeasure</strong>
+if:<br />
+1. <span class="math inline">\(\mu^{00}(\varnothing) = 0\)</span>.<br />
+2. <strong>Finite additivity</strong>: For disjoint <span class="math inline">\(\{C_n\}_{n=1}^N \subset \mathcal{G}\)</span> with
+<span class="math inline">\(\bigcup C_n \in \mathcal{G}\)</span>,<br />
 <span class="math display">\[
-C = \bigcup_{n=1}^N C_n \in \mathcal{G},
-\]</span> then<br />
+   \mu^{00}\left( \bigcup_{n=1}^N C_n \right) = \sum_{n=1}^N
+\mu^{00}(C_n).
+   \]</span></p>
+<p><strong>Note</strong>: Finite additivity + complement decomposition
+ensures consistency. If countably additive where possible, it becomes a
+full premeasure for extension.</p>
+</div>
+<div id="constructing-premeasures-from-distribution-functions" class="section level3">
+<h3>Constructing Premeasures from Distribution Functions</h3>
+<p>Let <span class="math inline">\(F: \mathbb{R} \to \mathbb{R}\)</span>
+be non-decreasing and right-continuous (i.e., <span class="math inline">\(F(x) = \lim_{y \downarrow x} F(y)\)</span>).
+Define on <span class="math inline">\(\mathcal{I}\)</span>:<br />
+- <span class="math inline">\(\mu^{00}(\varnothing) = 0\)</span>.<br />
+- <span class="math inline">\(\mu^{00}((a,b]) = F(b) - F(a)\)</span> for
+finite <span class="math inline">\(a &lt; b\)</span>.<br />
+- <span class="math inline">\(\mu^{00}((a,\infty)) = \lim_{x \to \infty}
+F(x) - F(a)\)</span>.<br />
+- <span class="math inline">\(\mu^{00}((-\infty,b]) = F(b) - \lim_{x \to
+-\infty} F(x)\)</span>.</p>
+<p><strong>Lemma</strong>: <span class="math inline">\(\mu^{00}\)</span>
+is a premeasure on <span class="math inline">\(\mathcal{I}\)</span>.<br />
+<strong>Proof Sketch</strong>:<br />
+- Finite additivity follows from telescoping sums in <span class="math inline">\(F\)</span>.<br />
+- For countable disjoint unions equaling an interval (finite case
+reduces via monotonicity; infinite via ε-approximation and
+right-continuity).</p>
+<p><strong>Examples</strong>:<br />
+1. <strong>Lebesgue Premeasure</strong>: <span class="math inline">\(F(x) = x \implies \mu^{00}((a,b]) = b -
+a\)</span>.<br />
+2. <strong>Counting Measure on <span class="math inline">\(\mathbb{Z}\)</span></strong>: <span class="math inline">\(F(x) = \lfloor x \rfloor \implies \mu^{00}((a,b])
+=\)</span> number of integers in <span class="math inline">\((a,b]\)</span>.<br />
+3. <strong>Dirac at 0</strong>: <span class="math inline">\(F(x) = I_{(x
+\geq 0)} \implies \mu^{00}((a,b]) = 1\)</span> if <span class="math inline">\(0 \in (a,b]\)</span>, else 0.</p>
+<p><strong>Additional Notes</strong>: Right-continuity ensures
+additivity over intervals; left-continuous versions use <span class="math inline">\([a,b)\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="extending-premeasures-to-fields" class="section level2">
+<h2>4. Extending Premeasures to Fields</h2>
+<p>Let <span class="math inline">\(\mathcal{G}\)</span> be a
+semi-algebra, <span class="math inline">\(\mu^{00}\)</span> a premeasure
+on <span class="math inline">\(\mathcal{G}\)</span>.<br />
+The <strong>field generated by <span class="math inline">\(\mathcal{G}\)</span></strong> is<br />
 <span class="math display">\[
-\mu^{00}(C) = \sum_{n=1}^N \mu^{00}(C_n).
-\]</span></li>
-</ol>
-<p>Because complements break into finitely many pieces inside <span class="math inline">\(\mathcal{G}\)</span>, the definition ensures
-<strong>well-definedness</strong> of <span class="math inline">\(\mu^{00}\)</span> even for sets formed by
-intersections and differences.</p>
-<hr />
-</div>
-</div>
-<div id="construction-of-a-specific-premeasure" class="section level1">
-<h1>4. Construction of a Specific Premeasure</h1>
-<div id="increasing-right-continuous-function" class="section level2">
-<h2>4.1 Increasing Right-Continuous Function</h2>
-<p>Let <span class="math inline">\(F:\mathbb{R}\to\mathbb{R}\)</span> be
-<strong>increasing</strong> and <strong>right-continuous</strong>.</p>
-<p>Define <span class="math inline">\(\mu^{00}\)</span> on <span class="math inline">\(\mathcal{I}\)</span> by:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mu^{00}(\varnothing)=0\)</span></li>
-<li>For finite intervals, <span class="math display">\[
-\mu^{00}((a,b]) = F(b)-F(a), \qquad -\infty &lt; a &lt; b &lt; \infty.
-\]</span></li>
-<li>For infinite endpoints, <span class="math display">\[
-\mu^{00}((a,\infty)) = F(+\infty)-F(a), \quad
-\mu^{00}((-\infty,b]) = F(b) - F(-\infty),
-\]</span> where<br />
+F^0 = \left\{ \bigcup_{i=1}^n C_i : C_i \in \mathcal{G}, \text{
+disjoint} \right\}.
+\]</span><br />
+- <span class="math inline">\(F^0\)</span> is the smallest field
+containing <span class="math inline">\(\mathcal{G}\)</span> (closed
+under finite unions, complements, intersections).</p>
+<p><strong>Extension</strong>: Define <span class="math inline">\(\mu^0:
+F^0 \to [0, \infty]\)</span> by<br />
 <span class="math display">\[
-F(+\infty)=\lim_{x\to\infty}F(x),\qquad
-F(-\infty)=\lim_{x\to -\infty}F(x).
-\]</span></li>
-</ol>
+\mu^0(F) = \sum_{i=1}^n \mu^{00}(C_i), \quad F = \bigcup_{i=1}^n C_i \
+(C_i \in \mathcal{G}, \text{ disjoint}).
+\]</span></p>
+<p><strong>Claims</strong>:<br />
+1. <strong>Well-Defined</strong>: Independent of decomposition (refine
+via intersections in π-system; additivity holds).<br />
+2. <strong>Unique</strong>: Only possible finitely additive
+extension.<br />
+3. <strong>Countably Additive</strong>: For disjoint <span class="math inline">\(\{F_m\} \subset F^0\)</span> with <span class="math inline">\(\bigcup F_m \in F^0\)</span>, <span class="math inline">\(\mu^0(\bigcup F_m) = \sum \mu^0(F_m)\)</span>
+(decompose into countable <span class="math inline">\(\mathcal{G}\)</span>-pieces).</p>
+<p><strong>Additional Notes</strong>: This step bridges semi-algebras to
+fields, where outer measures can be built.</p>
 <hr />
 </div>
-</div>
-<div id="lemma-mu00-is-a-premeasure" class="section level1">
-<h1>5. Lemma: <span class="math inline">\(\mu^{00}\)</span> is a
-Premeasure</h1>
-<p>Let <span class="math inline">\(\{I_n\}\)</span> be disjoint elements
-of <span class="math inline">\(\mathcal{I}\)</span> and suppose<br />
+<div id="outer-measures" class="section level2">
+<h2>5. Outer Measures</h2>
+<p>Given premeasure <span class="math inline">\(\mu^0\)</span> on field
+<span class="math inline">\(F^0\)</span>, define the <strong>outer
+measure</strong> <span class="math inline">\(\mu^*: \mathcal{P}(\Omega)
+\to [0, \infty]\)</span> by<br />
 <span class="math display">\[
-I = \bigcup_{n=1}^\infty I_n \in \mathcal{I}.
-\]</span></p>
-<p>We must show <span class="math display">\[
-\mu^{00}(I) = \sum_{n=1}^\infty \mu^{00}(I_n).
-\]</span></p>
-<div id="step-1.-reduction-to-the-finite-case" class="section level3">
-<h3>Step 1. Reduction to the finite case</h3>
-<p>For a finite union, <span class="math display">\[
-\mu^{00}(I) - \sum_{n=1}^N\mu^{00}(I_n)
-=
-\big( F(b) - F(a) \big)
--
-\sum_{n=1}^N (F(b_n)-F(a_n)) \ge 0
-\]</span> due to monotonicity of <span class="math inline">\(F\)</span>
-and the ordering of endpoints.</p>
-<p>Thus the inequality <span class="math display">\[
-\sum_{n=1}^N\mu^{00}(I_n) \le \mu^{00}(I)
-\]</span> holds.</p>
-<p>Taking <span class="math inline">\(N\to\infty\)</span> yields <span class="math display">\[
-\sum_{n=1}^\infty \mu^{00}(I_n) \le \mu^{00}(I).
-\]</span></p>
-<hr />
-</div>
-<div id="step-2.-reverse-inequality" class="section level3">
-<h3>Step 2. Reverse inequality</h3>
-<p>Assume <span class="math inline">\(I \subset \bigcup_{n=1}^\infty
-I_n\)</span>.</p>
-<p>Fix <span class="math inline">\(\varepsilon&gt;0\)</span>.<br />
-Choose <span class="math inline">\(a&#39;\in(a,b)\)</span> and <span class="math inline">\(b&#39;&gt;b\)</span> such that <span class="math display">\[
-F(a&#39;) - F(a) &lt; \varepsilon/2, \qquad
-F(b) - F(b&#39;) &lt; \varepsilon/2.
-\]</span></p>
-<p>Using right-continuity of <span class="math inline">\(F\)</span> we
-have <span class="math display">\[
-[a&#39;,b&#39;] \subset \bigcup_{n=1}^N I_n
-\]</span> for some finite <span class="math inline">\(N\)</span>
-(compactness).</p>
-<p>Thus <span class="math display">\[
-\mu^{00}(I)
-=
-F(b)-F(a)
-\le
-\varepsilon + \sum_{n=1}^N \mu^{00}(I_n)
-\le
-\varepsilon + \sum_{n=1}^\infty \mu^{00}(I_n).
-\]</span></p>
-<p>Let <span class="math inline">\(\varepsilon\to 0\)</span> to obtain
-the reverse inequality: <span class="math display">\[
-\mu^{00}(I) \le \sum_{n=1}^\infty \mu^{00}(I_n).
-\]</span></p>
-<hr />
-</div>
-<div id="conclusion" class="section level3">
-<h3>Conclusion</h3>
-<p><span class="math display">\[
-\boxed{
-\mu^{00}\ \text{is countably additive on disjoint families in}\
-\mathcal{I}
-}
-\]</span></p>
-<p>So <span class="math inline">\(\mu^{00}\)</span> is a
-<strong>premeasure</strong>.</p>
-<hr />
-</div>
-</div>
-<div id="interpretation-and-examples" class="section level1">
-<h1>6. Interpretation and Examples</h1>
-<div id="example-1-lebesgue-premeasure" class="section level3">
-<h3>Example 1: Lebesgue Premeasure</h3>
-<p>Take <span class="math inline">\(F(x)=x\)</span>.<br />
-Then<br />
-<span class="math display">\[
-\mu^{00}((a,b]) = b-a,
-\]</span> which generates the usual Lebesgue measure.</p>
-</div>
-<div id="example-2-counting-measure-on-mathbbz" class="section level3">
-<h3>Example 2: Counting Measure on <span class="math inline">\(\mathbb{Z}\)</span></h3>
-<p>Let <span class="math inline">\(F(x)=\lfloor x \rfloor\)</span>.
-Then<br />
-<span class="math display">\[
-F(b)-F(a) = \#\{k \in \mathbb{Z}: a &lt; k \le b\}.
-\]</span> Thus <span class="math inline">\(\mu^{00}\)</span> counts
-integers in the interval.</p>
-<hr />
-</div>
-</div>
-<div id="flow-of-construction" class="section level1">
-<h1>7. Flow of Construction</h1>
-<p>We now have the first step in the Carathéodory measure construction
-pipeline:</p>
-<p><span class="math display">\[
-\mathcal{G} \xrightarrow{\mu^{00}} \text{premeasure on semi-algebra}
-\quad\Longrightarrow\quad
-\mu^{0} \text{ on field}
-\quad\Longrightarrow\quad
-\mu^* \text{ (outer measure)}
-\quad\Longrightarrow\quad
-\mu \text{ on }\sigma(\mathcal{G}).
-\]</span></p>
-</div>
-<div id="part-2" class="section level1">
-<h1>Part 2:</h1>
-</div>
-<div id="ch2-part-2-construction-of-a-premeasure-on-a-field" class="section level1">
-<h1>CH2 Part 2 — Construction of a Premeasure on a Field</h1>
-<p>Fully annotated, teaching-style version</p>
-<hr />
-</div>
-<div id="semi-algebra-field-f0" class="section level1">
-<h1>1. Semi-algebra → Field <span class="math inline">\(F^0\)</span></h1>
-<p><strong>Theorem.</strong><br />
-Let <span class="math inline">\(\mathcal{G}\)</span> be a semi-algebra
-of subsets of <span class="math inline">\(\Omega\)</span>.<br />
-Let<br />
-<span class="math display">\[
-F^0 = \left\{\text{all finite disjoint unions of sets in }
-\mathcal{G}\right\}.
-\]</span> Then <strong><span class="math inline">\(F^0\)</span> is the
-minimal field generated by <span class="math inline">\(\mathcal{G}\)</span></strong>.</p>
-<p><strong>Idea.</strong><br />
-A semi-algebra is closed under finite intersections, but complements
-need not lie in <span class="math inline">\(\mathcal{G}\)</span>; they
-break into finitely many pieces.<br />
-A field requires closure under complements — hence <span class="math inline">\(F^0\)</span> is obtained by adding all finite
-disjoint unions of <span class="math inline">\(\mathcal{G}\)</span>-pieces.</p>
-<hr />
-</div>
-<div id="extending-a-premeasure-from-mathcalg-to-f0" class="section level1">
-<h1>2. Extending a Premeasure from <span class="math inline">\(\mathcal{G}\)</span> to <span class="math inline">\(F^0\)</span></h1>
-<p>Suppose<br />
-<span class="math display">\[
-\mu^{00} : \mathcal{G} \to [0,\infty]
-\]</span> is a <strong>premeasure</strong> on the semi-algebra.</p>
-<p><strong>Goal:</strong> Construct<br />
-<span class="math display">\[
-\mu^0 : F^0 \to [0,\infty]
-\]</span> such that</p>
-<ul>
-<li><span class="math inline">\(\mu^0\)</span> agrees with <span class="math inline">\(\mu^{00}\)</span> on <span class="math inline">\(\mathcal{G}\)</span>,</li>
-<li><span class="math inline">\(\mu^0\)</span> is finitely
-additive,</li>
-<li><span class="math inline">\(\mu^0\)</span> is <strong>countably
-additive</strong> on <span class="math inline">\(F^0\)</span>,</li>
-<li><span class="math inline">\(\mu^0\)</span> is
-<strong>unique</strong>.</li>
-</ul>
-<hr />
-<div id="defining-mu0-on-f0" class="section level2">
-<h2>2.1 Defining <span class="math inline">\(\mu^0\)</span> on <span class="math inline">\(F^0\)</span></h2>
-<p>Every <span class="math inline">\(F \in F^0\)</span> can be written
-(non-uniquely) as <span class="math display">\[
-F = \bigcup_{i=1}^n C_i, \qquad C_i \in \mathcal{G},\ \text{disjoint}.
-\]</span></p>
-<p>Define<br />
-<span class="math display">\[
-\mu^0(F) = \sum_{i=1}^n \mu^{00}(C_i).
-\]</span></p>
-<hr />
-<div id="claim-1.-the-value-of-mu0f-does-not-depend-on-the-choice-of-representation." class="section level3">
-<h3>🔵 <strong>Claim 1. The value of <span class="math inline">\(\mu^0(F)\)</span> does not depend on the choice of
-representation.</strong></h3>
-<p><strong>Explanation.</strong><br />
-Suppose two representations exist: <span class="math display">\[
-F = \bigcup_{i=1}^m C_i = \bigcup_{j=1}^n D_j,
-\]</span> with all <span class="math inline">\(C_i, D_j \in
-\mathcal{G}\)</span> disjoint.</p>
-<p>To compare them, build the disjoint refinement: <span class="math display">\[
-H = \{ C_i \cap D_j : 1 \le i \le m,\ 1 \le j \le n \}.
-\]</span></p>
-<p>Because <span class="math inline">\(\mathcal{G}\)</span> is a
-<strong><span class="math inline">\(\pi\)</span>-system</strong>, all
-intersections lie in <span class="math inline">\(\mathcal{G}\)</span>.<br />
-Moreover, <span class="math display">\[
-C_i = \bigcup_{j} (C_i \cap D_j), \qquad
-D_j = \bigcup_{i} (C_i \cap D_j),
-\]</span> as disjoint unions.</p>
-<p>Hence: <span class="math display">\[
-\sum_{i=1}^m \mu^{00}(C_i)
-= \sum_{i,j} \mu^{00}(C_i \cap D_j)
-= \sum_{j=1}^n \mu^{00}(D_j).
-\]</span></p>
-<p>✔ <strong>Thus the value <span class="math inline">\(\mu^0(F)\)</span> is well-defined.</strong></p>
-<hr />
-</div>
-</div>
-<div id="uniqueness-on-f0" class="section level2">
-<h2>2.2 Uniqueness on <span class="math inline">\(F^0\)</span></h2>
-<p>Because any <span class="math inline">\(F \in F^0\)</span> decomposes
-into finitely many <span class="math inline">\(\mathcal{G}\)</span>-pieces and the value is
-completely determined by those pieces,<br />
-<strong>at most one extension</strong> of <span class="math inline">\(\mu^{00}\)</span> to <span class="math inline">\(F^0\)</span> exists.</p>
-<hr />
-</div>
-</div>
-<div id="countable-additivity-on-f0" class="section level1">
-<h1>3. Countable Additivity on <span class="math inline">\(F^0\)</span></h1>
-<div id="claim-2.-if-f_m-is-a-disjoint-sequence-in-f0-then" class="section level3">
-<h3>🔵 <strong>Claim 2. If <span class="math inline">\((F_m)\)</span> is
-a disjoint sequence in <span class="math inline">\(F^0\)</span>,
-then</strong></h3>
-<p><span class="math display">\[
-\mu^0\Big( \bigcup_{m=1}^{\infty} F_m \Big)
-= \sum_{m=1}^{\infty} \mu^0(F_m).
-\]</span></p>
-<p><strong>Proof (annotated).</strong></p>
-<p>Each <span class="math inline">\(F_m\)</span> can be decomposed into
-finitely many <span class="math inline">\(\mathcal{G}\)</span>-pieces:
-<span class="math display">\[
-F_m = \bigcup_{C \in E_m} C,
-\qquad E_m \subset \mathcal{G},\ E_m\ \text{finite disjoint}.
-\]</span></p>
-<p>Let<br />
-<span class="math display">\[
-G = \bigcup_{m=1}^{\infty} E_m,
-\]</span> which is a <strong>countable disjoint collection</strong> of
-<span class="math inline">\(\mathcal{G}\)</span>-sets.</p>
-<p>Then:</p>
-<p><span class="math display">\[
-\mu^0(F_m)
-= \sum_{C \in E_m} \mu^{00}(C),
-\]</span></p>
-<p>and</p>
-<p><span class="math display">\[
-\mu^0\bigg(\bigcup_m F_m\bigg)
-= \sum_{C \in G} \mu^{00}(C)
-= \sum_{m=1}^{\infty} \sum_{C \in E_m} \mu^{00}(C)
-= \sum_{m=1}^{\infty} \mu^0(F_m).
-\]</span></p>
-<p>✔ <strong>Thus <span class="math inline">\(\mu^0\)</span> is
-countably additive on <span class="math inline">\(F^0\)</span>.</strong></p>
-<hr />
-</div>
-</div>
-<div id="hahnkolmogorov-extension-theorem" class="section level1">
-<h1>4. Hahn–Kolmogorov Extension Theorem</h1>
-<p>This is the key theorem enabling construction of a true measure on a
-<strong><span class="math inline">\(\sigma\)</span>-field</strong>.</p>
-<hr />
-<div id="outer-measure-construction" class="section level2">
-<h2>4.1 Outer Measure Construction</h2>
-<p>Given a premeasure <span class="math inline">\(\mu^0\)</span> on
-field <span class="math inline">\(F^0\)</span>, define an <strong>outer
-measure</strong>: <span class="math display">\[
-\mu^*(A)
-= \inf\left\{
-\sum_{n=1}^{\infty} \mu^0(F_n) :
-A \subset \bigcup_{n=1}^{\infty} F_n,\ \ F_n \in F^0
-\right\}.
-\]</span></p>
-<p>Properties:</p>
-<ul>
-<li><span class="math inline">\(\mu^*(\varnothing)=0\)</span></li>
-<li><strong>monotone</strong></li>
-<li><strong>countably subadditive</strong></li>
-<li>covers may not lie in <span class="math inline">\(F^0\)</span>, but
-elements of the cover do</li>
-</ul>
+\mu^*(A) = \inf \left\{ \sum_{n=1}^\infty \mu^0(F_n) : A \subseteq
+\bigcup_{n=1}^\infty F_n, \, F_n \in F^0 \right\}.
+\]</span><br />
+(Inf over countable <span class="math inline">\(F^0\)</span>-covers;
+<span class="math inline">\(\inf \varnothing = \infty\)</span>.)</p>
+<p><strong>Properties</strong>:<br />
+- <span class="math inline">\(\mu^*(\varnothing) = 0\)</span>.<br />
+- <strong>Monotonicity</strong>: <span class="math inline">\(A \subseteq
+B \implies \mu^*(A) \leq \mu^*(B)\)</span>.<br />
+- <strong>Countable Subadditivity</strong>: <span class="math inline">\(\mu^*(\bigcup A_n) \leq \sum
+\mu^*(A_n)\)</span>.<br />
+- <span class="math inline">\(\mu^*(F) = \mu^0(F)\)</span> for <span class="math inline">\(F \in F^0\)</span> (trivial cover for <span class="math inline">\(\leq\)</span>; subadditivity for <span class="math inline">\(\geq\)</span>).</p>
+<p><strong>Additional Notes</strong>: Outer measures approximate from
+outside; not necessarily additive.</p>
 <hr />
 </div>
 <div id="carathéodory-measurability" class="section level2">
-<h2>4.2 Carathéodory Measurability</h2>
-<p>A set <span class="math inline">\(A \subset \Omega\)</span> is
-<strong>Carathéodory measurable</strong> if:</p>
-<p><span class="math display">\[
-\mu^*(E)
-= \mu^*(E \cap A) + \mu^*(E \cap A^c),
-\qquad \forall E \subset \Omega.
-\]</span></p>
-<p>These “good sets’’ form a <span class="math inline">\(\sigma\)</span>-field.</p>
-<hr />
-</div>
-</div>
-<div id="extension-theorem-final-form" class="section level1">
-<h1>5. Extension Theorem (Final Form)</h1>
-<p><strong>Theorem (Hahn–Kolmogorov).</strong><br />
-Let <span class="math inline">\(F^0\)</span> be a field, and <span class="math inline">\(\mu^0\)</span> a premeasure on <span class="math inline">\(F^0\)</span>.<br />
-Then:</p>
-<ol style="list-style-type: decimal">
-<li>The outer measure <span class="math inline">\(\mu^*\)</span> defined
-above is an outer measure.</li>
-<li>Every set in <span class="math inline">\(F^0\)</span> is
-Carathéodory measurable.</li>
-<li>The restriction<br />
+<h2>6. Carathéodory Measurability</h2>
+<p>A set <span class="math inline">\(G \subseteq \Omega\)</span> is
+<strong>Carathéodory measurable</strong> if for all <span class="math inline">\(A \subseteq \Omega\)</span>,<br />
 <span class="math display">\[
-\mu := \mu^*|_{\sigma(F^0)}
-\]</span> is a <strong>measure</strong>.</li>
-<li>Moreover,<br />
-<span class="math display">\[
-\mu(F) = \mu^0(F), \qquad \forall F \in F^0.
-\]</span></li>
-</ol>
+\mu^*(A) = \mu^*(A \cap G) + \mu^*(A \cap G^c).
+\]</span><br />
+Let <span class="math inline">\(\mathcal{C} = \{ G : G \text{
+Carathéodory measurable} \}\)</span>.</p>
+<p><strong>Theorem</strong>: <span class="math inline">\(\mathcal{C}\)</span> is a σ-field, and <span class="math inline">\(\mu|_{\mathcal{C}}\)</span> is a measure extending
+<span class="math inline">\(\mu^*\)</span>.</p>
+<p><strong>Proof Outline</strong>:<br />
+1. <strong>Field</strong>: <span class="math inline">\(\Omega \in
+\mathcal{C}\)</span>; symmetric in <span class="math inline">\(G,
+G^c\)</span>; finite unions via iterative splitting.<br />
+2. <strong>σ-Field</strong>: Closed under countable disjoint unions
+(induction on finite, then limit; uses subadditivity).<br />
+3. <strong>Additivity</strong>: For disjoint <span class="math inline">\(G_i \in \mathcal{C}\)</span>, <span class="math inline">\(\mu(\bigcup G_i) = \sum \mu(G_i)\)</span> (from
+splitting).</p>
+<p><strong>Key Lemma</strong>: Every <span class="math inline">\(F \in
+F^0\)</span> is in <span class="math inline">\(\mathcal{C}\)</span>
+(refine covers over <span class="math inline">\(F\)</span> and <span class="math inline">\(F^c\)</span>; use additivity on field).</p>
+<p>Thus, <span class="math inline">\(\sigma(F^0) \subseteq
+\mathcal{C}\)</span>.</p>
 <hr />
 </div>
-<div id="key-step-showing-f0subset-mathcalc" class="section level1">
-<h1>6. Key Step: Showing <span class="math inline">\(F^0\subset
-\mathcal{C}\)</span></h1>
-<p>(<span class="math inline">\(\mathcal{C}\)</span> = Carathéodory
-sets)</p>
-<p>Let <span class="math inline">\(F \in F^0\)</span>.<br />
-We need to show: <span class="math display">\[
-\mu^*(A) = \mu^*(A\cap F) + \mu^*(A \cap F^c),
-\qquad \forall A\subset\Omega.
-\]</span></p>
-<p><strong>Annotated proof outline:</strong></p>
-<div id="step-1-show-muf-mu0f" class="section level3">
-<h3>Step 1 — Show <span class="math inline">\(\mu^*(F) =
-\mu^0(F)\)</span></h3>
-<p>Take the trivial cover:</p>
-<ul>
-<li><span class="math inline">\(F_1 = F\)</span></li>
-<li><span class="math inline">\(F_i = \varnothing\)</span> for <span class="math inline">\(i\ge 2\)</span></li>
-</ul>
-<p>Thus: <span class="math display">\[
-\mu^*(F) \le \mu^0(F).
-\]</span></p>
-<p>Reverse inequality uses the fact every cover must cover all <span class="math inline">\(\mathcal{G}\)</span>-pieces inside <span class="math inline">\(F\)</span>: <span class="math display">\[
-\mu^*(F) \ge \mu^0(F).
-\]</span></p>
-<p>So equality holds.</p>
+<div id="hahn-kolmogorov-extension-theorem" class="section level2">
+<h2>7. Hahn-Kolmogorov Extension Theorem</h2>
+<p><strong>Theorem</strong>: Let <span class="math inline">\(F^0\)</span> be a field, <span class="math inline">\(\mu^0\)</span> a premeasure on <span class="math inline">\(F^0\)</span>. Then:<br />
+1. <span class="math inline">\(\mu^*\)</span> is an outer measure
+extending <span class="math inline">\(\mu^0\)</span>.<br />
+2. <span class="math inline">\(\mu = \mu^*|_{\sigma(F^0)}\)</span> is a
+measure on <span class="math inline">\(\sigma(F^0)\)</span> extending
+<span class="math inline">\(\mu^0\)</span>.<br />
+3. <strong>Uniqueness</strong>: If another measure <span class="math inline">\(\nu\)</span> extends <span class="math inline">\(\mu^0\)</span> and both are σ-finite on <span class="math inline">\(F^0\)</span>, then <span class="math inline">\(\mu
+= \nu\)</span> on <span class="math inline">\(\sigma(F^0)\)</span> (via
+π-λ theorem on generators).</p>
+<p><strong>Construction Flow</strong>:<br />
+Semi-Algebra <span class="math inline">\(\mathcal{G}
+\xrightarrow{\mu^{00}}\)</span> Field <span class="math inline">\(F^0
+\xrightarrow{\mu^0}\)</span> Outer Measure <span class="math inline">\(\mu^* \to\)</span> Measure <span class="math inline">\(\mu\)</span> on <span class="math inline">\(\sigma(F^0)\)</span>.</p>
 <hr />
 </div>
-<div id="step-2-use-a-general-cover-of-a" class="section level3">
-<h3>Step 2 — Use a general cover of <span class="math inline">\(A\)</span></h3>
-<p>Choose a cover <span class="math inline">\(A \subset \bigcup_n
-G_n\)</span> with <span class="math inline">\(G_n \in F^0\)</span>.</p>
-<p>Define the refined sets: <span class="math display">\[
-H_1 = F \cap G_1,\quad
-H_n = (F \cap G_n)\setminus \bigcup_{i=1}^{n-1}(F\cap G_i)
-\]</span> and similarly refine sets covering <span class="math inline">\(A\cap F^c\)</span>.</p>
-<p>These refinements remain in <span class="math inline">\(F^0\)</span>
-because <span class="math inline">\(F^0\)</span> is a
-<strong>field</strong>.</p>
-<hr />
-</div>
-<div id="step-3-apply-countable-additivity-on-f0" class="section level3">
-<h3>Step 3 — Apply countable additivity on <span class="math inline">\(F^0\)</span></h3>
-<p><span class="math display">\[
-\mu^0\left(\bigcup_n H_n\right)
-= \sum_n \mu^0(H_n)
-\]</span> and similarly for the part inside <span class="math inline">\(F^c\)</span>.</p>
-<p>Using subadditivity and refinement, <span class="math display">\[
-\mu^*(A) + \epsilon
-\ge \mu^*(A\cap F) + \mu^*(A\cap F^c).
-\]</span></p>
-<p>Let <span class="math inline">\(\epsilon \to 0\)</span>.</p>
-<p>✔ <strong>Thus <span class="math inline">\(F \in
-\mathcal{C}\)</span>.</strong></p>
-<hr />
-</div>
-</div>
-<div id="final-conclusion" class="section level1">
-<h1>7. Final Conclusion</h1>
-<p>Every set in <span class="math inline">\(F^0\)</span> is Carathéodory
-measurable, and<br />
-<span class="math display">\[
-\mu = \mu^0 \quad \text{on }F^0.
-\]</span></p>
-<p>This gives a <strong>canonical extension</strong> from a semi-algebra
-to a full <span class="math inline">\(\sigma\)</span>-field (usually the
-Borel sets).</p>
-<hr />
-</div>
-<div id="end-of-ch2-part-2" class="section level1">
-<h1>End of CH2 Part 2</h1>
-</div>
-<div id="part-3" class="section level1">
-<h1>Part 3:</h1>
-<div id="recall" class="section level2">
-<h2>Recall</h2>
-<p>Let <span class="math inline">\(F^{\circ}\)</span> be a field.<br />
-Let <span class="math inline">\(\mu^{\circ}:F^{\circ} \to
-[0,+\infty]\)</span> be a premeasure.</p>
-<p>Define the outer measure <span class="math display">\[
-\mu^{*}(A) \;\coloneqq\;
-\inf\Bigl\{ \sum_{n=1}^{\infty} \mu^{\circ}(F_n)
-    : F_n \in F^{\circ},\; A \subset \bigcup_{n=1}^{\infty} F_n \Bigr\}.
-\]</span></p>
-<p>Then:</p>
-<ul>
-<li><span class="math inline">\(\mu^{*}\)</span> is an outer
-measure.</li>
-<li><span class="math inline">\(\mu^{*} =
-\mu^{\circ}\big|_{F^{\circ}}\)</span>, i.e., <span class="math display">\[
-\forall\, F \in F^{\circ},\quad \mu^{*}(F) = \mu^{\circ}(F).
-\]</span></li>
-<li>Every set in <span class="math inline">\(F^{\circ}\)</span> is
-Carathéodory measurable.</li>
-</ul>
-<hr />
-</div>
-<div id="carathéodory-extension-theorem" class="section level2">
-<h2>Carathéodory Extension Theorem</h2>
-<p>Let <span class="math inline">\(\mu^{*}\)</span> be an outer measure
-on <span class="math inline">\(\Omega\)</span>.</p>
-<p>Define the Carathéodory measurable sets <span class="math display">\[
-\mathcal{G}
-= \Bigl\{
-G \subset \Omega :
-\mu^{*}(A) = \mu^{*}(A\cap G) + \mu^{*}(A\cap G^{c})
-\;\text{for all } A\subset \Omega
-\Bigr\}.
-\]</span></p>
-<p>Then:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathcal{G}\)</span> is a <span class="math inline">\(\sigma\)</span>-field.</li>
-<li>Defining <span class="math inline">\(\mu(G) = \mu^{*}(G)\)</span>
-for <span class="math inline">\(G\in\mathcal{G}\)</span> makes<br />
-<span class="math inline">\((\Omega,\mathcal{G},\mu)\)</span> a measure
-space.</li>
-<li><span class="math inline">\(\mu\)</span> is countably additive on
-<span class="math inline">\(\mathcal{G}\)</span>.</li>
-</ol>
-<hr />
-</div>
-<div id="proof-outline-as-in-your-notes" class="section level2">
-<h2>Proof Outline (as in your notes)</h2>
-<div id="mathcalg-is-a-field" class="section level3">
-<h3>1. <span class="math inline">\(\mathcal{G}\)</span> is a field</h3>
-<ul>
-<li><p><span class="math inline">\(\Omega \in \mathcal{G}\)</span>
-since<br />
-<span class="math display">\[
-\mu^{*}(A)
-= \mu^{*}(A\cap\Omega) + \mu^{*}(A\cap\varnothing)
-= \mu^{*}(A) + 0.
-\]</span></p></li>
-<li><p>If <span class="math inline">\(G\in \mathcal{G}\)</span>, then
-<span class="math inline">\(G^{c} \in \mathcal{G}\)</span> by
-symmetry.</p></li>
-<li><p>If <span class="math inline">\(F,G \in \mathcal{G}\)</span>, we
-check closure under finite unions: <span class="math display">\[
-\mu^{*}\bigl(A \cap (F\cup G)\bigr)
-= \mu^{*}(A\cap F) + \mu^{*}(A\cap F^{c}\cap G),
-\]</span> which rearranges to show <span class="math inline">\(F\cup G
-\in \mathcal{G}\)</span>.</p></li>
-</ul>
-<p>Thus <span class="math inline">\(\mathcal{G}\)</span> is a field.</p>
-<hr />
-</div>
-<div id="mathcalg-is-closed-under-countable-disjoint-unions" class="section level3">
-<h3>2. <span class="math inline">\(\mathcal{G}\)</span> is closed under
-countable disjoint unions</h3>
-<p>Let <span class="math inline">\(\{G_i\}_{i=1}^{\infty} \subset
-\mathcal{G}\)</span> be disjoint and define<br />
-<span class="math display">\[
-H = \bigcup_{i=1}^{\infty} G_i.
-\]</span></p>
-<p>We want to show <span class="math inline">\(H\in\mathcal{G}\)</span>,
-i.e., <span class="math display">\[
-\mu^{*}(A)
-= \mu^{*}(A\cap H) + \mu^{*}(A\cap H^{c})
-\quad \forall A\subset \Omega.
-\]</span></p>
-<p>Use:</p>
-<ul>
-<li>subadditivity of <span class="math inline">\(\mu^{*}\)</span>,</li>
-<li>the defining Carathéodory property for each <span class="math inline">\(G_i\)</span>,</li>
-<li>monotone convergence of <span class="math display">\[
-\mu^{*}(A\cap H_n) = \sum_{i=1}^{n} \mu^{*}(A\cap G_i)
-\quad\text{for } H_n = \bigcup_{i=1}^{n} G_i.
-\]</span></li>
-</ul>
-<p>Let <span class="math inline">\(n\to\infty\)</span>. Then: <span class="math display">\[
-\mu^{*}(A\cap H)
-= \sum_{i=1}^{\infty} \mu^{*}(A\cap G_i).
-\]</span></p>
-<p>Combine with the Carathéodory condition to obtain equality.</p>
-<p>Thus <span class="math inline">\(H\in\mathcal{G}\)</span>, and <span class="math inline">\(\mathcal{G}\)</span> is a <span class="math inline">\(\sigma\)</span>-field.</p>
-<hr />
-</div>
-<div id="mu-is-countably-additive-on-mathcalg" class="section level3">
-<h3>3. <span class="math inline">\(\mu\)</span> is countably additive on
-<span class="math inline">\(\mathcal{G}\)</span></h3>
-<p>For disjoint <span class="math inline">\(G_i \in
-\mathcal{G}\)</span>, <span class="math display">\[
-\mu(H)
-= \mu^{*}\Bigl(\bigcup_{i=1}^{\infty} G_i\Bigr)
-= \sum_{i=1}^{\infty} \mu^{*}(G_i)
-= \sum_{i=1}^{\infty} \mu(G_i).
-\]</span></p>
-<p>So <span class="math inline">\(\mu\)</span> is a measure on <span class="math inline">\((\Omega,\mathcal{G})\)</span>.</p>
-<hr />
-</div>
-</div>
-<div id="hahnkolmogorov-extension-theorem-final-form" class="section level2">
-<h2>Hahn–Kolmogorov Extension Theorem (Final Form)</h2>
-<p>Let:</p>
-<ul>
-<li><span class="math inline">\(F^{\circ}\)</span> be a field,</li>
-<li><span class="math inline">\(\mu^{\circ}\)</span> a premeasure on
-<span class="math inline">\(F^{\circ}\)</span>.</li>
-</ul>
-<p>Then:</p>
-<ol style="list-style-type: decimal">
-<li><p>The outer measure<br />
-<span class="math display">\[
-\mu^{*}(A) = \inf\Bigl\{ \sum \mu^{\circ}(F_n) : A\subset\bigcup F_n,\;
-F_n\in F^{\circ} \Bigr\}
-\]</span> extends <span class="math inline">\(\mu^{\circ}\)</span>.</p></li>
-<li><p>The Carathéodory measurable sets form a <span class="math inline">\(\sigma\)</span>-field<br />
-<span class="math display">\[
-\mathcal{G} \supset \sigma(F^{\circ}).
-\]</span></p></li>
-<li><p>The measure <span class="math inline">\(\mu =
-\mu^{*}|_{\mathcal{G}}\)</span> is an extension of <span class="math inline">\(\mu^{\circ}\)</span> to <span class="math inline">\(\sigma(F^{\circ})\)</span>.</p></li>
-<li><p><strong>Uniqueness</strong>:<br />
-If <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\nu\)</span> are two measures extending <span class="math inline">\(\mu^{\circ}\)</span> and are
-<strong>σ-finite</strong> on <span class="math inline">\(F^{\circ}\)</span>, then<br />
-<span class="math display">\[
-\mu = \nu \quad\text{on }\sigma(F^{\circ}).
-\]</span></p></li>
-</ol>
-<hr />
-</div>
-<div id="application-constructing-lebesguestieltjes-measure" class="section level2">
-<h2>Application: Constructing Lebesgue–Stieltjes Measure</h2>
-<p>Let <span class="math inline">\(F:\mathbb{R}\to\mathbb{R}\)</span> be
-right-continuous and non-decreasing.</p>
-<p>Define <span class="math inline">\(\mu^{\circ}\)</span> on the
-semi-algebra <span class="math display">\[
-\mathcal{I}
-= \{\varnothing\}
-\;\cup\;
-\{(a,b],\; -\infty &lt; a &lt; b &lt; \infty\}
-\;\cup\;
-\{(a,\infty],\,(-\infty,b]\}.
-\]</span></p>
-<p>Set <span class="math display">\[
-\mu^{\circ}((a,b]) = F(b) - F(a).
-\]</span></p>
-<p>Then:</p>
-<ul>
-<li><span class="math inline">\(\mu^{\circ}\)</span> is a premeasure on
-the field <span class="math inline">\(F^{\circ} = \text{field generated
-by }\mathcal{I}\)</span>.</li>
-<li>By Hahn–Kolmogorov, there exists a <strong>unique</strong> measure
-<span class="math inline">\(\mu\)</span> on<br />
-<span class="math display">\[
-\sigma(F^{\circ}) = \mathcal{B}(\mathbb{R})
-\]</span> such that <span class="math display">\[
-\mu((a,b]) = F(b) - F(a).
-\]</span></li>
-</ul>
-<p>This is the <strong>Lebesgue–Stieltjes measure</strong> associated
-with <span class="math inline">\(F\)</span>.</p>
-<p>Uniqueness follows from:</p>
-<ul>
-<li><span class="math inline">\(\mathcal{I}\)</span> is a <span class="math inline">\(\pi\)</span>-system.</li>
-<li><span class="math inline">\(\mathbb{R} = \bigcup_{n\in\mathbb{Z}}
-(n,n+1]\)</span>.</li>
-<li><span class="math inline">\(\mu((n,n+1]) = F(n+1)-F(n) &lt;
-\infty\)</span>.</li>
-</ul>
-<p>Hence <span class="math inline">\(\mu\)</span> is σ-finite on <span class="math inline">\(\mathcal{I}\)</span>, so uniqueness holds on<br />
-<span class="math display">\[
-\sigma(\mathcal{I}) = \mathcal{B}(\mathbb{R}).
-\]</span></p>
-<hr />
+<div id="application-lebesgue-stieltjes-measures" class="section level2">
+<h2>8. Application: Lebesgue-Stieltjes Measures</h2>
+<p>For non-decreasing, right-continuous <span class="math inline">\(F:
+\mathbb{R} \to \mathbb{R}\)</span>, define <span class="math inline">\(\mu^{00}\)</span> on <span class="math inline">\(\mathcal{I}\)</span> as above.<br />
+- Extends to unique measure <span class="math inline">\(\mu\)</span> on
+<span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span> with <span class="math inline">\(\mu((a,b]) = F(b) - F(a)\)</span>.</p>
+<p><strong>Special Cases</strong>:<br />
+- <span class="math inline">\(F(x) = x\)</span>: Lebesgue measure <span class="math inline">\(\lambda\)</span>.<br />
+- <span class="math inline">\(F(x) = I_{(x \geq c)}\)</span>: Dirac
+measure at <span class="math inline">\(c\)</span>.<br />
+- Discrete <span class="math inline">\(F\)</span> (jumps at points):
+Discrete measures.</p>
+<p><strong>σ-Finiteness</strong>: <span class="math inline">\(\mathbb{R}
+= \bigcup (n, n+1]\)</span>, finite measure each, ensures
+uniqueness.</p>
+<p><strong>Additional Notes</strong>: In probability, <span class="math inline">\(F\)</span> is a CDF, yielding probability measures
+on <span class="math inline">\(\mathbb{R}\)</span>. For <span class="math inline">\(\mathbb{R}^d\)</span>, use products of intervals.
+Extensions to non-σ-finite cases may not be unique.</p>
 </div>
 </div>
 

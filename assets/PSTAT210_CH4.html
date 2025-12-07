@@ -355,829 +355,276 @@ display: none;
 </div>
 
 
-<div id="part-1" class="section level1">
-<h1>Part 1:</h1>
-</div>
-<div id="ch4-measurable-functions-part-1" class="section level1">
-<h1>CH4 — Measurable Functions (Part 1)</h1>
-<div id="definition-measurable-map" class="section level2">
-<h2>Definition: Measurable Map</h2>
-<p>Let <span class="math inline">\((\Omega, \mathcal F)\)</span> and
-<span class="math inline">\((S, \mathcal S)\)</span> be measurable
-spaces.</p>
-<p>A function<br />
+<div id="chapter-4-measurable-functions" class="section level1">
+<h1>Chapter 4: Measurable Functions</h1>
+<div id="definition-and-basic-properties" class="section level2">
+<h2>1. Definition and Basic Properties</h2>
+<div id="measurable-maps" class="section level3">
+<h3>Measurable Maps</h3>
+<p>Let <span class="math inline">\((\Omega, \mathcal{F})\)</span> and
+<span class="math inline">\((S, \mathcal{S})\)</span> be measurable
+spaces.<br />
+A function <span class="math inline">\(X: \Omega \to S\)</span> is
+<strong><span class="math inline">\(\mathcal{F}/\mathcal{S}\)</span>-measurable</strong>
+if for all <span class="math inline">\(E \in \mathcal{S}\)</span>,<br />
 <span class="math display">\[
-X : \Omega \to S
-\]</span> is <strong><span class="math inline">\(\mathcal F / \mathcal
-S\)</span>-measurable</strong> if <span class="math display">\[
-X^{-1}(E) = \{ \omega \in \Omega : X(\omega)\in E\} \in \mathcal F,
-\quad \forall E \in \mathcal S.
-\]</span></p>
-<p>The map <span class="math inline">\(X^{-1}\)</span> is called the
-<strong>pullback</strong>.</p>
-<p>Example:<br />
-If <span class="math inline">\((S,\mathcal S) = (\mathbb R, \mathcal
-B(\mathbb R))\)</span>,<br />
-<span class="math display">\[
-P(X\in [a,b]) = P\big( X^{-1}([a,b]) \big).
-\]</span></p>
+X^{-1}(E) = \{\omega \in \Omega : X(\omega) \in E\} \in \mathcal{F}.
+\]</span><br />
+- <span class="math inline">\(X^{-1}\)</span> is the
+<strong>preimage</strong> or <strong>pullback</strong>.<br />
+- In probability, if <span class="math inline">\((\Omega, \mathcal{F},
+P)\)</span> is a probability space and <span class="math inline">\((S,
+\mathcal{S}) = (\mathbb{R}, \mathcal{B}(\mathbb{R}))\)</span>, <span class="math inline">\(X\)</span> is a <strong>random variable</strong>,
+and <span class="math inline">\(P(X \in [a,b]) =
+P(X^{-1}([a,b]))\)</span>.</p>
+<p><strong>Properties of Preimages</strong>: For <span class="math inline">\(E, E_\alpha \in \mathcal{S}\)</span>,<br />
+1. <span class="math inline">\(X^{-1}(\varnothing) =
+\varnothing\)</span>.<br />
+2. <span class="math inline">\(X^{-1}(S) = \Omega\)</span>.<br />
+3. <span class="math inline">\(X^{-1}(E^c) =
+(X^{-1}(E))^c\)</span>.<br />
+4. <span class="math inline">\(X^{-1}(\bigcup E_\alpha) = \bigcup
+X^{-1}(E_\alpha)\)</span>.<br />
+5. <span class="math inline">\(X^{-1}(\bigcap E_\alpha) = \bigcap
+X^{-1}(E_\alpha)\)</span>.</p>
+<p>If <span class="math inline">\(\mathcal{S}\)</span> is a σ-field,
+then <span class="math inline">\(\{E \in \mathcal{S} : X^{-1}(E) \in
+\mathcal{F}\}\)</span> is a σ-field.</p>
+<p><strong>Additional Notes</strong>: Measurability ensures events
+defined by <span class="math inline">\(X\)</span> are in <span class="math inline">\(\mathcal{F}\)</span>, allowing probabilities or
+measures to be assigned.</p>
 <hr />
 </div>
-<div id="essential-properties-of-pullback-x-1" class="section level2">
-<h2>Essential Properties of Pullback <span class="math inline">\(X^{-1}\)</span></h2>
-<p>For all <span class="math inline">\(E, E_\alpha \in \mathcal
-S\)</span>:</p>
+</div>
+<div id="generators-and-testing-measurability" class="section level2">
+<h2>2. Generators and Testing Measurability</h2>
+<div id="proposition-preimage-of-generated-σ-field" class="section level3">
+<h3>Proposition: Preimage of Generated σ-Field</h3>
+<p>Let <span class="math inline">\(\mathcal{G} \subseteq
+\mathcal{P}(S)\)</span>. Then<br />
+<span class="math display">\[
+\sigma(X^{-1}(\mathcal{G})) = \{X^{-1}(C) : C \in \sigma(\mathcal{G})\}.
+\]</span><br />
+<strong>Proof Sketch</strong>: Let <span class="math inline">\(D =
+\{X^{-1}(C) : C \in \mathcal{G}\}\)</span>, <span class="math inline">\(\mathcal{F}_1 = \sigma(D)\)</span>, <span class="math inline">\(\mathcal{F}_2 = \{X^{-1}(C) : C \in
+\sigma(\mathcal{G})\}\)</span>.<br />
+- <span class="math inline">\(\mathcal{F}_2\)</span> is a σ-field
+containing <span class="math inline">\(D\)</span>, so <span class="math inline">\(\mathcal{F}_1 \subseteq
+\mathcal{F}_2\)</span>.<br />
+- Conversely, <span class="math inline">\(\sigma(\mathcal{G}) \subseteq
+\{C : X^{-1}(C) \in \mathcal{F}_1\}\)</span>, so <span class="math inline">\(\mathcal{F}_2 \subseteq
+\mathcal{F}_1\)</span>.</p>
+</div>
+<div id="corollary-measurability-via-generators" class="section level3">
+<h3>Corollary: Measurability via Generators</h3>
+<p><span class="math inline">\(X: (\Omega, \mathcal{F}) \to (S,
+\mathcal{S})\)</span> is measurable iff <span class="math inline">\(X^{-1}(G) \in \mathcal{F}\)</span> for all <span class="math inline">\(G\)</span> in a generator <span class="math inline">\(\mathcal{G}\)</span> of <span class="math inline">\(\mathcal{S}\)</span>.</p>
+<p><strong>Key Case: Real-Valued Functions</strong><br />
+<span class="math inline">\(X: \Omega \to \mathbb{R}\)</span> is <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R})\)</span>-measurable
+iff <span class="math inline">\(\{X \leq c\} \in \mathcal{F}\)</span>
+for all <span class="math inline">\(c \in \mathbb{R}\)</span> (since
+<span class="math inline">\((-\infty, c]\)</span> generates <span class="math inline">\(\mathcal{B}(\mathbb{R})\)</span>).<br />
+- Alternatives: <span class="math inline">\(\{X &lt; c\}\)</span>, <span class="math inline">\(\{X \geq c\}\)</span>, <span class="math inline">\(\{X &gt; c\}\)</span> also work as generators.</p>
+<p><strong>Additional Example</strong>: For <span class="math inline">\(X: \Omega \to [0, \infty)\)</span>, use generators
+like <span class="math inline">\([0, c)\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="compositions-and-vector-valued-maps" class="section level2">
+<h2>3. Compositions and Vector-Valued Maps</h2>
+<div id="lemma-composition-of-measurable-maps" class="section level3">
+<h3>Lemma: Composition of Measurable Maps</h3>
+<p>If <span class="math inline">\(X: (\Omega_1, \mathcal{F}_1) \to
+(\Omega_2, \mathcal{F}_2)\)</span> and <span class="math inline">\(Y:
+(\Omega_2, \mathcal{F}_2) \to (\Omega_3, \mathcal{F}_3)\)</span> are
+measurable, then <span class="math inline">\(Y \circ X\)</span> is <span class="math inline">\(\mathcal{F}_1 /
+\mathcal{F}_3\)</span>-measurable.<br />
+<strong>Proof</strong>: <span class="math inline">\((Y \circ
+X)^{-1}(F_3) = X^{-1}(Y^{-1}(F_3)) \in \mathcal{F}_1\)</span>.</p>
+</div>
+<div id="vector-valued-maps" class="section level3">
+<h3>Vector-Valued Maps</h3>
+<p>Let <span class="math inline">\(X_i: \Omega \to \mathbb{R}\)</span>
+be measurable for <span class="math inline">\(i=1,\dots,n\)</span>.
+Define <span class="math inline">\(Y(\omega) = (X_1(\omega), \dots,
+X_n(\omega))\)</span>.<br />
+Then <span class="math inline">\(Y: (\Omega, \mathcal{F}) \to
+(\mathbb{R}^n, \mathcal{B}(\mathbb{R}^n))\)</span> is measurable iff
+each <span class="math inline">\(X_i\)</span> is.<br />
+<strong>Proof</strong>:<br />
+- (<span class="math inline">\(\Rightarrow\)</span>) Projections <span class="math inline">\(\pi_i: \mathbb{R}^n \to \mathbb{R}\)</span> are
+measurable, <span class="math inline">\(X_i = \pi_i \circ
+Y\)</span>.<br />
+- (<span class="math inline">\(\Leftarrow\)</span>) For generators like
+rectangles <span class="math inline">\(\prod (a_i, b_i)\)</span>, <span class="math inline">\(Y^{-1}(\prod (a_i, b_i)) = \bigcap X_i^{-1}((a_i,
+b_i)) \in \mathcal{F}\)</span>.</p>
+<p><strong>Example</strong>: If <span class="math inline">\(X_1, X_2,
+X_3\)</span> are measurable, then <span class="math inline">\(Y = X_1^2
++ X_2 X_3\)</span> is measurable.<br />
+- Let <span class="math inline">\(Z = (X_1, X_2, X_3)\)</span>
+(measurable vector).<br />
+- Let <span class="math inline">\(f(x_1,x_2,x_3) = x_1^2 + x_2
+x_3\)</span> (continuous, hence Borel-measurable).<br />
+- <span class="math inline">\(Y = f \circ Z\)</span> (composition
+measurable).</p>
+</div>
+<div id="continuous-maps-are-borel-measurable" class="section level3">
+<h3>Continuous Maps are Borel-Measurable</h3>
+<p>Let <span class="math inline">\((S, d_S), (T, d_T)\)</span> be metric
+spaces, <span class="math inline">\(f: S \to T\)</span> continuous. Then
+<span class="math inline">\(f: (S, \mathcal{B}(S)) \to (T,
+\mathcal{B}(T))\)</span> is measurable.<br />
+<strong>Proof</strong>: Preimages of open sets in <span class="math inline">\(T\)</span> are open in <span class="math inline">\(S\)</span> (hence Borel); the collection of sets
+with Borel preimages is a σ-field containing opens, so contains <span class="math inline">\(\mathcal{B}(T)\)</span>.</p>
+<p><strong>Additional Notes</strong>: Polynomials, exponentials, logs
+(on domains) are continuous, hence measurable. In probability, this
+ensures functions of random variables are random variables.</p>
+<hr />
+</div>
+</div>
+<div id="generated-σ-fields-and-pushforward-measures" class="section level2">
+<h2>4. Generated σ-Fields and Pushforward Measures</h2>
+<div id="σ-field-generated-by-a-map" class="section level3">
+<h3>σ-Field Generated by a Map</h3>
+<p>For measurable <span class="math inline">\(X: (\Omega, \mathcal{F})
+\to (S, \mathcal{S})\)</span>,<br />
+<span class="math display">\[
+\sigma(X) = \{X^{-1}(E) : E \in \mathcal{S}\}
+\]</span><br />
+is the smallest σ-field on <span class="math inline">\(\Omega\)</span>
+making <span class="math inline">\(X\)</span> measurable (subset of
+<span class="math inline">\(\mathcal{F}\)</span>; contains all
+preimages).</p>
+</div>
+<div id="pushforward-measure-distribution" class="section level3">
+<h3>Pushforward Measure (Distribution)</h3>
+<p>Let <span class="math inline">\((\Omega, \mathcal{F}, \mu)\)</span>
+be a measure space, <span class="math inline">\(X\)</span> measurable.
+The <strong>pushforward</strong> <span class="math inline">\(\nu_X\)</span> on <span class="math inline">\((S,
+\mathcal{S})\)</span> is<br />
+<span class="math display">\[
+\nu_X(E) = \mu(X^{-1}(E)), \quad E \in \mathcal{S}.
+\]</span><br />
+- <span class="math inline">\(\nu_X\)</span> is a measure (empty set 0;
+additive over disjoint preimages).<br />
+- In probability (<span class="math inline">\(P\)</span> probability
+measure), <span class="math inline">\(\nu_X\)</span> is the
+<strong>distribution</strong> of <span class="math inline">\(X\)</span>,
+<span class="math inline">\(P(X \in E) = \nu_X(E)\)</span>.<br />
+- <strong>CDF</strong>: For real-valued <span class="math inline">\(X\)</span>, <span class="math inline">\(F_X(x) =
+P(X \leq x) = \nu_X((-\infty, x])\)</span>.</p>
+<p><strong>Example: Binomial Distribution</strong><br />
+- <span class="math inline">\(\Omega = \{H,T\}^N\)</span>, <span class="math inline">\(P(\omega) = p^k (1-p)^{N-k}\)</span> where $k = $
+number of <span class="math inline">\(H\)</span>.<br />
+- $X() = $ number of <span class="math inline">\(H\)</span> (measurable,
+as finite range).<br />
+- <span class="math inline">\(P(X = k) = \binom{N}{k} p^k
+(1-p)^{N-k}\)</span>.<br />
+- CDF: <span class="math inline">\(F_X(x) = \sum_{k=0}^{\lfloor x
+\rfloor} P(X=k)\)</span>.</p>
+<p><strong>Additional Example</strong>: Uniform on <span class="math inline">\([0,1]\)</span>: <span class="math inline">\(F_X(x)
+= x\)</span> for <span class="math inline">\(x \in [0,1]\)</span>.</p>
+<hr />
+</div>
+</div>
+<div id="limits-and-measurability" class="section level2">
+<h2>5. Limits and Measurability</h2>
+<p>Let <span class="math inline">\(X_n: (\Omega, \mathcal{F}) \to
+(\mathbb{R}, \mathcal{B}(\mathbb{R}))\)</span> be measurable.</p>
+<div id="lemma-limits-preserve-measurability" class="section level3">
+<h3>Lemma: Limits Preserve Measurability</h3>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(X^{-1}(\varnothing) =
-\varnothing\)</span></li>
-<li><span class="math inline">\(X^{-1}(S) = \Omega\)</span></li>
-<li><span class="math inline">\(X^{-1}(E^c) =
-(X^{-1}(E))^c\)</span></li>
-<li><span class="math inline">\(X^{-1}\left(\bigcup_\alpha
-E_\alpha\right)
-= \bigcup_\alpha X^{-1}(E_\alpha)\)</span></li>
-<li><span class="math inline">\(X^{-1}\left(\bigcap_\alpha
-E_\alpha\right)
-= \bigcap_\alpha X^{-1}(E_\alpha)\)</span></li>
-</ol>
-<p>If <span class="math inline">\(\mathcal S\)</span> is a <span class="math inline">\(\sigma\)</span>-field, then the collection<br />
-<span class="math display">\[
-\mathcal S^\* = \{ E\in \mathcal S : X^{-1}(E)\in\mathcal F\}
-\]</span> is also a <strong><span class="math inline">\(\sigma\)</span>-field</strong>.</p>
-<hr />
-</div>
-<div id="showing-mathcal-s-is-a-sigma-field" class="section level2">
-<h2>Showing <span class="math inline">\(\mathcal S^\*\)</span> is a
-<span class="math inline">\(\sigma\)</span>-field</h2>
-<p>Let <span class="math inline">\(E_n \in \mathcal S^\*\)</span>.
-Then:</p>
+<li><strong>Equality Set</strong>: <span class="math inline">\(\{X = Y\}
+\in \mathcal{F}\)</span> for measurable <span class="math inline">\(X,Y\)</span> (preimage of <span class="math inline">\(\{0\}\)</span> under <span class="math inline">\(X-Y\)</span>).<br />
+</li>
+<li><strong>Inf/Sup</strong>: <span class="math inline">\(\inf
+X_n\)</span> measurable, as <span class="math inline">\(\{\inf X_n &lt;
+c\} = \bigcup \{X_n &lt; c\}\)</span>.
 <ul>
-<li><span class="math inline">\(X^{-1}(E_n)\in \mathcal F\)</span></li>
-<li>Since <span class="math inline">\(\mathcal F\)</span> is a <span class="math inline">\(\sigma\)</span>-field, <span class="math display">\[
-X^{-1}\left(\bigcup_{n} E_n\right)
-= \bigcup_{n} X^{-1}(E_n) \in \mathcal F.
-\]</span></li>
-</ul>
-<p>Thus <span class="math inline">\(\bigcup_n E_n \in \mathcal
-S^\*\)</span>.</p>
-<hr />
-</div>
-<div id="proposition-pullback-of-a-generator" class="section level2">
-<h2>Proposition: Pullback of a Generator</h2>
-<p>Let <span class="math inline">\(X:\Omega\to S\)</span> and <span class="math inline">\(\mathcal G \subseteq \mathcal P(S)\)</span>.</p>
-<p>Then <span class="math display">\[
-\sigma(X^{-1}(\mathcal G))
-=
-\{ X^{-1}(C) : C \in \sigma(\mathcal G)\}.
-\]</span></p>
-<div id="proof-outline" class="section level3">
-<h3>Proof Outline</h3>
-<p>Let<br />
-<span class="math display">\[
-D = \{ X^{-1}(C) : C \in \mathcal G\},
-\quad
-\mathcal F_1 = \sigma(D),
-\quad
-\mathcal F_2 = \{ X^{-1}(C) : C \in \sigma(\mathcal G)\}.
-\]</span></p>
-<ul>
-<li><span class="math inline">\(\mathcal F_2\)</span> is a <span class="math inline">\(\sigma\)</span>-field since it is the pullback of
-a <span class="math inline">\(\sigma\)</span>-field.</li>
-<li><span class="math inline">\(D \subseteq \mathcal F_2 \implies
-\mathcal F_1 \subseteq \mathcal F_2\)</span></li>
-<li>Conversely, <span class="math display">\[
-\sigma(\mathcal G)\subseteq X(\mathcal F_1)
-\quad\Rightarrow\quad
-\mathcal F_2\subseteq\mathcal F_1.
-\]</span></li>
-</ul>
-<p>Thus <span class="math inline">\(\mathcal F_1 = \mathcal
-F_2\)</span>.</p>
-<hr />
-</div>
-</div>
-<div id="corollary-test-for-measurability" class="section level2">
-<h2>Corollary (Test for Measurability)</h2>
-<p>Let<br />
-- <span class="math inline">\((\Omega, \mathcal F)\)</span>,<br />
-- <span class="math inline">\((S, \mathcal S)\)</span> measurable
-spaces,<br />
-- <span class="math inline">\(\mathcal G\subseteq S\)</span> such that
-<span class="math inline">\(\sigma(\mathcal G) = \mathcal
-S\)</span>.</p>
-<p>Then<br />
-<span class="math display">\[
-X:\Omega\to S \text{ is } \mathcal F/\mathcal S\text{-measurable}
-\iff
-X^{-1}(G) \in \mathcal F \quad \forall G\in\mathcal G.
-\]</span></p>
-<p>This reduces checking measurability to checking only a generator.</p>
-<hr />
-</div>
-<div id="most-important-case-real-valued-random-variables" class="section level2">
-<h2>Most Important Case: Real-Valued Random Variables</h2>
-<p>Let <span class="math inline">\(X:\Omega\to\mathbb R\)</span>.</p>
-<p>Then<br />
-<span class="math display">\[
-X \text{ is } \mathcal F/\mathcal B(\mathbb R)\text{-measurable}
-\iff
-\{X \le c\}\in\mathcal F \quad \forall c\in\mathbb R.
-\]</span></p>
-<p>Reason: the sets <span class="math inline">\((-\infty,c]\)</span>
-generate <span class="math inline">\(\mathcal B(\mathbb R)\)</span>.</p>
-<hr />
-</div>
-<div id="lemma-composition-of-measurable-maps" class="section level2">
-<h2>Lemma: Composition of Measurable Maps</h2>
-<p>If<br />
-<span class="math display">\[
-(\Omega^1,\mathcal F^1)\xrightarrow{X}
-(\Omega^2,\mathcal F^2)\xrightarrow{Y}
-(\Omega^3,\mathcal F^3)
-\]</span> and both maps are measurable, then<br />
-<span class="math display">\[
-Y\circ X: \Omega^1 \to \Omega^3
-\]</span> is <strong><span class="math inline">\(\mathcal F^1/\mathcal
-F^3\)</span>-measurable</strong>.</p>
-<p><strong>Proof:</strong><br />
-<span class="math display">\[
-(Y\circ X)^{-1}(F^3)
-= X^{-1}(Y^{-1}(F^3)),
-\]</span> and the right-hand side is in <span class="math inline">\(\mathcal F^1\)</span>.</p>
-<hr />
-</div>
-<div id="lemma-vector-valued-measurable-maps" class="section level2">
-<h2>Lemma: Vector-Valued Measurable Maps</h2>
-<p>Let <span class="math inline">\(X_i:\Omega\to\mathbb R\)</span>,
-<span class="math inline">\(i=1,\dots,n\)</span>.<br />
-Define<br />
-<span class="math display">\[
-Y(\omega) = (X_1(\omega), \dots, X_n(\omega)).
-\]</span></p>
-<p>Then<br />
-<span class="math display">\[
-Y \text{ measurable }
-\iff
-X_i \text{ measurable for all } i.
-\]</span></p>
-<div id="proof" class="section level3">
-<h3>Proof</h3>
-<p><strong>(<span class="math inline">\(\Rightarrow\)</span>)</strong><br />
-Each projection <span class="math inline">\(\pi_i : \mathbb R^n \to
-\mathbb R\)</span> is measurable, and<br />
-<span class="math display">\[
-X_i = \pi_i\circ Y.
-\]</span></p>
-<p><strong>(<span class="math inline">\(\Leftarrow\)</span>)</strong><br />
-Let<br />
-<span class="math display">\[
-\mathcal G = \{(a_1,b_1)\times\cdots\times(a_n,b_n)\}
-\]</span> generate <span class="math inline">\(\mathcal B(\mathbb
-R^n)\)</span>.</p>
-<p>For any such rectangle, <span class="math display">\[
-Y^{-1}(G)
-= \bigcap_{i=1}^n X_i^{-1}\left((a_i,b_i)\right) \in \mathcal F.
-\]</span></p>
-<p>Thus <span class="math inline">\(Y\)</span> is measurable.</p>
-<hr />
-</div>
-</div>
-</div>
-<div id="part-2" class="section level1">
-<h1>Part 2:</h1>
-</div>
-<div id="ch4-measurable-functions-part-2-detailed" class="section level1">
-<h1>CH4 — Measurable Functions (Part 2, Detailed)</h1>
-<div id="example-y-x_12-x_2-x_3-is-measurable" class="section level2">
-<h2>1. Example: <span class="math inline">\(Y = X_1^2 + X_2 X_3\)</span>
-is measurable</h2>
-<p>Let <span class="math display">\[
-X_i : (\Omega,\mathcal{F}) \to (\mathbb{R},\mathcal{B}(\mathbb{R})),
-\quad i=1,2,3,
-\]</span> be <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R})\)</span>-measurable.<br />
-Define <span class="math display">\[
-Y(\omega) = X_1(\omega)^2 + X_2(\omega) X_3(\omega).
-\]</span></p>
-<p>We want to show <span class="math inline">\(Y :
-(\Omega,\mathcal{F})\to (\mathbb{R},\mathcal{B}(\mathbb{R}))\)</span> is
-measurable.</p>
-<div id="step-1-build-a-vector-valued-map" class="section level3">
-<h3>Step 1: Build a vector-valued map</h3>
-<p>Define <span class="math display">\[
-Z(\omega) = \big(X_1(\omega), X_2(\omega), X_3(\omega)\big)
-             : \Omega \to \mathbb{R}^3.
-\]</span></p>
-<p>Each coordinate map <span class="math inline">\(X_i\)</span> is
-measurable.<br />
-By the lemma from CH4 Part 1:</p>
-<blockquote>
-<p><strong>Lemma (Coordinate-wise measurability):</strong><br />
-If <span class="math inline">\(X_i:(\Omega,\mathcal{F})\to(\mathbb{R},\mathcal{B}(\mathbb{R}))\)</span>
-are measurable for <span class="math inline">\(i=1,\dots,n\)</span>,
-then <span class="math display">\[
-Y(\omega) = (X_1(\omega),\dots,X_n(\omega))
-\]</span> is <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R}^n)\)</span>-measurable.</p>
-</blockquote>
-<p>we already know that <span class="math inline">\(Z\)</span> is <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R}^3)\)</span>-measurable.</p>
-</div>
-<div id="step-2-define-a-continuous-function-on-mathbbr3" class="section level3">
-<h3>Step 2: Define a continuous function on <span class="math inline">\(\mathbb{R}^3\)</span></h3>
-<p>Define <span class="math display">\[
-f:\mathbb{R}^3\to\mathbb{R},\qquad
-f(x_1,x_2,x_3) = x_1^2 + x_2 x_3.
-\]</span></p>
-<p>This is a polynomial in <span class="math inline">\((x_1,x_2,x_3)\)</span>, hence continuous in the
-usual Euclidean metric.</p>
-</div>
-<div id="step-3-express-y-as-a-composition" class="section level3">
-<h3>Step 3: Express <span class="math inline">\(Y\)</span> as a
-composition</h3>
-<p>By construction, <span class="math display">\[
-Y(\omega) = f\big(Z(\omega)\big) = (f\circ Z)(\omega).
-\]</span></p>
-<p>So it is enough to know:</p>
-<blockquote>
-<p><strong>Lemma (Composition):</strong><br />
-If <span class="math inline">\(Z:(\Omega,\mathcal{F})\to(S,\mathcal{S})\)</span>
-is <span class="math inline">\(\mathcal{F}/\mathcal{S}\)</span>-measurable
-and<br />
-<span class="math inline">\(f:(S,\mathcal{S})\to(T,\mathcal{T})\)</span>
-is <span class="math inline">\(\mathcal{S}/\mathcal{T}\)</span>-measurable,<br />
-then <span class="math inline">\(f\circ Z :
-(\Omega,\mathcal{F})\to(T,\mathcal{T})\)</span> is <span class="math inline">\(\mathcal{F}/\mathcal{T}\)</span>-measurable.</p>
-</blockquote>
-<p><strong>Proof of the composition lemma</strong></p>
-<p>Take any <span class="math inline">\(B\in\mathcal{T}\)</span>. Then
-<span class="math display">\[
-(f\circ Z)^{-1}(B)
-= \{\omega\in\Omega : f(Z(\omega))\in B\}
-= \{\omega\in\Omega : Z(\omega)\in f^{-1}(B)\}
-= Z^{-1}\!\big(f^{-1}(B)\big).
-\]</span> Because <span class="math inline">\(f\)</span> is <span class="math inline">\(\mathcal{S}/\mathcal{T}\)</span>-measurable, <span class="math inline">\(f^{-1}(B)\in\mathcal{S}\)</span>.<br />
-Because <span class="math inline">\(Z\)</span> is <span class="math inline">\(\mathcal{F}/\mathcal{S}\)</span>-measurable, <span class="math inline">\(Z^{-1}(C)\in\mathcal{F}\)</span> for every <span class="math inline">\(C\in\mathcal{S}\)</span>.<br />
-Therefore <span class="math inline">\(Z^{-1}(f^{-1}(B))\in\mathcal{F}\)</span>.<br />
-Hence <span class="math inline">\((f\circ
-Z)^{-1}(B)\in\mathcal{F}\)</span> for all <span class="math inline">\(B\in\mathcal{T}\)</span>; measurability follows.
-<span class="math inline">\(\square\)</span></p>
-<p>So if we can show that <span class="math inline">\(f\)</span> is
-<span class="math inline">\(\mathcal{B}(\mathbb{R}^3)/\mathcal{B}(\mathbb{R})\)</span>-measurable,
-then <span class="math inline">\(Y=f\circ Z\)</span> is measurable.</p>
-</div>
-<div id="step-4-continuous-rightarrow-borel-measurable" class="section level3">
-<h3>Step 4: Continuous <span class="math inline">\(\Rightarrow\)</span>
-Borel-measurable</h3>
-<p>We will use the general lemma below.</p>
-<hr />
-</div>
-</div>
-<div id="lemma-continuous-maps-between-metric-spaces-are-measurable" class="section level2">
-<h2>2. Lemma: Continuous maps between metric spaces are measurable</h2>
-<p>Let <span class="math inline">\(S,T\)</span> be metric spaces with
-Borel <span class="math inline">\(\sigma\)</span>-fields <span class="math inline">\(\mathcal{B}(S),\mathcal{B}(T)\)</span>.<br />
-Let <span class="math inline">\(f:S\to T\)</span> be continuous. Then
-<span class="math display">\[
-f: (S,\mathcal{B}(S)) \to (T,\mathcal{B}(T))
-\]</span> is <span class="math inline">\(\mathcal{B}(S)/\mathcal{B}(T)\)</span>-measurable.</p>
-<div id="detailed-proof" class="section level3">
-<h3>Detailed proof</h3>
-<ol style="list-style-type: decimal">
-<li><p>Let <span class="math inline">\(\mathcal{O}_T\)</span> denote the
-family of <strong>open sets</strong> in <span class="math inline">\(T\)</span>.<br />
-By definition of the Borel <span class="math inline">\(\sigma\)</span>-field, <span class="math display">\[
-\mathcal{B}(T) = \sigma(\mathcal{O}_T),
-\]</span> i.e. the smallest <span class="math inline">\(\sigma\)</span>-field containing all open sets in
-<span class="math inline">\(T\)</span>.</p></li>
-<li><p>Because <span class="math inline">\(f\)</span> is continuous, for
-every open set <span class="math inline">\(O\in\mathcal{O}_T\)</span>,
-the preimage <span class="math display">\[
-f^{-1}(O) = \{s\in S : f(s)\in O\}
-\]</span> is an open subset of <span class="math inline">\(S\)</span>.
-In particular, <span class="math inline">\(f^{-1}(O)\in\mathcal{O}_S\)</span>, the open sets
-in <span class="math inline">\(S\)</span>.</p></li>
-<li><p>Since every open set in <span class="math inline">\(S\)</span> is
-Borel, we have <span class="math inline">\(\mathcal{O}_S\subset
-\mathcal{B}(S)\)</span>.<br />
-Thus for each <span class="math inline">\(O\in\mathcal{O}_T\)</span>,
-<span class="math display">\[
-f^{-1}(O)\in\mathcal{B}(S).
-\]</span></p></li>
-<li><p>Consider the family <span class="math display">\[
-\mathcal{C} = \{B\subseteq T : f^{-1}(B)\in\mathcal{B}(S)\}.
-\]</span> We check that:</p>
-<ul>
-<li><span class="math inline">\(\mathcal{C}\)</span> is a <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(T\)</span>:
-<ul>
-<li><span class="math inline">\(T\in\mathcal{C}\)</span>: <span class="math inline">\(f^{-1}(T)=S\in\mathcal{B}(S)\)</span>.</li>
-<li>If <span class="math inline">\(B\in\mathcal{C}\)</span>, then <span class="math display">\[
-f^{-1}(B^c) = S\setminus f^{-1}(B) \in \mathcal{B}(S),
-\]</span> because <span class="math inline">\(\mathcal{B}(S)\)</span> is
-a <span class="math inline">\(\sigma\)</span>-field. Hence <span class="math inline">\(B^c\in\mathcal{C}\)</span>.</li>
-<li>If <span class="math inline">\(B_n\in\mathcal{C}\)</span> are
-countably many sets, then <span class="math display">\[
-f^{-1}\Big(\bigcup_{n=1}^\infty B_n\Big)
-= \bigcup_{n=1}^\infty f^{-1}(B_n) \in\mathcal{B}(S).
-\]</span> So <span class="math inline">\(\bigcup_n
-B_n\in\mathcal{C}\)</span>.</li>
+<li>Similarly for <span class="math inline">\(\sup X_n\)</span> via
+<span class="math inline">\(\{&gt; c\}\)</span>.<br />
+</li>
+<li>Note: Use strict inequalities; <span class="math inline">\(\{\inf
+X_n \leq c\} \neq \bigcup \{X_n \leq c\}\)</span> in general
+(counterexample: <span class="math inline">\(X_n = 1 +
+1/n\)</span>).<br />
+</li>
 </ul></li>
-</ul>
-<p>Thus <span class="math inline">\(\mathcal{C}\)</span> is a <span class="math inline">\(\sigma\)</span>-field.</p></li>
-<li><p>From step 3 we know that for every open <span class="math inline">\(O\in\mathcal{O}_T\)</span>, <span class="math inline">\(O\in\mathcal{C}\)</span>. So <span class="math display">\[
-\mathcal{O}_T \subseteq \mathcal{C}.
-\]</span> Since <span class="math inline">\(\mathcal{C}\)</span> is a
-<span class="math inline">\(\sigma\)</span>-field containing all open
-sets of <span class="math inline">\(T\)</span>, it must contain the
-smallest such <span class="math inline">\(\sigma\)</span>-field: <span class="math display">\[
-\mathcal{B}(T) = \sigma(\mathcal{O}_T)\subseteq \mathcal{C}.
-\]</span></p></li>
-<li><p>By definition of <span class="math inline">\(\mathcal{C}\)</span>, this means <span class="math display">\[
-f^{-1}(B) \in\mathcal{B}(S) \quad \forall\, B\in\mathcal{B}(T),
-\]</span> which is exactly the definition that <span class="math inline">\(f\)</span> is <span class="math inline">\(\mathcal{B}(S)/\mathcal{B}(T)\)</span>-measurable.
-<span class="math inline">\(\square\)</span></p></li>
-</ol>
-</div>
-<div id="apply-the-lemma-to-our-example" class="section level3">
-<h3>Apply the lemma to our example</h3>
-<p>Take <span class="math inline">\(S=\mathbb{R}^3\)</span>, <span class="math inline">\(T=\mathbb{R}\)</span>, and <span class="math inline">\(f(x_1,x_2,x_3) = x_1^2 + x_2 x_3\)</span>.<br />
-Then <span class="math inline">\(f\)</span> is continuous, hence
-Borel-measurable.<br />
-Since <span class="math inline">\(Z\)</span> is measurable and <span class="math inline">\(Y = f\circ Z\)</span>, the composition lemma
-implies <span class="math inline">\(Y\)</span> is measurable.</p>
-<p><strong>Conclusion:</strong><br />
-<span class="math display">\[
-Y = X_1^2 + X_2 X_3
-\]</span> is <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R})\)</span>-measurable.</p>
-<hr />
-</div>
-</div>
-<div id="generated-sigma-field-of-a-measurable-map" class="section level2">
-<h2>3. Generated <span class="math inline">\(\sigma\)</span>-field of a
-measurable map</h2>
-<p>Let <span class="math inline">\((\Omega,\mathcal{F},\mu)\)</span> be
-a measure space, and <span class="math inline">\((S,\mathcal{S})\)</span> a measurable space.<br />
-Let <span class="math inline">\(X:(\Omega,\mathcal{F})\to(S,\mathcal{S})\)</span>
-be measurable.</p>
-<div id="definition-sigmax" class="section level3">
-<h3>Definition: <span class="math inline">\(\sigma(X)\)</span></h3>
-<p>Define <span class="math display">\[
-\sigma(X) := \{X^{-1}(E) : E\in\mathcal{S}\}.
-\]</span></p>
-<div id="claim" class="section level4">
-<h4>Claim</h4>
-<p><span class="math inline">\(\sigma(X)\)</span> is the smallest <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega\)</span> that makes <span class="math inline">\(X\)</span> measurable.</p>
-<p><strong>Proof</strong></p>
-<ol style="list-style-type: decimal">
-<li><p>By measurability of <span class="math inline">\(X\)</span>, for
-every <span class="math inline">\(E\in\mathcal{S}\)</span>, <span class="math inline">\(X^{-1}(E)\in\mathcal{F}\)</span>.<br />
-Hence <span class="math inline">\(\sigma(X)\subseteq\mathcal{F}\)</span>.</p></li>
-<li><p>Check that <span class="math inline">\(\sigma(X)\)</span> is a
-<span class="math inline">\(\sigma\)</span>-field:</p>
-<ul>
-<li><span class="math inline">\(\Omega =
-X^{-1}(S)\in\sigma(X)\)</span>.</li>
-<li>If <span class="math inline">\(A=X^{-1}(E)\in\sigma(X)\)</span>,
-then <span class="math display">\[
-A^c = \Omega\setminus A
-    = \Omega\setminus X^{-1}(E)
-    = X^{-1}(S\setminus E)
-    = X^{-1}(E^c)\in \sigma(X).
-\]</span></li>
-<li>If <span class="math inline">\(A_n=X^{-1}(E_n)\in\sigma(X)\)</span>,
-then <span class="math display">\[
-\bigcup_{n=1}^{\infty} A_n
-= \bigcup_{n=1}^{\infty} X^{-1}(E_n)
-= X^{-1}\Big(\bigcup_{n=1}^{\infty} E_n\Big)\in\sigma(X).
-\]</span></li>
-</ul></li>
-<li><p>Let <span class="math inline">\(\mathcal{G}\)</span> be any <span class="math inline">\(\sigma\)</span>-field on <span class="math inline">\(\Omega\)</span> such that <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathcal{G}/\mathcal{S}\)</span>-measurable.<br />
-Then, for every <span class="math inline">\(E\in\mathcal{S}\)</span>,
-<span class="math inline">\(X^{-1}(E)\in\mathcal{G}\)</span>.<br />
-Hence <span class="math inline">\(\sigma(X)\subseteq\mathcal{G}\)</span>.</p></li>
-</ol>
-<p>Thus <span class="math inline">\(\sigma(X)\)</span> is the smallest
-<span class="math inline">\(\sigma\)</span>-field making <span class="math inline">\(X\)</span> measurable. <span class="math inline">\(\square\)</span></p>
-<hr />
-</div>
-</div>
-</div>
-<div id="pushforward-measure-distribution" class="section level2">
-<h2>4. Pushforward measure (distribution)</h2>
-<p>Let <span class="math inline">\((\Omega,\mathcal{F},\mu)\)</span> be
-a measure space and<br />
-<span class="math display">\[
-X:(\Omega,\mathcal{F})\to(S,\mathcal{S})
-\]</span> be measurable.</p>
-<div id="definition" class="section level3">
-<h3>Definition</h3>
-<p>The <strong>pushforward measure</strong> (or
-<strong>distribution</strong> of <span class="math inline">\(X\)</span>
-under <span class="math inline">\(\mu\)</span>) is <span class="math display">\[
-\nu_X(E) := \mu(X^{-1}(E)), \qquad E\in\mathcal{S}.
-\]</span></p>
-</div>
-<div id="lemma-nu_x-is-a-measure-on-smathcals" class="section level3">
-<h3>Lemma: <span class="math inline">\(\nu_X\)</span> is a measure on
-<span class="math inline">\((S,\mathcal{S})\)</span></h3>
-<p><strong>Proof</strong></p>
-<p>We must show:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\nu_X(\varnothing) = 0\)</span>.</li>
-<li>Countable additivity on disjoint unions.</li>
-</ol>
-<p><strong>(1) Null set</strong></p>
-<p><span class="math display">\[
-\nu_X(\varnothing) = \mu(X^{-1}(\varnothing))
-= \mu(\varnothing) = 0,
-\]</span> since <span class="math inline">\(X^{-1}(\varnothing)=\varnothing\)</span> and
-measures assign <span class="math inline">\(0\)</span> to the empty
-set.</p>
-<p><strong>(2) Countable additivity</strong></p>
-<p>Let <span class="math inline">\((E_n)_{n\ge1}\subseteq
-\mathcal{S}\)</span> be pairwise disjoint.<br />
-Then the preimages <span class="math inline">\(X^{-1}(E_n)\)</span> are
-also pairwise disjoint:</p>
-<ul>
-<li>If <span class="math inline">\(X^{-1}(E_i)\cap
-X^{-1}(E_j)\neq\varnothing\)</span> for some <span class="math inline">\(i\neq j\)</span>,<br />
-there exists <span class="math inline">\(\omega\)</span> with <span class="math inline">\(X(\omega)\in E_i\)</span> and <span class="math inline">\(X(\omega)\in E_j\)</span>,<br />
-so <span class="math inline">\(E_i\cap E_j\neq\varnothing\)</span>,
-contradiction.</li>
-</ul>
-<p>Now <span class="math display">\[
-X^{-1}\Big(\bigcup_{n=1}^\infty E_n\Big)
-= \bigcup_{n=1}^\infty X^{-1}(E_n).
-\]</span></p>
-<p>Because <span class="math inline">\(\mu\)</span> is a measure on
-<span class="math inline">\((\Omega,\mathcal{F})\)</span>, <span class="math display">\[
-\mu\Big(X^{-1}\Big(\bigcup_{n=1}^\infty E_n\Big)\Big)
-= \mu\Big(\bigcup_{n=1}^\infty X^{-1}(E_n)\Big)
-= \sum_{n=1}^\infty \mu(X^{-1}(E_n)).
-\]</span></p>
-<p>By definition of <span class="math inline">\(\nu_X\)</span>, <span class="math display">\[
-\nu_X\Big(\bigcup_{n=1}^\infty E_n\Big)
-= \mu\Big(X^{-1}\Big(\bigcup_{n=1}^\infty E_n\Big)\Big)
-= \sum_{n=1}^\infty \mu(X^{-1}(E_n))
-= \sum_{n=1}^\infty \nu_X(E_n).
-\]</span></p>
-<p>Thus <span class="math inline">\(\nu_X\)</span> is a measure. <span class="math inline">\(\square\)</span></p>
-</div>
-<div id="important-special-case-probability-measures-and-cdfs" class="section level3">
-<h3>Important special case: probability measures and CDFs</h3>
-<p>Let <span class="math inline">\((\Omega,\mathcal{F},P)\)</span> be a
-probability space and <span class="math display">\[
-X:(\Omega,\mathcal{F})\to(\mathbb{R},\mathcal{B}(\mathbb{R}))
-\]</span> measurable. Then <span class="math inline">\(\nu_X\)</span> is
-a probability measure (total mass <span class="math inline">\(1\)</span>) with <span class="math display">\[
-\nu_X(E) = P(X\in E) = P(X^{-1}(E)), \qquad E\in\mathcal{B}(\mathbb{R}).
-\]</span></p>
-<p>The <strong>cumulative distribution function (CDF)</strong> of <span class="math inline">\(X\)</span> is <span class="math display">\[
-F_X(x) = P(X\le x) = P\big(X^{-1}((-\infty,x])\big)
-= \nu_X((-\infty,x]), \qquad x\in\mathbb{R}.
-\]</span></p>
-<p>Because <span class="math inline">\((-\infty,x]\in\mathcal{B}(\mathbb{R})\)</span>,
-<span class="math inline">\(F_X(x)\)</span> is well-defined.</p>
-<hr />
-</div>
-</div>
-<div id="example-binomial-distribution-from-n-coin-tosses" class="section level2">
-<h2>5. Example: Binomial distribution from <span class="math inline">\(N\)</span> coin tosses</h2>
-<p>Let <span class="math inline">\(\Omega = \{H,T\}^N\)</span> be all
-sequences of length <span class="math inline">\(N\)</span> of heads or
-tails.<br />
-For <span class="math inline">\(\omega =
-(w_1,\dots,w_N)\in\Omega\)</span>,</p>
-<ul>
-<li>Let the probability of a head on a single toss be <span class="math inline">\(p\in[0,1]\)</span>.</li>
-<li>Tosses are i.i.d.</li>
-</ul>
-<p>Then the canonical product probability measure <span class="math inline">\(P\)</span> on <span class="math inline">\((\Omega,\mathcal{F})\)</span> with <span class="math inline">\(\mathcal{F} = \mathcal{P}(\Omega)\)</span> is
-given by <span class="math display">\[
-P(\omega) = p^{\#\{i : w_i = H\}} (1-p)^{\#\{i : w_i = T\}}.
-\]</span></p>
-<p>Define a random variable <span class="math display">\[
-X(\omega) = \sum_{i=1}^N 1_{\{w_i = H\}},
-\]</span> i.e. the <strong>number of heads</strong> in the sequence.</p>
-<div id="step-1-x-is-measurable" class="section level3">
-<h3>Step 1: <span class="math inline">\(X\)</span> is measurable</h3>
-<p>Here <span class="math inline">\(S = \{0,1,\dots,N\}\)</span> with
-<span class="math inline">\(\mathcal{S}=\mathcal{P}(S)\)</span>.<br />
-Every subset of <span class="math inline">\(S\)</span> is measurable, so
-any map <span class="math inline">\(X:\Omega\to S\)</span> is
-automatically measurable with respect to <span class="math inline">\((\mathcal{F},\mathcal{S}) =
-(\mathcal{P}(\Omega),\mathcal{P}(S))\)</span> because preimages of
-subsets of <span class="math inline">\(S\)</span> are subsets of <span class="math inline">\(\Omega\)</span>.</p>
-</div>
-<div id="step-2-compute-the-distribution-nu_x" class="section level3">
-<h3>Step 2: Compute the distribution <span class="math inline">\(\nu_X\)</span></h3>
-<p>For <span class="math inline">\(k = 0,1,\dots,N\)</span>, <span class="math display">\[
-\nu_X(\{k\}) = P(X=k)
-= P\{\omega\in\Omega : X(\omega)=k\}.
-\]</span></p>
-<p>The event <span class="math inline">\(\{X=k\}\)</span> consists of
-all sequences with exactly <span class="math inline">\(k\)</span> heads
-and <span class="math inline">\(N-k\)</span> tails.</p>
-<ul>
-<li>The number of such sequences is <span class="math inline">\(\binom{N}{k}\)</span>.</li>
-<li>Each such sequence has probability <span class="math inline">\(p^k(1-p)^{N-k}\)</span>.</li>
-</ul>
-<p>Hence <span class="math display">\[
-P(X=k) = \binom{N}{k} p^k (1-p)^{N-k}.
-\]</span></p>
-<p>Thus <span class="math inline">\(\nu_X\)</span> is the
-<strong>Binomial<span class="math inline">\((N,p)\)</span></strong>
-distribution.</p>
-</div>
-<div id="relation-to-cdf" class="section level3">
-<h3>Relation to CDF</h3>
-<p>The CDF is <span class="math display">\[
-F_X(x) = P(X\le x)
-= \sum_{k=0}^{\lfloor x \rfloor} \binom{N}{k} p^k (1-p)^{N-k},
-\]</span> for <span class="math inline">\(x\in\mathbb{R}\)</span>.</p>
-<hr />
-</div>
-</div>
-<div id="summary-of-key-facts-in-part-2" class="section level2">
-<h2>6. Summary of key facts in Part 2</h2>
-<ol style="list-style-type: decimal">
-<li>If <span class="math inline">\(X_i\)</span> are real-valued
-measurable functions, any polynomial in the <span class="math inline">\(X_i\)</span> (and more generally any continuous
-function <span class="math inline">\(f(X_1,\dots,X_n)\)</span>) is
-measurable.</li>
-<li>The <span class="math inline">\(\sigma\)</span>-field <span class="math inline">\(\sigma(X) = \{X^{-1}(E):E\in\mathcal{S}\}\)</span>
-is the smallest on <span class="math inline">\(\Omega\)</span> making
-<span class="math inline">\(X\)</span> measurable.</li>
-<li>Given a measurable <span class="math inline">\(X\)</span> on a
-measure space, the pushforward <span class="math inline">\(\nu_X(E)=\mu(X^{-1}(E))\)</span> is a measure; in
-probability this is the distribution of the random variable.</li>
-<li>For coin flips, the counting random variable of heads has a Binomial
-distribution; this is obtained by combining the product probability on
-the sample space with the pushforward construction.</li>
-</ol>
-</div>
-</div>
-<div id="part-3" class="section level1">
-<h1>Part 3:</h1>
-</div>
-<div id="ch4-part-3-measurability-and-limits" class="section level1">
-<h1>CH4 Part 3 — Measurability and Limits</h1>
-<p>Let <span class="math inline">\((\Omega,\mathcal{F})\)</span> be a
-measurable space, and let<br />
-<span class="math display">\[
-X_n : (\Omega,\mathcal{F}) \to (\mathbb{R},\mathcal{B}(\mathbb{R}))
-\]</span> be measurable functions (random variables).</p>
-<p>We prove that several limit operations preserve measurability.</p>
-<hr />
-<div id="lemma-measurability-and-limits" class="section level2">
-<h2>Lemma (Measurability and limits)</h2>
-<p>Let <span class="math inline">\(X_n\)</span> be measurable. Then:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Equality set is measurable</strong></p>
-<p>If <span class="math display">\[
-A = \{\omega : X(\omega) = Y(\omega)\},
-\]</span> then <span class="math inline">\(A \in
-\mathcal{F}\)</span>.</p></li>
-<li><p><strong>inf<span class="math inline">\(_n X_n\)</span>, sup<span class="math inline">\(_n X_n\)</span>, liminf, limsup are
-measurable</strong></p>
-<p>Each of the functions <span class="math display">\[
-\inf_n X_n,\quad
-\sup_n X_n,\quad
-\liminf_n X_n,\quad
-\limsup_n X_n
-\]</span> is <span class="math inline">\(\mathcal{F}/\mathcal{B}(\mathbb{R})\)</span>-measurable.</p></li>
-<li><p><strong>If limit exists pointwise</strong>, then <span class="math display">\[
-A = \{\omega : \lim_n X_n(\omega) \text{ exists}\} \in \mathcal{F}.
-\]</span></p></li>
-<li><p><strong>If limit exists and finite</strong>,<br />
-<span class="math display">\[
-B = \{\omega : \lim_n X_n(\omega) \in \mathbb{R}\} \in \mathcal{F}.
-\]</span></p></li>
-<li><p><strong>If limit exists</strong>, the limiting function<br />
-<span class="math display">\[
-Y(\omega) =
-\begin{cases}
-\lim_n X_n(\omega), &amp; \omega\in B,\\
-0, &amp; \omega\notin B
-\end{cases}
-\]</span> is measurable.</p></li>
-</ol>
-<hr />
-</div>
-</div>
-<div id="proofs-fully-detailed" class="section level1">
-<h1>Proofs (Fully Detailed)</h1>
-<div id="the-equality-set-is-measurable" class="section level2">
-<h2><strong>(1) The equality set is measurable</strong></h2>
-<p>Consider <span class="math display">\[
-A = \{\omega : X(\omega)=Y(\omega)\}.
-\]</span></p>
-<p>Define continuous function <span class="math inline">\(f(x,y)=x-y\)</span>.<br />
-Since <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are measurable, the vector map <span class="math display">\[
-(X,Y):\Omega\to\mathbb{R}^2
-\]</span> is measurable.</p>
-<p>Then <span class="math display">\[
-A = \{\omega : f(X(\omega),Y(\omega)) = 0\}
-= (f\circ(X,Y))^{-1}(\{0\}).
-\]</span></p>
-<p>Because:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> is continuous ⇒
-Borel-measurable<br />
+<li><strong>Liminf/Limsup</strong>: <span class="math inline">\(\liminf
+X_n = \sup_m \inf_{n \geq m} X_n\)</span> (measurable by composition).
+Similarly for <span class="math inline">\(\limsup\)</span>.<br />
 </li>
-<li><span class="math inline">\(\{0\}\in\mathcal{B}(\mathbb{R})\)</span></li>
-</ul>
-<p>we have <span class="math inline">\(A\in\mathcal{F}\)</span>.<br />
-Thus equality of measurable functions is a measurable event.</p>
-<hr />
-</div>
-<div id="a-measurability-of-inf_n-x_n" class="section level2">
-<h2><strong>(2a) Measurability of <span class="math inline">\(\inf_n
-X_n\)</span></strong></h2>
-<p>We show:<br />
-<span class="math display">\[
-\{\omega : \inf_n X_n(\omega) &lt; c\} \in \mathcal{F}
-\quad \forall c\in\mathbb{R}.
-\]</span></p>
-<p>Observe:</p>
-<p><span class="math display">\[
-\{\inf_n X_n &lt; c\}
-= \bigcup_{n=1}^\infty \{X_n &lt; c\}.
-\]</span></p>
-<p>Indeed,<br />
-<span class="math display">\[
-\inf_n X_n(\omega) &lt; c
-\quad\iff\quad
-\exists n: X_n(\omega) &lt; c.
-\]</span></p>
-<p>Since each set <span class="math inline">\(\{X_n&lt;c\}=X_n^{-1}((-\infty,c))\in\mathcal{F}\)</span>,<br />
-the union is also in <span class="math inline">\(\mathcal{F}\)</span>.</p>
-<p>Hence <span class="math inline">\(\inf_n X_n\)</span> is
-measurable.</p>
-<hr />
-<div id="why-we-cannot-use-le-here" class="section level3">
-<h3>⚠️ Why we <em>cannot</em> use “<span class="math inline">\(\le\)</span>” here</h3>
-<p>Your note correctly points out the counterexample:</p>
-<p>Take <span class="math inline">\(X_n = 1 + \frac{1}{n}\)</span>.
-Then</p>
-<ul>
-<li><span class="math inline">\(\inf_n X_n = 1\)</span></li>
-<li>Consider event<br />
-<span class="math display">\[
-\{\inf_n X_n \le 1\} = \Omega
-\]</span></li>
-<li>But<br />
-<span class="math display">\[
-\bigcup_n \{X_n \le 1\} = \varnothing.
-\]</span></li>
-</ul>
-<p>Thus the identity<br />
-<span class="math display">\[
-\{\inf_n X_n \le c\}
-= \bigcup_n \{X_n \le c\}
-\]</span> FAILS.</p>
-<p>This is why the proof must use “<span class="math inline">\(&lt;c\)</span>” not “<span class="math inline">\(\le c\)</span>”.</p>
-<hr />
-</div>
-</div>
-<div id="b-measurability-of-sup_n-x_n" class="section level2">
-<h2><strong>(2b) Measurability of <span class="math inline">\(\sup_n
-X_n\)</span></strong></h2>
-<p>Similarly, <span class="math display">\[
-\{\sup_n X_n &gt; c\}
-= \bigcup_{n=1}^\infty \{X_n &gt; c\}.
-\]</span></p>
-<p>Thus <span class="math inline">\(\sup_n X_n\)</span> is
-measurable.</p>
-<hr />
-</div>
-<div id="c-measurability-of-limsup-and-liminf" class="section level2">
-<h2><strong>(2c) Measurability of limsup and liminf</strong></h2>
-<p>Recall definitions:</p>
-<p><span class="math display">\[
-\limsup_n X_n = \inf_m \sup_{n\ge m} X_n,
-\quad
-\liminf_n X_n = \sup_m \inf_{n\ge m} X_n.
-\]</span></p>
-<p>We already proved inf and sup of measurable functions are
-measurable.</p>
-<p>Thus:</p>
-<ul>
-<li><span class="math inline">\(\sup_{n\ge m} X_n\)</span> is
-measurable<br />
+<li><strong>Limit Exists</strong>: <span class="math inline">\(A =
+\{\lim X_n \text{ exists}\} = \{\liminf = \limsup\} \in
+\mathcal{F}\)</span>.<br />
 </li>
-<li><span class="math inline">\(\inf_m (\sup_{n\ge m} X_n)\)</span> is
-measurable ⇒ <span class="math inline">\(\limsup X_n\)</span>
-measurable<br />
+<li><strong>Limit Finite</strong>: <span class="math inline">\(B =
+\{\lim X_n \in \mathbb{R}\} = A \cap \{\liminf &gt; -\infty\} \cap
+\{\limsup &lt; \infty\} \in \mathcal{F}\)</span>.<br />
 </li>
-<li>Similar for <span class="math inline">\(\liminf X_n\)</span></li>
-</ul>
-<p>Hence both limsup and liminf are measurable.</p>
-<hr />
+<li><strong>Limiting Function</strong>: If limit exists a.e., <span class="math inline">\(Y = \lim X_n\)</span> on <span class="math inline">\(B\)</span>, 0 elsewhere, is measurable (<span class="math inline">\(Y = \liminf \cdot I_B\)</span>).</li>
+</ol>
+<p><strong>Additional Notes</strong>: Almost everywhere (a.e.)
+convergence: Limit exists except on null set (measurable). Key for
+convergence theorems (e.g., monotone convergence). In sequences, <span class="math inline">\(\limsup X_n(\omega) = \inf_m \sup_{n \geq m}
+X_n(\omega)\)</span>.</p>
 </div>
-<div id="measurability-of-limit-exists" class="section level2">
-<h2><strong>(3) Measurability of “limit exists”</strong></h2>
-<p>Limit exists iff<br />
-<span class="math display">\[
-\liminf_n X_n = \limsup_n X_n.
-\]</span></p>
-<p>Define the event <span class="math display">\[
-A = \{\omega: \liminf_n X_n(\omega)
-           = \limsup_n X_n(\omega)\}.
-\]</span></p>
-<p>Since each of limsup, liminf is measurable, and equality set of
-measurable functions is measurable (part 1),<br />
-we conclude <span class="math inline">\(A\in\mathcal{F}\)</span>.</p>
-<hr />
-</div>
-<div id="measurable-event-limit-exists-and-is-finite" class="section level2">
-<h2><strong>(4) Measurable event: limit exists and is
-finite</strong></h2>
-<p><span class="math display">\[
-B
-= \{\lim X_n \text{ exists}\}
-  \cap
-  \{\lim X_n &gt; -\infty\}
-  \cap
-  \{\lim X_n &lt; +\infty\}
-\]</span></p>
-<p>Equivalent:</p>
-<p><span class="math display">\[
-B
-= A \cap
-  \{\liminf_n X_n &gt; -\infty\}
-  \cap \{\limsup_n X_n &lt; +\infty\}.
-\]</span></p>
-<p>Events like <span class="math inline">\(\{\limsup_n X_n &lt;
-+\infty\}\)</span> are measurable because limsup is measurable.</p>
-<p>Thus <span class="math inline">\(B\in\mathcal{F}\)</span>.</p>
-<hr />
-</div>
-<div id="the-limiting-function-y-is-measurable" class="section level2">
-<h2><strong>(5) The limiting function <span class="math inline">\(Y\)</span> is measurable</strong></h2>
-<p>Define <span class="math display">\[
-Y(\omega) =
-\begin{cases}
-\lim_n X_n(\omega), &amp; \omega\in B \\
-0, &amp; \omega\notin B
-\end{cases}
-\]</span></p>
-<p>Write <span class="math display">\[
-Y = (\liminf_n X_n)\cdot 1_B.
-\]</span></p>
-<p>Both terms are measurable:</p>
-<ul>
-<li><span class="math inline">\(\liminf_n X_n\)</span> measurable<br />
-</li>
-<li>indicator <span class="math inline">\(1_B\)</span> measurable
-because <span class="math inline">\(B\in\mathcal{F}\)</span></li>
-</ul>
-<p>Thus the product is measurable.</p>
-<hr />
-</div>
-</div>
-<div id="summary-table" class="section level1">
-<h1>Summary Table</h1>
+<div id="summary-table" class="section level3">
+<h3>Summary Table</h3>
 <table>
 <colgroup>
-<col width="27%" />
-<col width="42%" />
-<col width="30%" />
+<col width="34%" />
+<col width="14%" />
+<col width="51%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Function</th>
+<th>Function/Set</th>
 <th>Measurable?</th>
-<th>Argument</th>
+<th>Key Preimage Representation</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(\inf_n X_n\)</span></td>
 <td>Yes</td>
-<td>preimage of <span class="math inline">\((-\infty,c)\)</span> is
-countable union</td>
+<td><span class="math inline">\(\{\inf &lt; c\} = \bigcup \{X_n &lt;
+c\}\)</span></td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\sup_n X_n\)</span></td>
 <td>Yes</td>
-<td>preimage of <span class="math inline">\((c,\infty)\)</span> is
-countable union</td>
+<td><span class="math inline">\(\{\sup &gt; c\} = \bigcup \{X_n &gt;
+c\}\)</span></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\liminf\)</span>, <span class="math inline">\(\limsup\)</span></td>
+<td><span class="math inline">\(\liminf_n X_n\)</span></td>
 <td>Yes</td>
-<td>compositions of measurable inf/sup</td>
+<td><span class="math inline">\(\sup_m \inf_{n \geq m} X_n\)</span></td>
 </tr>
 <tr class="even">
-<td>limit exists</td>
+<td><span class="math inline">\(\limsup_n X_n\)</span></td>
 <td>Yes</td>
-<td>equality of limsup, liminf</td>
+<td><span class="math inline">\(\inf_m \sup_{n \geq m} X_n\)</span></td>
 </tr>
 <tr class="odd">
-<td>limit function</td>
+<td><span class="math inline">\(\{\lim X_n \text{
+exists}\}\)</span></td>
 <td>Yes</td>
-<td>measurable on event where limit exists</td>
+<td><span class="math inline">\(\{\liminf = \limsup\}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\lim X_n\)</span> (where exists)</td>
+<td>Yes</td>
+<td><span class="math inline">\(\liminf \cdot I_B\)</span></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Connections</strong>: These ensure limits of random variables
+are random variables, foundational for expectation, convergence theorems
+(e.g., DCT, Fatou).</p>
+</div>
+</div>
 </div>
 
 
