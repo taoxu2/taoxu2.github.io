@@ -131,3 +131,5 @@ Here you'll find summaries, problem solutions, and conceptual insights from cour
 
 #### Week 7 Notes
 [📘 View PSTAT 220A Week 7 Notes →](/assets/PSTAT220A_Week7_notes.html)
+
+### PSTAT 220B 
